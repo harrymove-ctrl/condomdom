@@ -1,0 +1,128 @@
+# condomdom — UI/UX contract
+
+Every screen in condomdom follows this contract. If a change breaks a rule here, change the rule here first, on purpose.
+
+The look comes from [ascii.rest](https://ascii.rest): plain text, one monospace face, ink on paper, and nothing that moves without a reason.
+
+---
+
+## 1. Typography
+
+| Rule | Value |
+|---|---|
+| Family | **one face**: `JetBrains Mono`, falling back to `ui-monospace, SFMono-Regular, Menlo, monospace`. No serif, no sans. |
+| Weights | `400` for everything, `500` for titles and the active state. Nothing else. |
+| Scale (px) | `11` meta · `12` labels, pills, buttons · `14` body · `16` lede · `22` drawer title |
+| Line height | `1.6` body · `1.25` titles · `1` for ascii art (set by the piece) |
+| Measure | max `72ch` per line |
+| Numbers | `font-variant-numeric: tabular-nums` wherever numbers line up (stats, dates) |
+
+Token names: `--text-xs` 11, `--text-sm` 12, `--text-md` 14, `--text-lg` 16, `--text-xl` 22.
+
+## 2. Text and voice
+
+- **Interface labels are lowercase**: `library`, `workflow`, `add`, `clear all`. Content keeps its own case: titles exactly as the maker writes them.
+- Nav and actions are wrapped in parentheses: `(library)` `(workflow)` `(random)` `(add)`. The active one is underlined.
+- Dates are `YYYY-MM-DD` in tabular figures.
+- Write labels as verbs or nouns, never both in one place. Buttons are verbs (`save`, `delete`, `open ↗`); filters are nouns (`components`, `core`).
+- Empty, loading and error states always say what happened and what to do next, in one line.
+- Use no emoji in the UI. Glyphs come from the font: `●` `○` `◐` `↗` `→` `·` `—`.
+
+## 3. Color
+
+There is **one ink, one paper, one accent**. Every grey is the ink at a set opacity (§4), never a separate hex.
+
+| Token | Light | Dark | Use |
+|---|---|---|---|
+| `--paper` | `#f7f6f2` | `#0d0d0c` | page background |
+| `--paper-raised` | `#ffffff` | `#151513` | drawers, cards, inputs |
+| `--ink` | `#1b1a17` | `#e9e6df` | text, borders (via opacity) |
+| `--accent` | `#e8590c` | `#ff8a3d` | core status, focus ring, active underline, ascii highlight |
+| `--danger` | `#c92a2a` | `#ff6b6b` | delete only |
+
+The accent is rationed: it marks **core** items, the focused element and the active view. If more than ~5% of the screen is accent, something is wrong.
+
+## 4. Opacity
+
+The fixed scale that every grey is made from: `color-mix(in srgb, var(--ink) N%, transparent)`.
+
+| Token | Ink at | Use |
+|---|---|---|
+| `--ink-100` | 100% | titles, active text |
+| `--ink-80` | 80% | body text |
+| `--ink-60` | 60% | secondary text, summaries |
+| `--ink-40` | 40% | meta, labels, placeholders |
+| `--ink-16` | 16% | borders, rules |
+| `--ink-08` | 8% | subtle fills, hover rows |
+| `--ink-04` | 4% | pressed and selected backgrounds |
+
+Disabled = `--ink-40` text on no fill. Never use opacity on a whole element that contains text; use the token on the color.
+
+## 5. Light and dark mode
+
+- Three modes: **system** (default), **light**, **dark**. The `(theme: …)` control in the footer cycles them, and the choice is remembered per browser.
+- `<html data-theme="light|dark">` overrides; with no attribute, `prefers-color-scheme` decides.
+- The theme is applied before first paint (inline script in `<head>`), so there's no flash.
+- Ascii pieces read the text color, so they redraw correctly in either mode with no extra code.
+- Both modes must pass WCAG AA: `--ink-60` on `--paper` ≥ 4.5:1 for body-size text.
+
+## 6. Layout
+
+| Rule | Value |
+|---|---|
+| Column | one centred column, `min(760px, 100% - 32px)` (16px side gutter on phones) |
+| Spacing scale | `4 8 12 16 24 32 48 72` px only (`--s-1` … `--s-8`) |
+| Radius | `6px` controls, `10px` panels; pills are fully rounded |
+| Borders | `1px solid var(--ink-16)`; section breaks are `1px dashed var(--ink-16)` |
+| Breakpoints | `560px` (stack form rows, hide hero donut) · `760px` (workflow columns stack) |
+| Scroll | never horizontal at any width ≥ 320px |
+
+Page order is always: hero → controls → view → footer.
+
+## 7. Views and states
+
+| View | What it is | Required states |
+|---|---|---|
+| **library** | searchable, filterable list, newest first | loading · empty (filters) · empty (no items) · error |
+| **workflow** | one column per stage: question, playbook, items (core first) | loading · empty stage (`nothing here yet`) |
+| **detail** | right-hand drawer: kicker, title, summary, video, note, tags, links | video missing hint · read-only hint |
+| **editor** | right-hand drawer form for add/edit/delete | validation error inline · saving · delete confirm |
+
+- **Loading** shows the ascii `spinners` piece (`dots`) and the line `loading the library…`.
+- **Empty after filters** shows the ascii `not-found` piece with `nothing matches` and a `(clear filters)` action.
+- **Error** is one line in `--danger` saying what failed and how to retry.
+- **Read-only** (opened without the server): editing is hidden and the detail drawer says `run node server.mjs to edit`.
+
+## 8. Status, kind and stage
+
+| Status | Mark | Meaning |
+|---|---|---|
+| core | `●` in accent | always reach for it |
+| using | `◐` in ink | in rotation now |
+| to-try | `○` at `--ink-40` | saved, not tried |
+
+- Kinds are written as words (`component`, `video`, `skill`, `read`, `tool`, `inspiration`), never icons.
+- Stages are always in workflow order: inspire → design → build → ship → learn.
+
+## 9. Motion
+
+- Motion comes **only** from ascii.rest pieces and ≤150ms colour/underline transitions. Nothing slides, scales or bounces.
+- With `prefers-reduced-motion: reduce`, pieces hold still on their resting frame (ascii.rest does this itself) and transitions are off.
+- At most **two** pieces animate on screen at once: the hero pair, or one state piece.
+
+## 10. Interaction and accessibility
+
+- Every action works by keyboard: `/` search, `r` random, `n` add, `w` switch view, `t` theme, `esc` close.
+- Focus is always visible: a 2px accent ring offset by 2px.
+- Hit targets are at least 32px tall on touch.
+- Ascii art is decorative (`aria-hidden="true"`); its meaning is repeated in real text next to it.
+- Drawers use `<dialog>`: focus moves in, `esc` closes, focus returns to the row that opened it.
+
+## Checklist for any change
+
+- [ ] Only the mono face, only weights 400/500, only sizes from §1.
+- [ ] No new hex colours; greys come from the §4 opacity tokens.
+- [ ] Works in light, dark and system modes, with no flash.
+- [ ] Spacing from the §6 scale; no horizontal scroll at 320px.
+- [ ] Loading, empty and error states exist and say what to do.
+- [ ] Keyboard and reduced-motion both work.

@@ -105,9 +105,11 @@ createServer(async (req, res) => {
   const path = decodeURIComponent(new URL(req.url, "http://x").pathname);
   try {
     if (path.startsWith("/api/")) return await api(req, res, path);
-    // /content/* and /media/* come from the project root, everything else from public/
-    const base = path.startsWith("/content/") || path.startsWith("/media/") ? ROOT : PUBLIC;
-    const file = resolve(base, "." + normalize(path === "/" ? "/index.html" : path));
+    // /content/*, /media/* and the ascii.rest package come from the project root, everything else from public/
+    const clean = normalize(path === "/" ? "/index.html" : path); // collapse ../ before checking the prefix
+    const fromRoot = ["/content/", "/media/", "/node_modules/ascii.rest/dist/"].some((p) => clean.startsWith(p));
+    const base = fromRoot ? ROOT : PUBLIC;
+    const file = resolve(base, "." + clean);
     if (!file.startsWith(base)) return send(res, 403, { error: "forbidden" });
     await serveFile(req, res, file);
   } catch (err) {

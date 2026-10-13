@@ -1,55 +1,711 @@
 {
   "items": [
-    { "id": "number-flow", "title": "NumberFlow", "kind": "component", "stage": "build", "status": "core", "url": "https://number-flow.barvian.me/", "summary": "React component to animate numbers. Dependency-free, accessible.", "note": "Default for any stat, price or counter that changes.", "tags": ["react", "motion", "numbers"], "added": "2026-10-13" },
-    { "id": "beautiful-ui", "title": "Beautiful UI", "kind": "component", "stage": "build", "status": "using", "url": "https://beautifului.dev/", "summary": "Copy-paste components for chat agents: thinking states, approvals, human-in-the-loop.", "note": "Reference for agent UIs (Prydea, MemWal console).", "tags": ["ai-ui", "agents", "copy-paste"], "added": "2026-10-13" },
-    { "id": "aicss", "title": "AICSS", "kind": "component", "stage": "build", "status": "to-try", "url": "https://aicss.dev/", "summary": "Components for AI conversations: tool calls, streaming text, citations. React, Vue, Svelte.", "note": "Compare against Beautiful UI for tool-call rows.", "tags": ["ai-ui", "agents"], "added": "2026-10-13" },
-    { "id": "dot-matrix", "title": "Dot Matrix", "kind": "component", "stage": "build", "status": "to-try", "url": "https://dotmatrix.zzzzshawn.cloud/", "summary": "Dot-matrix loaders installed via the shadcn registry.", "note": "Loading states with personality.", "tags": ["shadcn", "loaders"], "added": "2026-10-13" },
-    { "id": "thinking-orbs", "title": "Thinking orbs", "kind": "component", "stage": "build", "status": "to-try", "url": "https://orbs.jakubantalik.com/", "summary": "Dotted thought-orb loading indicators for AI and agent UIs.", "note": "Agent 'thinking' state.", "tags": ["ai-ui", "loaders"], "added": "2026-10-13" },
-    { "id": "loading-dev", "title": "loading.dev", "kind": "component", "stage": "build", "status": "to-try", "url": "https://loading.dev/", "summary": "Lightweight library of loading indicators for React.", "note": "", "tags": ["react", "loaders"], "added": "2026-10-13" },
-    { "id": "liquid-glass", "title": "liquid-glass", "kind": "component", "stage": "build", "status": "to-try", "url": "https://glass.samasante.com/", "summary": "Headless React lens that refracts the live page.", "note": "", "tags": ["react", "effects"], "added": "2026-10-13" },
-    { "id": "liquid-gooey", "title": "Liquid Gooey", "kind": "component", "stage": "build", "status": "to-try", "url": "https://gooey.jakubantalik.com/", "summary": "Liquid UI effects for React.", "note": "", "tags": ["react", "effects"], "added": "2026-10-13" },
-    { "id": "morphicons", "title": "morphicons", "kind": "component", "stage": "build", "status": "to-try", "url": "https://www.morphicons.com/", "summary": "Morph any SVG icon into any other with spring physics.", "note": "", "tags": ["icons", "motion"], "added": "2026-10-13" },
-    { "id": "interior-dev", "title": "interior.dev", "kind": "component", "stage": "build", "status": "to-try", "url": "https://www.interior.dev/", "summary": "Micro-interactions for React, built for the half-second after a click.", "note": "", "tags": ["react", "micro-interactions"], "added": "2026-10-13" },
-    { "id": "uselayouts", "title": "useLayouts", "kind": "component", "stage": "build", "status": "to-try", "url": "https://uselayouts.com/", "summary": "Animated React components with Framer Motion and Tailwind. Preview, copy, ship.", "note": "", "tags": ["react", "tailwind", "motion"], "added": "2026-10-13" },
-    { "id": "fluid-functionalism", "title": "Fluid Functionalism", "kind": "component", "stage": "design", "status": "to-try", "url": "https://www.fluidfunctionalism.com/", "summary": "Open-source UI components by @micka_design.", "note": "", "tags": ["open-source"], "added": "2026-10-13" },
-    { "id": "bencho", "title": "Bencho", "kind": "component", "stage": "design", "status": "to-try", "url": "https://bencho.dev/", "summary": "Interactive UI blocks to explore, tweak and take into projects.", "note": "", "tags": ["blocks"], "added": "2026-10-13" },
-    { "id": "shoogle", "title": "Shoogle", "kind": "tool", "stage": "build", "status": "using", "url": "https://shoogle.dev/", "summary": "Search shadcn blocks, components and templates across registries.", "note": "First stop before building a shadcn component myself.", "tags": ["shadcn", "search"], "added": "2026-10-13" },
-    { "id": "cuelume", "title": "Cuelume", "kind": "component", "stage": "build", "status": "to-try", "url": "https://cuelume.dev/", "summary": "Tiny dependency-free interaction sounds, synthesized with Web Audio.", "note": "", "tags": ["sound", "micro-interactions"], "added": "2026-10-13" },
-    { "id": "dither-kit", "title": "dither-kit", "kind": "component", "stage": "build", "status": "to-try", "url": "https://www.tripwire.sh/dither-kit", "summary": "Composable dithered charts with a recharts-style API.", "note": "Fits the ascii/dither art in my Downloads.", "tags": ["charts", "dither"], "added": "2026-10-13" },
-    { "id": "kugiri", "title": "kugiri", "kind": "component", "stage": "build", "status": "to-try", "url": "https://edoardolunardi.github.io/kugiri/", "summary": "Splits text into lines, words and characters where the browser broke it.", "note": "", "tags": ["typography", "motion"], "added": "2026-10-13" },
-
-    { "id": "corner-radii", "title": "Corner Radii", "kind": "tool", "stage": "design", "status": "using", "url": "https://corner-radii.xyz/", "summary": "Calculate perfect nested border radii.", "note": "", "tags": ["radius", "detail"], "added": "2026-10-13" },
-    { "id": "design-tokens", "title": "Design Tokens Generator", "kind": "tool", "stage": "design", "status": "to-try", "url": "https://design.dev/ai/design-tokens-generator/", "summary": "Brand colors to CSS variables, Tailwind v4 @theme, DTCG tokens and agent rules.", "note": "Use at the start of every new product repo.", "tags": ["tokens", "tailwind", "agents"], "added": "2026-10-13" },
-    { "id": "gradientool", "title": "GRADIENTOOL", "kind": "tool", "stage": "inspire", "status": "to-try", "url": "https://gradientool.com/", "summary": "Infinite unique gradient outputs.", "note": "", "tags": ["gradients"], "added": "2026-10-13" },
-    { "id": "ui-camera", "title": "UI Camera", "kind": "tool", "stage": "ship", "status": "to-try", "url": "https://ui.camera/", "summary": "Studio-quality photos and videos of software, in the browser.", "note": "Alternative to my ultramock / shots.so mockups for launch posts.", "tags": ["mockups", "launch"], "added": "2026-10-13" },
-    { "id": "agentation", "title": "Agentation", "kind": "tool", "stage": "build", "status": "to-try", "url": "https://www.agentation.com/", "summary": "Visual feedback tool for agents.", "note": "Point at UI, hand the note to Claude.", "tags": ["agents", "feedback"], "added": "2026-10-13" },
-
-    { "id": "interface-cheat-sheet", "title": "Interface Cheat Sheet", "kind": "read", "stage": "design", "status": "core", "url": "https://interfaces.dev/cheat-sheet", "summary": "Tips and best practices that quickly make interfaces better.", "note": "Run through it before every UI review.", "tags": ["checklist", "craft"], "added": "2026-10-13" },
-    { "id": "craft", "title": "Craft", "kind": "read", "stage": "learn", "status": "to-try", "url": "https://craft.gustavofior.com/", "summary": "A collection of design engineering concepts.", "note": "", "tags": ["craft"], "added": "2026-10-13" },
-    { "id": "html-can-do-that", "title": "HTML Can Do That", "kind": "read", "stage": "learn", "status": "to-try", "url": "https://chrisburnell.com/html-can-do-that/", "summary": "Dynamic functionality you can now get with just HTML.", "note": "", "tags": ["html", "platform"], "added": "2026-10-13" },
-    { "id": "practical-typography", "title": "Butterick's Practical Typography", "kind": "read", "stage": "learn", "status": "core", "url": "https://practicaltypography.com/", "summary": "The reference for typography basics.", "note": "", "tags": ["typography"], "added": "2026-10-13" },
-    { "id": "inter-alternatives", "title": "Inter alternatives: how to choose a UI font", "kind": "read", "stage": "design", "status": "to-try", "url": "https://yeptype.com/article/inter-alternatives", "summary": "Two real criteria for a UI font, plus 10 alternatives.", "note": "", "tags": ["typography", "fonts"], "added": "2026-10-13" },
-    { "id": "limit-details", "title": "Limit the number of details", "kind": "read", "stage": "design", "status": "core", "url": "https://design.lightspark.com/limit-the-number-of-details", "summary": "Fewer details leaves room to make the remaining ones better.", "note": "", "tags": ["craft", "principles"], "added": "2026-10-13" },
-    { "id": "design-with-ai", "title": "How I Design with AI", "kind": "read", "stage": "learn", "status": "to-try", "url": "https://ref.tools/blog/how-i-design-with-ai", "summary": "An engineer who is not a designer and hates slop.", "note": "", "tags": ["ai", "process"], "added": "2026-10-13" },
-    { "id": "morphrig", "title": "Morphrig", "kind": "read", "stage": "learn", "status": "to-try", "url": "https://morphrig.dev/", "summary": "How icon morphing works, in ten parts.", "note": "", "tags": ["icons", "motion"], "added": "2026-10-13" },
-
-    { "id": "emil-skills", "title": "emilkowalski/skills", "kind": "skill", "stage": "build", "status": "to-try", "url": "https://github.com/emilkowalski/skills", "summary": "Agent skills for design engineers.", "note": "Vendor into ~/.agents/skills.", "tags": ["agent-skill", "motion"], "added": "2026-10-13" },
-    { "id": "jakub-skills", "title": "jakubkrehel/skills", "kind": "skill", "stage": "build", "status": "to-try", "url": "https://github.com/jakubkrehel/skills", "summary": "Skills for animations, typography, layout and colors.", "note": "", "tags": ["agent-skill", "design"], "added": "2026-10-13" },
-    { "id": "react-bits-pro", "title": "react-bits-pro", "kind": "skill", "stage": "build", "status": "using", "path": "~/.agents/skills/react-bits-pro", "summary": "React Bits Pro components, blocks and templates for agents.", "note": "", "tags": ["agent-skill", "react"], "added": "2026-10-13" },
-    { "id": "cmk-delivery-pipeline", "title": "cmk-delivery-pipeline", "kind": "skill", "stage": "ship", "status": "core", "path": "~/.agents/skills/cmk-delivery-pipeline", "summary": "Work a tracker issue end to end: intake, spec, build, review, ship.", "note": "My default loop for PRDEA tickets.", "tags": ["agent-skill", "delivery", "linear"], "added": "2026-10-13" },
-    { "id": "cmk-delivery-review", "title": "cmk-delivery-review", "kind": "skill", "stage": "ship", "status": "core", "path": "~/.agents/skills/cmk-delivery-review", "summary": "Review changes before shipping.", "note": "", "tags": ["agent-skill", "review"], "added": "2026-10-13" },
-    { "id": "cmk-design", "title": "cmk-design", "kind": "skill", "stage": "design", "status": "using", "path": "~/.agents/skills/cmk-design", "summary": "Draft system designs and architecture updates.", "note": "", "tags": ["agent-skill", "architecture"], "added": "2026-10-13" },
-    { "id": "cmk-learn", "title": "cmk-learn", "kind": "skill", "stage": "learn", "status": "using", "path": "~/.agents/skills/cmk-learn", "summary": "Capture learnings and gotchas so they persist.", "note": "", "tags": ["agent-skill", "memory"], "added": "2026-10-13" },
-    { "id": "cmk-local-stack", "title": "cmk-local-stack", "kind": "skill", "stage": "build", "status": "using", "path": "~/.agents/skills/cmk-local-stack", "summary": "Worktree-safe local dev stacks without port conflicts.", "note": "", "tags": ["agent-skill", "worktrees"], "added": "2026-10-13" },
-    { "id": "orca-cli", "title": "orca-cli", "kind": "skill", "stage": "build", "status": "core", "path": "~/.agents/skills/orca-cli", "summary": "Operate Orca worktrees, terminals, browser and handoffs.", "note": "", "tags": ["agent-skill", "orca", "worktrees"], "added": "2026-10-13" },
-    { "id": "orchestration", "title": "orchestration", "kind": "skill", "stage": "build", "status": "using", "path": "~/.agents/skills/orchestration", "summary": "Coordinate supervised Orca workers, task DAGs and decision gates.", "note": "", "tags": ["agent-skill", "orca", "multi-agent"], "added": "2026-10-13" },
-    { "id": "superset-orchestrate", "title": "superset-orchestrate", "kind": "skill", "stage": "build", "status": "to-try", "path": "~/.agents/skills/superset-orchestrate", "summary": "Coordinate terminal coding agents through the Superset CLI.", "note": "", "tags": ["agent-skill", "multi-agent"], "added": "2026-10-13" },
-    { "id": "cmk-sui-sdk", "title": "cmk-sui-sdk", "kind": "skill", "stage": "build", "status": "using", "path": "~/.agents/skills/cmk-sui-sdk", "summary": "Sui SDK: full nodes, objects, coins, transactions.", "note": "", "tags": ["agent-skill", "sui"], "added": "2026-10-13" },
-    { "id": "synthesis-design-coach", "title": "synthesis-design-coach", "kind": "skill", "stage": "inspire", "status": "to-try", "path": "~/.agents/skills/synthesis-design-coach", "summary": "Human-centered design thinking for finding product ideas.", "note": "", "tags": ["agent-skill", "ideation"], "added": "2026-10-13" },
-    { "id": "use-railway", "title": "use-railway", "kind": "skill", "stage": "ship", "status": "using", "path": "~/.agents/skills/use-railway", "summary": "Deploy and manage services on Railway.", "note": "", "tags": ["agent-skill", "deploy"], "added": "2026-10-13" },
-
-    { "id": "video-e2e-aether", "title": "E2E Aether walkthrough", "kind": "video", "stage": "ship", "status": "using", "file": "media/videos/E2E-Aether.mov", "summary": "End-to-end product demo recording.", "note": "Move the file into media/videos to preview it here.", "tags": ["demo", "my-work"], "added": "2026-10-13" },
-    { "id": "video-demo-stellar", "title": "Stellar demo", "kind": "video", "stage": "ship", "status": "using", "file": "media/videos/demo_stellar.mp4", "summary": "Hackathon demo video.", "note": "", "tags": ["demo", "my-work"], "added": "2026-10-13" },
-    { "id": "video-ultramock-timeline", "title": "Ultramock timeline 16:9", "kind": "video", "stage": "inspire", "status": "using", "file": "media/videos/ultramock-timeline.mp4", "summary": "Animated product timeline made in Ultramock.", "note": "Template for launch videos.", "tags": ["mockups", "launch"], "added": "2026-10-13" }
+    {
+      "id": "number-flow",
+      "title": "NumberFlow",
+      "kind": "component",
+      "stage": "build",
+      "status": "core",
+      "url": "https://number-flow.barvian.me/",
+      "summary": "React component to animate numbers. Dependency-free, accessible.",
+      "note": "Default for any stat, price or counter that changes.",
+      "tags": [
+        "react",
+        "motion",
+        "numbers"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "beautiful-ui",
+      "title": "Beautiful UI",
+      "kind": "component",
+      "stage": "build",
+      "status": "using",
+      "url": "https://beautifului.dev/",
+      "summary": "Copy-paste components for chat agents: thinking states, approvals, human-in-the-loop.",
+      "note": "Reference for agent UIs (Prydea, MemWal console).",
+      "tags": [
+        "ai-ui",
+        "agents",
+        "copy-paste"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "aicss",
+      "title": "AICSS",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://aicss.dev/",
+      "summary": "Components for AI conversations: tool calls, streaming text, citations. React, Vue, Svelte.",
+      "note": "Compare against Beautiful UI for tool-call rows.",
+      "tags": [
+        "ai-ui",
+        "agents"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "dot-matrix",
+      "title": "Dot Matrix",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://dotmatrix.zzzzshawn.cloud/",
+      "summary": "Dot-matrix loaders installed via the shadcn registry.",
+      "note": "Loading states with personality.",
+      "tags": [
+        "shadcn",
+        "loaders"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "thinking-orbs",
+      "title": "Thinking orbs",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://orbs.jakubantalik.com/",
+      "summary": "Dotted thought-orb loading indicators for AI and agent UIs.",
+      "note": "Agent 'thinking' state.",
+      "tags": [
+        "ai-ui",
+        "loaders"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "loading-dev",
+      "title": "loading.dev",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://loading.dev/",
+      "summary": "Lightweight library of loading indicators for React.",
+      "note": "",
+      "tags": [
+        "react",
+        "loaders"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "liquid-glass",
+      "title": "liquid-glass",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://glass.samasante.com/",
+      "summary": "Headless React lens that refracts the live page.",
+      "note": "",
+      "tags": [
+        "react",
+        "effects"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "liquid-gooey",
+      "title": "Liquid Gooey",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://gooey.jakubantalik.com/",
+      "summary": "Liquid UI effects for React.",
+      "note": "",
+      "tags": [
+        "react",
+        "effects"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "morphicons",
+      "title": "morphicons",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://www.morphicons.com/",
+      "summary": "Morph any SVG icon into any other with spring physics.",
+      "note": "",
+      "tags": [
+        "icons",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "interior-dev",
+      "title": "interior.dev",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://www.interior.dev/",
+      "summary": "Micro-interactions for React, built for the half-second after a click.",
+      "note": "",
+      "tags": [
+        "react",
+        "micro-interactions"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "uselayouts",
+      "title": "useLayouts",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://uselayouts.com/",
+      "summary": "Animated React components with Framer Motion and Tailwind. Preview, copy, ship.",
+      "note": "",
+      "tags": [
+        "react",
+        "tailwind",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "fluid-functionalism",
+      "title": "Fluid Functionalism",
+      "kind": "component",
+      "stage": "design",
+      "status": "to-try",
+      "url": "https://www.fluidfunctionalism.com/",
+      "summary": "Open-source UI components by @micka_design.",
+      "note": "",
+      "tags": [
+        "open-source"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "bencho",
+      "title": "Bencho",
+      "kind": "component",
+      "stage": "design",
+      "status": "to-try",
+      "url": "https://bencho.dev/",
+      "summary": "Interactive UI blocks to explore, tweak and take into projects.",
+      "note": "",
+      "tags": [
+        "blocks"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "shoogle",
+      "title": "Shoogle",
+      "kind": "tool",
+      "stage": "build",
+      "status": "using",
+      "url": "https://shoogle.dev/",
+      "summary": "Search shadcn blocks, components and templates across registries.",
+      "note": "First stop before building a shadcn component myself.",
+      "tags": [
+        "shadcn",
+        "search"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "cuelume",
+      "title": "Cuelume",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://cuelume.dev/",
+      "summary": "Tiny dependency-free interaction sounds, synthesized with Web Audio.",
+      "note": "",
+      "tags": [
+        "sound",
+        "micro-interactions"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "dither-kit",
+      "title": "dither-kit",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://www.tripwire.sh/dither-kit",
+      "summary": "Composable dithered charts with a recharts-style API.",
+      "note": "Fits the ascii/dither art in my Downloads.",
+      "tags": [
+        "charts",
+        "dither"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "kugiri",
+      "title": "kugiri",
+      "kind": "component",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://edoardolunardi.github.io/kugiri/",
+      "summary": "Splits text into lines, words and characters where the browser broke it.",
+      "note": "",
+      "tags": [
+        "typography",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "corner-radii",
+      "title": "Corner Radii",
+      "kind": "tool",
+      "stage": "design",
+      "status": "using",
+      "url": "https://corner-radii.xyz/",
+      "summary": "Calculate perfect nested border radii.",
+      "note": "",
+      "tags": [
+        "radius",
+        "detail"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "design-tokens",
+      "title": "Design Tokens Generator",
+      "kind": "tool",
+      "stage": "design",
+      "status": "to-try",
+      "url": "https://design.dev/ai/design-tokens-generator/",
+      "summary": "Brand colors to CSS variables, Tailwind v4 @theme, DTCG tokens and agent rules.",
+      "note": "Use at the start of every new product repo.",
+      "tags": [
+        "tokens",
+        "tailwind",
+        "agents"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "gradientool",
+      "title": "GRADIENTOOL",
+      "kind": "tool",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://gradientool.com/",
+      "summary": "Infinite unique gradient outputs.",
+      "note": "",
+      "tags": [
+        "gradients"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "ui-camera",
+      "title": "UI Camera",
+      "kind": "tool",
+      "stage": "ship",
+      "status": "to-try",
+      "url": "https://ui.camera/",
+      "summary": "Studio-quality photos and videos of software, in the browser.",
+      "note": "Alternative to my ultramock / shots.so mockups for launch posts.",
+      "tags": [
+        "mockups",
+        "launch"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "agentation",
+      "title": "Agentation",
+      "kind": "tool",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://www.agentation.com/",
+      "summary": "Visual feedback tool for agents.",
+      "note": "Point at UI, hand the note to Claude.",
+      "tags": [
+        "agents",
+        "feedback"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "interface-cheat-sheet",
+      "title": "Interface Cheat Sheet",
+      "kind": "read",
+      "stage": "design",
+      "status": "core",
+      "url": "https://interfaces.dev/cheat-sheet",
+      "summary": "Tips and best practices that quickly make interfaces better.",
+      "note": "Run through it before every UI review.",
+      "tags": [
+        "checklist",
+        "craft"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "craft",
+      "title": "Craft",
+      "kind": "read",
+      "stage": "learn",
+      "status": "to-try",
+      "url": "https://craft.gustavofior.com/",
+      "summary": "A collection of design engineering concepts.",
+      "note": "",
+      "tags": [
+        "craft"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "html-can-do-that",
+      "title": "HTML Can Do That",
+      "kind": "read",
+      "stage": "learn",
+      "status": "to-try",
+      "url": "https://chrisburnell.com/html-can-do-that/",
+      "summary": "Dynamic functionality you can now get with just HTML.",
+      "note": "",
+      "tags": [
+        "html",
+        "platform"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "practical-typography",
+      "title": "Butterick's Practical Typography",
+      "kind": "read",
+      "stage": "learn",
+      "status": "core",
+      "url": "https://practicaltypography.com/",
+      "summary": "The reference for typography basics.",
+      "note": "",
+      "tags": [
+        "typography"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "inter-alternatives",
+      "title": "Inter alternatives: how to choose a UI font",
+      "kind": "read",
+      "stage": "design",
+      "status": "to-try",
+      "url": "https://yeptype.com/article/inter-alternatives",
+      "summary": "Two real criteria for a UI font, plus 10 alternatives.",
+      "note": "",
+      "tags": [
+        "typography",
+        "fonts"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "limit-details",
+      "title": "Limit the number of details",
+      "kind": "read",
+      "stage": "design",
+      "status": "core",
+      "url": "https://design.lightspark.com/limit-the-number-of-details",
+      "summary": "Fewer details leaves room to make the remaining ones better.",
+      "note": "",
+      "tags": [
+        "craft",
+        "principles"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "design-with-ai",
+      "title": "How I Design with AI",
+      "kind": "read",
+      "stage": "learn",
+      "status": "to-try",
+      "url": "https://ref.tools/blog/how-i-design-with-ai",
+      "summary": "An engineer who is not a designer and hates slop.",
+      "note": "",
+      "tags": [
+        "ai",
+        "process"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "morphrig",
+      "title": "Morphrig",
+      "kind": "read",
+      "stage": "learn",
+      "status": "to-try",
+      "url": "https://morphrig.dev/",
+      "summary": "How icon morphing works, in ten parts.",
+      "note": "",
+      "tags": [
+        "icons",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "emil-skills",
+      "title": "emilkowalski/skills",
+      "kind": "skill",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://github.com/emilkowalski/skills",
+      "summary": "Agent skills for design engineers.",
+      "note": "Vendor into ~/.agents/skills.",
+      "tags": [
+        "agent-skill",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "jakub-skills",
+      "title": "jakubkrehel/skills",
+      "kind": "skill",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://github.com/jakubkrehel/skills",
+      "summary": "Skills for animations, typography, layout and colors.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "design"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "react-bits-pro",
+      "title": "react-bits-pro",
+      "kind": "skill",
+      "stage": "build",
+      "status": "using",
+      "path": "~/.agents/skills/react-bits-pro",
+      "summary": "React Bits Pro components, blocks and templates for agents.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "react"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "cmk-delivery-pipeline",
+      "title": "cmk-delivery-pipeline",
+      "kind": "skill",
+      "stage": "ship",
+      "status": "core",
+      "path": "~/.agents/skills/cmk-delivery-pipeline",
+      "summary": "Work a tracker issue end to end: intake, spec, build, review, ship.",
+      "note": "My default loop for PRDEA tickets.",
+      "tags": [
+        "agent-skill",
+        "delivery",
+        "linear"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "cmk-delivery-review",
+      "title": "cmk-delivery-review",
+      "kind": "skill",
+      "stage": "ship",
+      "status": "core",
+      "path": "~/.agents/skills/cmk-delivery-review",
+      "summary": "Review changes before shipping.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "review"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "cmk-design",
+      "title": "cmk-design",
+      "kind": "skill",
+      "stage": "design",
+      "status": "using",
+      "path": "~/.agents/skills/cmk-design",
+      "summary": "Draft system designs and architecture updates.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "architecture"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "cmk-learn",
+      "title": "cmk-learn",
+      "kind": "skill",
+      "stage": "learn",
+      "status": "using",
+      "path": "~/.agents/skills/cmk-learn",
+      "summary": "Capture learnings and gotchas so they persist.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "memory"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "cmk-local-stack",
+      "title": "cmk-local-stack",
+      "kind": "skill",
+      "stage": "build",
+      "status": "using",
+      "path": "~/.agents/skills/cmk-local-stack",
+      "summary": "Worktree-safe local dev stacks without port conflicts.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "worktrees"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "orca-cli",
+      "title": "orca-cli",
+      "kind": "skill",
+      "stage": "build",
+      "status": "core",
+      "path": "~/.agents/skills/orca-cli",
+      "summary": "Operate Orca worktrees, terminals, browser and handoffs.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "orca",
+        "worktrees"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "orchestration",
+      "title": "orchestration",
+      "kind": "skill",
+      "stage": "build",
+      "status": "using",
+      "path": "~/.agents/skills/orchestration",
+      "summary": "Coordinate supervised Orca workers, task DAGs and decision gates.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "orca",
+        "multi-agent"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "superset-orchestrate",
+      "title": "superset-orchestrate",
+      "kind": "skill",
+      "stage": "build",
+      "status": "to-try",
+      "path": "~/.agents/skills/superset-orchestrate",
+      "summary": "Coordinate terminal coding agents through the Superset CLI.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "multi-agent"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "cmk-sui-sdk",
+      "title": "cmk-sui-sdk",
+      "kind": "skill",
+      "stage": "build",
+      "status": "using",
+      "path": "~/.agents/skills/cmk-sui-sdk",
+      "summary": "Sui SDK: full nodes, objects, coins, transactions.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "sui"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "synthesis-design-coach",
+      "title": "synthesis-design-coach",
+      "kind": "skill",
+      "stage": "inspire",
+      "status": "to-try",
+      "path": "~/.agents/skills/synthesis-design-coach",
+      "summary": "Human-centered design thinking for finding product ideas.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "ideation"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "use-railway",
+      "title": "use-railway",
+      "kind": "skill",
+      "stage": "ship",
+      "status": "using",
+      "path": "~/.agents/skills/use-railway",
+      "summary": "Deploy and manage services on Railway.",
+      "note": "",
+      "tags": [
+        "agent-skill",
+        "deploy"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "video-e2e-aether",
+      "title": "E2E Aether walkthrough",
+      "kind": "video",
+      "stage": "ship",
+      "status": "using",
+      "file": "media/videos/E2E-Aether.mov",
+      "summary": "End-to-end product demo recording.",
+      "note": "Move the file into media/videos to preview it here.",
+      "tags": [
+        "demo",
+        "my-work"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "video-demo-stellar",
+      "title": "Stellar demo",
+      "kind": "video",
+      "stage": "ship",
+      "status": "using",
+      "file": "media/videos/demo_stellar.mp4",
+      "summary": "Hackathon demo video.",
+      "note": "",
+      "tags": [
+        "demo",
+        "my-work"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "video-ultramock-timeline",
+      "title": "Ultramock timeline 16:9",
+      "kind": "video",
+      "stage": "inspire",
+      "status": "using",
+      "file": "media/videos/ultramock-timeline.mp4",
+      "summary": "Animated product timeline made in Ultramock.",
+      "note": "Template for launch videos.",
+      "tags": [
+        "mockups",
+        "launch"
+      ],
+      "added": "2026-10-13"
+    }
   ]
 }

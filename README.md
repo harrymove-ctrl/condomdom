@@ -6,10 +6,15 @@ It's inspired by [desengs.com](https://desengs.com/), but curated for my own wor
 ## Run
 
 ```bash
+pnpm install
 node server.mjs
 ```
 
-Open http://localhost:4321. Node 20+; no dependencies, no build step.
+Open http://localhost:4321. Needs Node 20+. There's no build step: the page loads [ascii.rest](https://ascii.rest) straight from `node_modules` through an import map.
+
+## Design
+
+Every screen follows [DESIGN.md](DESIGN.md), the UI/UX contract: one monospace face, ink on paper in light and dark, greys made only from ink opacity, one accent, and ascii.rest pieces for the motion (banner wordmark, typewriter tagline, donut, loading spinner, "nothing matches" state).
 
 ## How it's organised
 
@@ -32,13 +37,14 @@ Every item has:
 - By hand: edit `content/library.json`.
 - Videos: copy the file into `media/videos/` and set `file` to `media/videos/<name>`.
 
-Shortcuts: `/` search · `r` random pick · `n` add · `w` switch between Library and Workflow.
+Shortcuts: `/` search · `r` random pick · `n` add · `w` switch between library and workflow · `t` theme (system → light → dark).
 
 ## Files
 
 ```
 server.mjs              local server + save API (localhost only)
 public/                 the site (index.html, styles.css, app.js)
+DESIGN.md               the UI/UX contract
 content/library.json    all items
 content/workflow.json   stages + playbooks
 media/videos/           local video files (ignored by git)
