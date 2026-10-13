@@ -1,17 +1,30 @@
 {
   "name": "condomdom",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "My personal library of UI components, videos and skills, arranged around how I build.",
   "type": "module",
   "scripts": {
-    "dev": "node server.mjs",
-    "start": "node server.mjs"
+    "dev": "next dev -H 127.0.0.1 -p 4321",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1 -p 4321",
+    "typecheck": "tsc --noEmit"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.9"
   },
   "dependencies": {
-    "ascii.rest": "^0.4.0"
+    "ascii.rest": "^0.4.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2"
   }
 }
