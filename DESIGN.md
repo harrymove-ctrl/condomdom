@@ -112,6 +112,17 @@ Page order is always: boot screen (first visit) → hero → toolbar → view �
 - Kinds are written as words (`component`, `video`, `skill`, `read`, `tool`, `inspiration`), never icons.
 - Stages are always in workflow order: inspire → design → build → ship → learn.
 
+### Pricing
+
+| Pricing | Mark | Meaning |
+|---|---|---|
+| free | `free` pill in ink | free to use; open-source repos count as free |
+| freemium | `free + pro` pill, dashed | free to start, paid pro parts |
+| paid | `paid` pill in accent | you pay to use it |
+| unknown | `?`, faint, no border | not checked or not clear |
+
+Only components, tools and skills carry a price. It is always a word in a pill, never colour alone.
+
 ## 9. Motion
 
 - Motion comes **only** from ascii.rest pieces and ≤150ms colour/underline transitions. Nothing slides, scales or bounces.

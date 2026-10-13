@@ -1,6 +1,6 @@
 "use client";
 // The library as a data table: sortable headers, hideable columns, pages of 15 (DESIGN.md §7).
-import { KIND_PLURAL, STATUS_LABEL, STATUS_MARK, STATUS_RANK, type Item } from "@/lib/types";
+import { KIND_PLURAL, PRICING_LABEL, STATUS_LABEL, STATUS_MARK, STATUS_RANK, type Item } from "@/lib/types";
 import { Preview } from "./Preview";
 
 export const TABLE_COLUMNS = [
@@ -8,6 +8,7 @@ export const TABLE_COLUMNS = [
   { id: "title", label: "title", sortable: true },
   { id: "kind", label: "kind", sortable: true },
   { id: "group", label: "group", sortable: true },
+  { id: "pricing", label: "pricing", sortable: true },
   { id: "stage", label: "stage", sortable: true },
   { id: "status", label: "status", sortable: true },
   { id: "tags", label: "tags", sortable: false },
@@ -27,6 +28,7 @@ export function sortItems(items: Item[], sort: Sort) {
       case "stage": return STAGE_ORDER.indexOf(it.stage);
       case "kind": return it.kind;
       case "group": return it.group ?? "~";
+      case "pricing": return ["free", "freemium", "paid", "unknown"].indexOf(it.pricing ?? "unknown");
       case "added": return it.added;
       default: return it.title.toLowerCase();
     }
@@ -83,6 +85,7 @@ export function DataTable({ rows, total, visible, sort, onSort, page, onPage, on
                 )}
                 {visible.has("kind") && <td className="c-kind">{KIND_PLURAL[it.kind].replace(/s$/, "")}</td>}
                 {visible.has("group") && <td className="c-group">{it.group ?? "—"}</td>}
+                {visible.has("pricing") && <td className="c-pricing"><span className={`price ${it.pricing ?? "unknown"}`}>{PRICING_LABEL[it.pricing ?? "unknown"]}</span></td>}
                 {visible.has("stage") && <td className="c-stage">{it.stage}</td>}
                 {visible.has("status") && (
                   <td className="c-status"><span className={`mark ${it.status}`} aria-hidden="true">{STATUS_MARK[it.status]}</span>{STATUS_LABEL[it.status]}</td>

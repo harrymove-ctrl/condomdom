@@ -2,7 +2,7 @@
 // Item panels on <dialog> (DESIGN.md §7, §10), in three modes: side (a right-hand drawer), center (a card over the
 // blurred page) and full (the whole page, content in a reading column). Focus moves in, esc closes, focus returns.
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { KINDS, KIND_PLURAL, STATUSES, STATUS_LABEL, STATUS_MARK, type Item, type Stage } from "@/lib/types";
+import { KINDS, KIND_PLURAL, PRICINGS, PRICING_LABEL, STATUSES, STATUS_LABEL, STATUS_MARK, type Item, type Stage } from "@/lib/types";
 import { Preview } from "./Preview";
 
 export const PANEL_MODES = ["side", "center", "full"] as const;
@@ -54,6 +54,7 @@ export function ItemDetail({ item, stage, onEdit, onClose, mode, onMode }: {
         <span><span className={`mark ${item.status}`} aria-hidden="true">{STATUS_MARK[item.status]}</span>{STATUS_LABEL[item.status]}</span>
         <span>{KIND_PLURAL[item.kind].replace(/s$/, "")}{item.group ? ` / ${item.group}` : ""}</span>
         <span>{stage?.label.toLowerCase() ?? item.stage}</span>
+        {item.pricing && item.pricing !== "unknown" && <span className={`price ${item.pricing}`}>{PRICING_LABEL[item.pricing]}</span>}
         <span>{item.added}</span>
       </div>
       <h2>{item.title}</h2>
@@ -135,6 +136,7 @@ export function EditorDrawer({ open, item, stages, groups, defaults, mode, onMod
         <div className="fields">
           <label>kind<select name="kind" defaultValue={v.kind ?? "component"}>{KINDS.map((k) => <option key={k} value={k}>{KIND_PLURAL[k].replace(/s$/, "")}</option>)}</select></label>
           <label>stage<select name="stage" defaultValue={v.stage ?? "build"}>{stages.map((s) => <option key={s.id} value={s.id}>{s.label.toLowerCase()}</option>)}</select></label>
+          <label>pricing<select name="pricing" defaultValue={v.pricing ?? "unknown"}>{PRICINGS.map((p) => <option key={p} value={p}>{PRICING_LABEL[p]}</option>)}</select></label>
           <label>status<select name="status" defaultValue={v.status ?? "to-try"}>{STATUSES.map((s) => <option key={s} value={s}>{STATUS_LABEL[s]}</option>)}</select></label>
         </div>
         <label>group <small>a category inside its kind, e.g. animated-react, svelte: pick one or type a new one</small>

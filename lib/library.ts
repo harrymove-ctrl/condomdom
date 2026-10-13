@@ -2,7 +2,7 @@
 import "server-only";
 import { readFile, rename, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { KINDS, STAGES, STATUSES, type Item, type Stage } from "./types";
+import { KINDS, PRICINGS, STAGES, STATUSES, type Item, type Stage } from "./types";
 
 const ROOT = process.cwd();
 const LIBRARY = join(ROOT, "content", "library.json");
@@ -51,6 +51,7 @@ function clean(input: Record<string, unknown>, existing?: Item): Item {
     summary: opt("summary"),
     note: opt("note"),
     group: opt("group")?.toLowerCase(),
+    pricing: PRICINGS.includes(merged.pricing as never) ? (merged.pricing as Item["pricing"]) : undefined,
     tags: tags.map((t) => t.trim()).filter(Boolean),
     added: existing?.added ?? new Date().toISOString().slice(0, 10),
   };

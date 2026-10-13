@@ -1,9 +1,54 @@
 {
   "stages": [
-    { "id": "inspire", "label": "Inspire", "question": "What's worth making?", "playbook": ["Collect references and mockups", "Write the one-line idea", "Pick 3 references to steal from"] },
-    { "id": "design",  "label": "Design",  "question": "How should it look and feel?", "playbook": ["Generate tokens (colors, radii, type)", "Sketch the key screen", "Check against the Interface Cheat Sheet"] },
-    { "id": "build",   "label": "Build",   "question": "What do I reuse instead of writing?", "playbook": ["Search Shoogle and my components first", "Load the matching agent skills", "Run agents in worktrees, not on main"] },
-    { "id": "ship",    "label": "Ship",    "question": "Is it ready, and how do I show it?", "playbook": ["Review with cmk-delivery-review", "Record a demo video", "Make launch mockups"] },
-    { "id": "learn",   "label": "Learn",   "question": "What do I keep from this?", "playbook": ["Save gotchas with cmk-learn", "Promote good finds to Core", "Archive what I never used"] }
+    {
+      "id": "inspire",
+      "label": "Inspire",
+      "question": "What's worth making, and what does good look like?",
+      "playbook": [
+        "Drop new links into content/inbox/<date>.md under ## kind / group, with a short note on why",
+        "Run pnpm inbox <file> to preview, then --apply to add them",
+        "Pick 3 references (ui references, portfolios) to steal from"
+      ]
+    },
+    {
+      "id": "design",
+      "label": "Design",
+      "question": "How should it look and feel?",
+      "playbook": [
+        "Choose a style family: pixel & ascii, glass, neobrutalism or hand-drawn",
+        "Pick icons, fonts and a background from their groups",
+        "Check the screen against the Interface Cheat Sheet"
+      ]
+    },
+    {
+      "id": "build",
+      "label": "Build",
+      "question": "What do I reuse instead of writing?",
+      "playbook": [
+        "Filter pricing → free first; free + pro only if the free part is enough",
+        "Search component libraries, motion and charts before writing a component",
+        "Load the matching skill packs into the agent"
+      ]
+    },
+    {
+      "id": "ship",
+      "label": "Ship",
+      "question": "Is it ready, and how do I show it?",
+      "playbook": [
+        "Record the demo with a video tool",
+        "Make launch mockups",
+        "Mark what you actually used as core"
+      ]
+    },
+    {
+      "id": "learn",
+      "label": "Learn",
+      "question": "What do I keep from this?",
+      "playbook": [
+        "Write a one-line note on each item you tried: keep, or why not",
+        "Move unused to-try items out every month",
+        "Read one piece of writing a week"
+      ]
+    }
   ]
 }

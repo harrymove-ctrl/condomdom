@@ -190,6 +190,12 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 .data .c-thumb { width: 1%; padding-right: 0; }
 .data .c-added, .data .c-status, .data .c-kind, .data .c-group, .data .c-stage { white-space: nowrap; }
 .data .c-group { color: var(--ink-60); }
+/* pricing (§8): a word, never a colour alone. free is plain, paid carries the accent, unknown is faint */
+.price { display: inline-block; white-space: nowrap; font-size: var(--text-xs); padding: 0 var(--s-2); border: var(--rule); border-radius: 999px; color: var(--ink-80); }
+.price.free { color: var(--ink-100); }
+.price.freemium { border-style: dashed; color: var(--ink-100); }
+.price.paid { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+.price.unknown { color: var(--ink-40); border-color: transparent; }
 .data .c-added { color: var(--ink-40); }
 .data .c-tags { color: var(--ink-40); width: 20ch; max-width: 20ch; line-height: 1.5; }
 .data .c-tags span { display: inline-block; white-space: nowrap; margin-right: 1ch; }
@@ -263,6 +269,17 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 .stage li button { display: block; width: 100%; text-align: left; font-size: var(--text-sm); color: var(--ink-80); min-height: 28px; padding: var(--s-1) var(--s-2); border-radius: var(--r-control); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .stage li button:hover { background: var(--ink-08); color: var(--ink-100); }
 .stage .none { font-size: var(--text-sm); color: var(--ink-40); }
+.stage h3 .count { float: right; font-weight: 400; font-size: var(--text-sm); color: var(--ink-40); }
+.stage-group { border-top: var(--rule-dashed); padding-top: var(--s-2); }
+.stage-group > summary { list-style: none; display: flex; gap: var(--s-2); align-items: baseline; cursor: pointer; font-size: var(--text-sm); color: var(--ink-80); padding: 2px 0; }
+.stage-group > summary::-webkit-details-marker { display: none; }
+.stage-group > summary::before { content: "▸"; color: var(--ink-40); width: 1ch; }
+.stage-group[open] > summary::before { content: "▾"; }
+.stage-group > summary .count { margin-left: auto; font-size: var(--text-xs); color: var(--ink-40); white-space: nowrap; }
+.stage-group ul { border-top: 0; padding-top: var(--s-1); }
+.stage li button { display: flex; align-items: baseline; gap: var(--s-1); }
+.stage li button .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; }
+.stage li button .price { flex-shrink: 0; }
 
 /* ───────── drawers ───────── */
 /* item panels (§7): side · center · full, all over a blurred page */
@@ -298,7 +315,7 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 form.editor { display: grid; gap: var(--s-3); }
 form.editor label { display: grid; gap: var(--s-1); font-size: var(--text-sm); color: var(--ink-60); }
 form.editor small { color: var(--ink-40); }
-form.editor .fields { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-2); }
+form.editor .fields { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-2); }
 input, select, textarea { width: 100%; font: var(--text-md) var(--mono); color: var(--ink-100); background: var(--paper); border: var(--rule); border-radius: var(--r-control); padding: var(--s-2) var(--s-3); }
 input:focus, select:focus, textarea:focus { outline: none; border-color: var(--ink-40); }
 .error { color: var(--danger); font-size: var(--text-sm); margin: 0; }
@@ -318,7 +335,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--i
 @media (max-width: 700px) {
   .toolbar-row > .menu-anchor .menu { left: auto; right: 0; }
   .menu { max-width: calc(100vw - 32px); }
-  .data .c-kind, .data .c-group, .data .c-stage, .data .c-tags, .data .c-added { display: none; }
+  .data .c-kind, .data .c-group, .data .c-pricing, .data .c-stage, .data .c-tags, .data .c-added { display: none; }
 }
 @media (max-width: 560px) {
   .brand .dim { display: none; }

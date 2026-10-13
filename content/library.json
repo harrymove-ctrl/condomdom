@@ -1,6 +1,2509 @@
 {
   "items": [
     {
+      "id": "designeer",
+      "title": "Designeer",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://designeer.xyz/components",
+      "summary": "120 component libraries, UI kits, and motion libraries for shipping interfaces faster \u2014 vetted for craft, not just popularity.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "saurabh-2607-greatui",
+      "title": "Saurabh-2607/GreatUI",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/Saurabh-2607/GreatUI",
+      "summary": "Beautiful, animated React components built with TypeScript, Tailwind CSS, and Motion.",
+      "note": "26/7 new ui library",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "nexvyn-ui",
+      "title": "Nexvyn UI",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://ui.nexvyn.dev/components/table-of-contents",
+      "summary": "A fixed bottom-left floating block that tracks scroll position, shows the active section via IntersectionObserver, and expands into a navigable section list.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "iconiq-ui",
+      "title": "Iconiq UI",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://iconiqui.com/navigation/faq-pro",
+      "summary": "Install and customize the Iconiq UI FAQ Pro with shadcn registry commands, live previews, provider variants, and editable source files.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "reui-shadcn-gantt",
+      "title": "reui \u00b7 Shadcn Gantt",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://reui.io/components/gantt",
+      "summary": "7 free shadcn gantt chart components with split tree and timeline panes, day to year scales, drag scheduling, and progress.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "boardui",
+      "title": "BoardUI",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://www.boardui.com/components",
+      "summary": "Browse BoardUI's dashboard UI components for React + Tailwind CSS: buttons, inputs, selects, tables, data tables, tabs, pagination, sidebar and more - all de\u2026",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "originkit",
+      "title": "Originkit",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://www.originkit.dev/",
+      "summary": "The largest free animated component library for building modern websites.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "efferd",
+      "title": "Efferd",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "paid",
+      "url": "https://efferd.com/",
+      "summary": "Save hours of design time with clean, ready-to-use shadcn blocks that just work \u2014 modern, responsive, and built for speed.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "heroui-pro",
+      "title": "HeroUI Pro",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "paid",
+      "url": "https://heroui.pro/",
+      "summary": "Premium UI components, templates, and AI tooling for React and React Native.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "canvas-ui-creative-canvas-webgl-and-webgpu-component-library",
+      "title": "Canvas UI: Creative Canvas, WebGL and WebGPU Component Library",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://canvasui.dev/",
+      "summary": "An open source component library of creative html-in-canvas effects for React, Solid, Preact, Vue, Svelte, and vanilla JS.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "uiverse-io-yaya12085-quick-husky-74",
+      "title": "uiverse.io/Yaya12085/quick-husky-74",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://uiverse.io/Yaya12085/quick-husky-74",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "radiumcoders-ui",
+      "title": "radiumcoders/ui",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/radiumcoders/ui",
+      "summary": "Hand-crafted, beautiful, and minimal UI components built with Tailwind CSS and Motion.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "viraui-dev",
+      "title": "viraui.dev",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://viraui.dev/",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "fancy-components",
+      "title": "Fancy Components",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://www.fancycomponents.dev/components",
+      "summary": "Ready to use, fancy React components to make the web fun again.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "evil-buttons",
+      "title": "Evil Buttons",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.evilbuttons.com/docs",
+      "summary": "A button with an animated 4x4 ordered-dither wave background and a knockout label.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "opensource-ui",
+      "title": "Opensource UI",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://opensourceui.in/components",
+      "summary": "Browse 207+ free UI components in the Opensource UI library \u2014 React and Next.js copy-paste blocks, Tailwind CSS components, iPhone and MacBook mockups, widge\u2026",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "juanda-crd-ui",
+      "title": "juanda \u00b7 crd-ui",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://crd-ui.juanda.co/#display",
+      "summary": "A credit &#38; debit card component for payment forms: live brand detection, 3D flip, themeable variants.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "ui8-components",
+      "title": "ui8 \u00b7 components",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://components.ui8.dev/",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "fluid-functionalism-2",
+      "title": "Fluid Functionalism",
+      "kind": "component",
+      "group": "component libraries",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.fluidfunctionalism.com/docs/tabs",
+      "summary": "Segmented control with sliding indicator and fluid hover.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "beui",
+      "title": "beUI",
+      "kind": "component",
+      "group": "motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://beui.dev/components/motion/scroll-animation",
+      "summary": "Scroll-driven motion: a Lenis smooth-scroll provider and a reading-progress indicator that reads from it.",
+      "note": "library ui ux",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "vengenceui-pop-button",
+      "title": "vengenceui \u00b7 Pop Button",
+      "kind": "component",
+      "group": "motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.vengenceui.com/components/pop-button",
+      "summary": "Interactive 3D pushable pop button.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "vengeance-ui",
+      "title": "Vengeance UI",
+      "kind": "component",
+      "group": "motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://vengeanceui.com/components/typing-keyboard",
+      "summary": "3D isometric keyboard with auto-typing screen.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "watermelon-ui",
+      "title": "Watermelon UI",
+      "kind": "component",
+      "group": "motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://ui.watermelon.sh/animated-components/category/disclosure",
+      "summary": "7 free animated React disclosure components built with Motion and Tailwind CSS, for expanding menus and reveal panels.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "chanhdai-theme-toggle-effect",
+      "title": "chanhdai \u00b7 Theme Toggle Effect",
+      "kind": "component",
+      "group": "motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://chanhdai.com/components/theme-toggle-effect",
+      "summary": "Animated transitions when switching between light and dark themes.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "rare-ui-2",
+      "title": "Rare UI",
+      "kind": "component",
+      "group": "motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://www.rareui.com/components/foldercomponent",
+      "summary": "An animated folder whose cards fan out on hover and lift open on click, with a 3D-tilted flap.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "animata",
+      "title": "Animata",
+      "kind": "component",
+      "group": "motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://animata.design/docs/card/flip-card",
+      "summary": "A dynamic flip card featuring smooth 180-degree flip animations along both the X and Y axes.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "svelte-animations-components",
+      "title": "Svelte Animations Components",
+      "kind": "component",
+      "group": "motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://sv-animations.vercel.app/",
+      "summary": "50+ free and open-source animated components and effects.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "sona-ui-vercel-app-docs-animated-dropdown",
+      "title": "sona-ui.vercel.app/docs/animated-dropdown",
+      "kind": "component",
+      "group": "motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://sona-ui.vercel.app/docs/animated-dropdown",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "remocn-transitions",
+      "title": "remocn \u00b7 Transitions",
+      "kind": "component",
+      "group": "motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://remocn.dev/docs/transitions",
+      "summary": "Scene transitions built as presentations for TransitionSeries",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "reactvibe-com-docs-text-motion-linear-reveal",
+      "title": "reactvibe.com/docs/text-motion/linear-reveal",
+      "kind": "component",
+      "group": "text-motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://reactvibe.com/docs/text-motion/linear-reveal",
+      "note": "react vibe",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "unlumen-ui-2",
+      "title": "unlumen UI",
+      "kind": "component",
+      "group": "text-motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://ui.unlumen.com/components/dia-text-reveal",
+      "summary": "Animated text reveal with a colorful gradient sweep effect, inspired by the Dia app.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "textmotion-slot-text",
+      "title": "textmotion \u00b7 slot-text",
+      "kind": "component",
+      "group": "text-motion",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://textmotion.dev/",
+      "summary": "slot-text \u2014 text that rolls into place.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "chatcn-me-docs-misc-video-carousel",
+      "title": "chatcn.me/docs/misc/video-carousel",
+      "kind": "component",
+      "group": "ai-ui",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.chatcn.me/docs/misc/video-carousel",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "animated-react-widgets-copy-and-paste-ui-elements",
+      "title": "Animated React Widgets: Copy and Paste UI Elements",
+      "kind": "component",
+      "group": "ai-ui",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://aicanvas.me/components/category/widgets",
+      "summary": "Free animated React widgets and UI elements.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "uiuno",
+      "title": "Uiuno",
+      "kind": "component",
+      "group": "ai-ui",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://uiuno.com/explore/components/chat",
+      "summary": "Human-code-first workspace for UI components.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "beautiful-ui-five-beautiful-ui",
+      "title": "beautiful-ui-five \u00b7 Beautiful UI",
+      "kind": "component",
+      "group": "ai-ui",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://beautiful-ui-five.vercel.app/",
+      "summary": "A small library of extremely crafted, copy-paste components for chat agents, thinking states, human-in-the-loop approvals, and everything agents need to talk\u2026",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "svelte-ai-elements",
+      "title": "Svelte AI Elements",
+      "kind": "component",
+      "group": "ai-ui",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "http://svelte-ai-elements.vercel.app/",
+      "summary": "Explore a variety of AI-powered components and features designed to enhance user interactions and streamline workflows.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "sv-agentation-svelte-agentation",
+      "title": "sv-agentation \u00b7 Svelte Agentation",
+      "kind": "component",
+      "group": "ai-ui",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://sv-agentation.com/",
+      "summary": "Minimal source-inspection tooling for Svelte apps, inspired by Agentation and designed for dev-only workflows.",
+      "note": "Svelte Agentation: turns UI annotations into structured context that AI coding agents can understand",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "beautiful-ui-2",
+      "title": "Beautiful UI",
+      "kind": "component",
+      "group": "ai-ui",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.beautifului.dev/harness",
+      "summary": "An interactive chat window built entirely from Beautiful UI primitives.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "generative-loaders",
+      "title": "Generative Loaders",
+      "kind": "component",
+      "group": "ai-ui",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://generativeloaders.com/",
+      "summary": "Animated React loaders for text, inline, and image generation states.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "bloub-avatar-svg-anim",
+      "title": "bloub, avatar SVG anim\u00e9",
+      "kind": "component",
+      "group": "ai-ui",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://bloub.vercel.app/",
+      "summary": "bloub recr\u00e9e en SVG anim\u00e9 l",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "base-ui",
+      "title": "Base UI",
+      "kind": "component",
+      "group": "primitives",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://base-ui.com/react/utils/csp-provider",
+      "summary": "A CSP provider component that applies a nonce to inline <style> and <script> tags rendered by Base UI components, and can disable inline <style> elements.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "bklit-ui",
+      "title": "Bklit UI",
+      "kind": "component",
+      "group": "charts",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://bklit.com/docs/components/area-chart",
+      "summary": "A composable area chart with gradient fills, tooltips, and hover interactions",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "benji-liveline",
+      "title": "benji \u00b7 Liveline",
+      "kind": "component",
+      "group": "charts",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://benji.org/liveline",
+      "summary": "Real-time animated line chart for React.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "tanstack",
+      "title": "TanStack",
+      "kind": "component",
+      "group": "charts",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://tanstack.com/charts/catalog",
+      "summary": "Executable TanStack Charts examples.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "evil-charts",
+      "title": "Evil Charts",
+      "kind": "component",
+      "group": "charts",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://evilcharts.com/",
+      "summary": "Free, open-source animated React chart components built with Recharts, Apache ECharts, shadcn/ui, and Tailwind CSS.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "react-data-table-with-filters",
+      "title": "React Data Table with Filters",
+      "kind": "component",
+      "group": "data tables",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://data-table.openstatus.dev/",
+      "summary": "Open-source React data table with faceted filters, sorting, infinite scroll, and server-side rendering.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "mdxcn-markdown-friendly-components",
+      "title": "mdxcn: markdown-friendly components",
+      "kind": "component",
+      "group": "data tables",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://mdx-graphs.kshv.me/",
+      "summary": "markdown-friendly react components for mdx.",
+      "note": "markdown charts and tables in a dashed frame",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "componentry-2",
+      "title": "Componentry",
+      "kind": "component",
+      "group": "pixel & ascii",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://componentry.dev/docs/components/dither-gradient",
+      "summary": "Gradient background with dithering noise.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "dot-matrix-a-library-of-60-quiet-loaders",
+      "title": "dot/matrix, a library of 60 quiet loaders",
+      "kind": "component",
+      "group": "pixel & ascii",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://dot-matrix-animations.vercel.app/",
+      "summary": "60 hand-designed 5\u00d75 dot-matrix loader animations.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "ascii-studio",
+      "title": "ascii studio",
+      "kind": "component",
+      "group": "pixel & ascii",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.asciistudio.space/showcase",
+      "summary": "Browse a community showcase of ASCII animations built with ascii studio \u2014 explore real-time, character-based art and find inspiration for your own.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "retro-ui-components-for-react",
+      "title": "Retro UI components for React",
+      "kind": "component",
+      "group": "pixel & ascii",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://retroui.dev/",
+      "summary": "NeoBrutalism is a retro UI component library for React and Next.js \u2014 components, blocks, templates and themes (formerly RetroUI).",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "cult-ui-hero-dithering",
+      "title": "cult-ui \u00b7 Hero Dithering",
+      "kind": "component",
+      "group": "pixel & ascii",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://www.cult-ui.com/docs/components/hero-dithering",
+      "summary": "Split-layout hero section for React and shadcn/ui with a Dithering WebGL shader, call-to-action buttons, and tech stack badges.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "pixelact-ui",
+      "title": "Pixelact UI",
+      "kind": "component",
+      "group": "pixel & ascii",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://www.pixelactui.com/",
+      "summary": "A modern pixel art styled React component library built on shadcn/ui.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "8bitcn-ui",
+      "title": "8bitcn/ui",
+      "kind": "component",
+      "group": "pixel & ascii",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://www.8bitcn.com",
+      "summary": "A retro UI library of 8-bit styled shadcn/ui components, blocks, and game-ready interfaces for modern React apps.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "holosticker",
+      "title": "Holosticker",
+      "kind": "component",
+      "group": "glass & effects",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.holosticker.dev/",
+      "summary": "Holographic sticker studio.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "crenspire-glass-ui",
+      "title": "crenspire \u00b7 Glass UI",
+      "kind": "component",
+      "group": "glass & effects",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://glass-ui.crenspire.com/",
+      "summary": "A modern, glassmorphic component library inspired by Apple's design language",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "boldkit",
+      "title": "BoldKit",
+      "kind": "component",
+      "group": "neobrutalism",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://boldkit.dev/",
+      "summary": "Free neubrutalism UI library for React & Vue 3.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "neobrutalism-components",
+      "title": "Neobrutalism components",
+      "kind": "component",
+      "group": "neobrutalism",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.neobrutalism.dev/",
+      "summary": "A collection of neobrutalism-styled components based on shadcn/ui.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "neobrutalism",
+      "title": "NeoBrutalism",
+      "kind": "component",
+      "group": "neobrutalism",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://neobrutalism.com/",
+      "summary": "NeoBrutalism is a retro UI component library for React and Next.js \u2014 components, blocks, templates and themes (formerly RetroUI).",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "syabro-neat-annotations",
+      "title": "syabro \u00b7 neat-annotations",
+      "kind": "component",
+      "group": "hand-drawn",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://neat-annotations.syabro.com/",
+      "summary": "Arrows and handwritten labels for your website.",
+      "note": "neat hand-drawn annotations for your page: arrows and handwritten labels",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "drawably-site-pages-dev",
+      "title": "drawably-site.pages.dev",
+      "kind": "component",
+      "group": "hand-drawn",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://drawably-site.pages.dev/",
+      "note": "drawably",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "danilaa1-drawably",
+      "title": "Danilaa1/drawably",
+      "kind": "component",
+      "group": "hand-drawn",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/Danilaa1/drawably",
+      "summary": "Hand-drawn UI controls.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "handdrawn-grug-hand-font-downloads",
+      "title": "handdrawn \u00b7 Grug Hand font downloads",
+      "kind": "component",
+      "group": "hand-drawn",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://handdrawn.software/grug/",
+      "summary": "Download the four Grug Hand TrueType font faces and browse their supported characters and icons.",
+      "note": "font",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "oreoui-doodle-icons",
+      "title": "oreoui \u00b7 Doodle Icons",
+      "kind": "component",
+      "group": "hand-drawn",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://oreoui.com/doodle-icons",
+      "summary": "A growing set of hand-drawn doodle icons with stroke-drawn entrances and a boiling wiggle filter.",
+      "note": "doodle icons",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "google-fonts",
+      "title": "Google Fonts",
+      "kind": "component",
+      "group": "hand-drawn",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://fonts.google.com/specimen/Schoolbell",
+      "summary": "Do you hear it?",
+      "note": "font",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "arlan-dia-browser-s-gradient",
+      "title": "arlan \u00b7 Dia Browser's gradient",
+      "kind": "component",
+      "group": "backgrounds",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.arlan.me/vault/dia-gradient",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "metalforge",
+      "title": "MetalForge",
+      "kind": "component",
+      "group": "backgrounds",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://metalforge.xyz/",
+      "summary": "Beautiful shaders for SwiftUI, React Native and the web, without writing shader code.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "hattrick-post-one-photo-as-three-on-x",
+      "title": "Hattrick: post one photo as three on X",
+      "kind": "component",
+      "group": "backgrounds",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://hattrick-pi.vercel.app/",
+      "summary": "Cut a wide image into three equal parts and post them as one seamless slideshow on X.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "sombra",
+      "title": "Sombra",
+      "kind": "component",
+      "group": "backgrounds",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://sombra.design/",
+      "summary": "Create, customize, and export layered gradient artwork in your browser.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "light-stroke-rail-light-rails",
+      "title": "light-stroke-rail \u00b7 Light Rails",
+      "kind": "component",
+      "group": "backgrounds",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://light-stroke-rail.vercel.app/",
+      "summary": "Light Rails \u2014 a generative pattern studio: wire patterns into mockups, then into a showreel.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "onepromptdesign",
+      "title": "OnePromptDesign",
+      "kind": "component",
+      "group": "backgrounds",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://onepromptdesign.com/",
+      "summary": "Curated AI prompts for images, illustrations, icons, mockups, backgrounds and design assets.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "40-000-svg-icons-for-web-ui",
+      "title": "40,000+ SVG Icons for Web & UI",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "paid",
+      "url": "https://nucleoapp.com/app/?library=ui",
+      "summary": "Use the web app to manage, customize and export all Nucleo icons.",
+      "note": "logo icons",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "pixelarticons-5570-pixel-art-icons",
+      "title": "Pixelarticons: 5570 Pixel Art Icons",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://pixelarticons.com/",
+      "summary": "5570 pixel art icons on a 24x24 grid.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "app-genie-icons",
+      "title": "App Genie Icons",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://icons.appg.co/",
+      "summary": "Download free AI-generated app icons and copy the exact prompts behind them.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "hand-drawn-lucide-icons-hand-drawn-lucide",
+      "title": "hand-drawn-lucide-icons \u00b7 Hand-drawn Lucide",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://hand-drawn-lucide-icons.fayaz.workers.dev/",
+      "summary": "Every Lucide icon, redrawn by hand.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "voxel-icon",
+      "title": "Voxel Icon",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://voxel-icon.vercel.app/",
+      "summary": "Macro-voxel 3D icons for emoji and everyday objects.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "mx-icons",
+      "title": "MX Icons",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://mx-icons.vercel.app/",
+      "summary": "Free open-source React icon library with 5,600+ beautiful icons.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "phosphor-icons",
+      "title": "Phosphor Icons",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://phosphoricons.com/",
+      "summary": "A flexible icon family for interfaces, diagrams, presentations \u2014 whatever, really.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "familyjs-famicons",
+      "title": "familyjs/famicons",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/familyjs/famicons",
+      "summary": "Premium hand-crafted icons built by Family, for Family apps and web apps everywhere - familyjs/famicons",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "stash-ui-icons",
+      "title": "stash-ui/icons",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/stash-ui/icons",
+      "summary": "A gorgeous set of 24x24 icons.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "lucide-icons-lucide",
+      "title": "lucide-icons/lucide",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/lucide-icons/lucide",
+      "summary": "Beautiful & consistent icon toolkit made by the community.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "coreui-coreui-icons",
+      "title": "coreui/coreui-icons",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/coreui/coreui-icons",
+      "summary": "CoreUI Free Icons - Premium designed free icon set with marks in SVG, Webfont and raster formats - coreui/coreui-icons",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "notion-club-notion-style-illustrations",
+      "title": "Notion Club: Notion-style illustrations",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.overflow.design/notion-illustrations/notion-club/",
+      "summary": "150 illustrations in two styles for Notion.",
+      "note": "notion-style illustrations",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "slp",
+      "title": "SLP",
+      "kind": "component",
+      "group": "icons",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://slp.gallery/",
+      "summary": "Curated AI image prompts, tested and labeled.",
+      "note": "3d",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "termcn",
+      "title": "termcn",
+      "kind": "component",
+      "group": "terminal ui",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.termcn.dev/",
+      "summary": "A collection of beautifully designed, accessible, and customizable terminal UI components.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "term-v0-app",
+      "title": "term-v0.app",
+      "kind": "component",
+      "group": "terminal ui",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.term-v0.app/",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "trees-from-pierre",
+      "title": "Trees, from Pierre",
+      "kind": "component",
+      "group": "terminal ui",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://trees.software/",
+      "summary": "@pierre/trees is an open source file tree rendering library.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "radiumcoders-23rd-dev",
+      "title": "radiumcoders/23rd.dev",
+      "kind": "component",
+      "group": "web templates",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/radiumcoders/23rd.dev",
+      "summary": "Opinionated UI Components for shippers.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "m1ckc3s-nullframe",
+      "title": "m1ckc3s/nullframe",
+      "kind": "component",
+      "group": "web templates",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/m1ckc3s/nullframe",
+      "summary": "PROJECT NULLFRAME \u2014 a live telemetry dashboard in the Nothing design language - m1ckc3s/nullframe",
+      "note": "PROJECT NULLFRAME",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "circle-by-lndev-ui",
+      "title": "Circle by lndev-ui",
+      "kind": "component",
+      "group": "web templates",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://circle.lndev.me/lndev-ui/team/CORE/cycles",
+      "summary": "Project management interface inspired by Linear.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "threeui",
+      "title": "ThreeUI",
+      "kind": "component",
+      "group": "threejs",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://threeui.com/",
+      "summary": "Browse copy-ready Three.js components, complete website templates, WebGL backgrounds, hero sections, UI effects, and source-backed variants.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "pmndrs",
+      "title": "pmndrs",
+      "kind": "component",
+      "group": "threejs",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://pmndrs.github.io/examples/examples/flying-bananas",
+      "summary": "Shows how to form self-contained components with their own state and user interaction.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "bun-ui",
+      "title": "Bun UI",
+      "kind": "component",
+      "group": "github widgets",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://www.bunui.xyz/",
+      "summary": "Bun UI is a free, open-source registry of animated React components for React and Next.js.",
+      "note": "github activity",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "ui-sfx-936-open-source-interface-sound-effects",
+      "title": "UI SFX: 936 Open-Source Interface Sound Effects",
+      "kind": "component",
+      "group": "sound",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://uisfx.com/#sound-library",
+      "summary": "Preview 936 open-source UI sound effects for web, mobile, SaaS, and games.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "typeui-sh-design-skills",
+      "title": "typeui.sh/design-skills",
+      "kind": "skill",
+      "group": "skill packs",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.typeui.sh/design-skills",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "animate-text-skill-for-your-ai-agent",
+      "title": "Animate text skill for your AI agent.",
+      "kind": "skill",
+      "group": "skill packs",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://pixelpoint.io/skills/animate-text/",
+      "summary": "Get beautiful text animations in any stack by installing this skill to your AI agent.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "luchasarie-bro-skill",
+      "title": "luchasarie/bro-skill",
+      "kind": "skill",
+      "group": "skill packs",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/luchasarie/bro-skill",
+      "summary": "\ud83e\udd19 /bro \u2014 re-explains the last answer in plain language, for when the reply made you go 'bro what'.",
+      "note": "I like it",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "loopany-templates",
+      "title": "Loopany templates",
+      "kind": "skill",
+      "group": "skill packs",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://loopany.ai/templates",
+      "summary": "Browse every Loopany template for free: ready-to-run scheduled agent loops for growth, business ops, codebase upkeep, CI & security, and more \u2014 each showing \u2026",
+      "note": "I like it",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "auto",
+      "title": "auto",
+      "kind": "skill",
+      "group": "skill packs",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://www.auto.sh/",
+      "summary": "Program software factories the same way you program CI/CD.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "functioncall-blueprint",
+      "title": "functioncall/blueprint",
+      "kind": "skill",
+      "group": "skill packs",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/functioncall/blueprint",
+      "summary": "Contribute to functioncall/blueprint development by creating an account on GitHub.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "inkboard-system-atlas",
+      "title": "inkboard/system-atlas",
+      "kind": "skill",
+      "group": "skill packs",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/inkboard/system-atlas",
+      "summary": "An agent skill that turns an architecture discussion into an explorable isometric atlas: one data file, an interactive map and a generated SYSTEM.md - inkboa\u2026",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "agent-skills-overview",
+      "title": "Agent Skills Overview",
+      "kind": "skill",
+      "group": "skill packs",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://agentskills.io/home",
+      "summary": "A standardized way to give AI agents new capabilities and expertise.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "design-minis",
+      "title": "Design Minis",
+      "kind": "tool",
+      "group": "design tools",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.designminis.com/",
+      "summary": "A directory of small tools made by designers.",
+      "note": "the design tools",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "animos",
+      "title": "animos",
+      "kind": "tool",
+      "group": "design tools",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://animos.app/editor",
+      "summary": "animos \u2014 ready-made animation templates for showcasing your designs.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "inkdrum",
+      "title": "INKDRUM\u2122",
+      "kind": "tool",
+      "group": "design tools",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.inkdrum.app/",
+      "summary": "INKDRUM \u2014 a browser risograph print shop.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "flexbox-labs",
+      "title": "Flexbox Labs",
+      "kind": "tool",
+      "group": "design tools",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://flexboxlabs.netlify.app/",
+      "summary": "A visual tool for experimenting with flexbox and CSS grid layouts.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "grainrad",
+      "title": "Grainrad",
+      "kind": "tool",
+      "group": "design tools",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://grainrad.com/",
+      "summary": "Grainrad - Free WebGPU-powered ASCII, dithering, and retro effects at 60fps",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "bakers-studio",
+      "title": "Bakers Studio",
+      "kind": "tool",
+      "group": "design tools",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://bakers.studio/tools",
+      "summary": "We",
+      "note": "card ui designs",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "basementstudio-shader-lab",
+      "title": "basementstudio/shader-lab",
+      "kind": "tool",
+      "group": "design tools",
+      "stage": "design",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/basementstudio/shader-lab",
+      "summary": "A powerful toolkit to create, stack, and animate shaders.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "movo",
+      "title": "MOVO",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "paid",
+      "url": "https://movo.video/",
+      "summary": "Motion templates for teams and creatives \u2014 made by humans, powered by AI.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "butter-video",
+      "title": "Butter Video",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://app.butter.video/",
+      "summary": "The first video editor and design platform built with creative code for creative teams.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "screen-movie",
+      "title": "Screen Movie",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "paid",
+      "url": "https://screen.movie/",
+      "summary": "Record your screen, capture screenshots, edit videos, animate text, images and captions, add music and export beautiful product videos with the ultimate nati\u2026",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "ui8-flows",
+      "title": "ui8 \u00b7 flows",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://portfolio.ui8.dev/",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "diffshub-from-pierre",
+      "title": "DiffsHub, from Pierre",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://diffshub.com/",
+      "summary": "View code changes from any public GitHub diff or patch URL with a super-freaking-fast, beautiful, and virtualized interface.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "getrescript-rescript",
+      "title": "getrescript \u00b7 Rescript",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://www.app.getrescript.com/",
+      "summary": "A fully offline, open-source transcript-based video editor.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "tokokino",
+      "title": "Tokokino",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://tokokino.com/",
+      "summary": "Create polished product screenshots and animated demos with device frames, backgrounds, annotations, timeline editing, and fast image or GIF/WebM exports.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "render-labs-by-evlog",
+      "title": "Render labs by evlog",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://render-labs.evlog.cloud/",
+      "summary": "Compose and render shots in the browser.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "arqe",
+      "title": "Arqe",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "paid",
+      "url": "https://arqe.ai/mockups",
+      "summary": "Create stunning product visuals with real 3D, studio-lit device mockups.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "recordly",
+      "title": "Recordly",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://recordly.dev/",
+      "summary": "Recordly is an open\u2011source screen recorder for MacOS/Windows/Linux with auto-zoom, motion blur animated cursors, and minimal interface.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "sibyl-labs-hackathon-the-results",
+      "title": "Sibyl Labs Hackathon: the results",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://hack.sibyllabs.org/",
+      "summary": "92 teams built agents where memory is load-bearing.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "reelfolio",
+      "title": "Reelfolio",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "paid",
+      "url": "https://reelfolio.io/",
+      "summary": "Turn your screenshots, mockups, and clips into professional video portfolios.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "852wa-jizura",
+      "title": "852wa \u00b7 JIZURA \u5b57\u9762",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://852wa.github.io/JIZURA/",
+      "summary": "\u6b4c\u8a5e\u3092\u5165\u308c\u308b\u3068\u6587\u5b57PV\uff08\u30ea\u30ea\u30c3\u30af\u30e2\u30fc\u30b7\u30e7\u30f3\uff09\u3092\u81ea\u52d5\u3067\u7d44\u307f\u7acb\u3066\u3066 MP4 \u306b\u66f8\u304d\u51fa\u3059\u30d6\u30e9\u30a6\u30b6\u30a2\u30d7\u30ea",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "dump-cam",
+      "title": "dump.cam",
+      "kind": "tool",
+      "group": "video tools",
+      "stage": "ship",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://dump.cam/",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "codekarma",
+      "title": "CodeKarma",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://codekarma.ai/?mode=agent",
+      "summary": "CodeKarma maps production behavior directly to code.",
+      "note": "production intelligence for humans and AI agents",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "react-grab",
+      "title": "React Grab",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.react-grab.com/",
+      "summary": "Copy any UI element for your coding agent.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "usetool-toolbar",
+      "title": "usetool \u00b7 Toolbar",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "paid",
+      "url": "https://usetool.bar/",
+      "summary": "Toolbar automatically creates, heals, updates, and runs browser-based QA flows across pull requests, staging, and production.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "gitingest",
+      "title": "Gitingest",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://gitingest.com/",
+      "summary": "Replace",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "colinlienard-githundred",
+      "title": "colinlienard/githundred",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/colinlienard/githundred",
+      "summary": "\u2b50\ufe0f Top 100 most starred GitHub repositories.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "firecrawl-anydoc",
+      "title": "firecrawl/anydoc",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/firecrawl/anydoc",
+      "summary": "Convert Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV, and PDF to clean Markdown.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "alumnium",
+      "title": "Alumnium",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://alumnium.ai/",
+      "summary": "End-to-End Testing with AI for Agents and Engineers",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "field-theory-context-stacking-portable-commands-and-local-vo",
+      "title": "Field Theory: Context stacking, portable commands, and local voice transcription",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "paid",
+      "url": "https://www.fieldtheory.dev",
+      "summary": "Local voice transcription, screenshots, and portable commands\u2014ready for Cursor, Claude, or any input field.",
+      "note": "syncs bookmarks locally and makes local context available to Claude Code, Codex or any agent with shell access",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "afar1-fieldtheory-cli",
+      "title": "afar1/fieldtheory-cli",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/afar1/fieldtheory-cli",
+      "summary": "Field Theory CLI for bookmarks, Library, commands, and agent workflows - afar1/fieldtheory-cli",
+      "note": "Field Theory CLI",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "nimbus-docs-linting",
+      "title": "nimbus-docs \u00b7 Linting",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://nimbus-docs.com/writing/linting/",
+      "summary": "Catch authoring-quality issues with nimbus-docs lint \u2014 human output, JSON for agents, and auto-fixes.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "pierre-diffs",
+      "title": "Pierre Diffs",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://diffs.com/playground",
+      "summary": "Try @pierre/diffs in the browser: switch between split and unified layouts, change themes and fonts, toggle virtualization and line wrapping, and see the res\u2026",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "underleaf",
+      "title": "Underleaf",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://underleaf.xyz/",
+      "summary": "An AI-powered document editor for writing documents beautifully.",
+      "note": "pdf tool",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "aloud",
+      "title": "Aloud",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.aloud.sh/",
+      "summary": "Point at anything you\u2019re building \u2014 an app, a site, a design \u2014 and say what\u2019s off.",
+      "note": "AI tool, capture it",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "writer",
+      "title": "Writer",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://writer.computer/",
+      "summary": "Fast and lightweight app for your workspace's markdown files.",
+      "note": "gemini x",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "cabinetai-cabinet",
+      "title": "cabinetai/cabinet",
+      "kind": "tool",
+      "group": "dev tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/cabinetai/cabinet",
+      "summary": "AI-first knowledge base and startup OS.",
+      "note": "coop with writer.computer",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "usemono-monocode",
+      "title": "usemono \u00b7 MonoCode",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://www.usemono.dev/",
+      "summary": "A desktop UI for the coding agents already on your machine.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "hardbeat920-monocode",
+      "title": "hardbeat920/monocode",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/hardbeat920/monocode",
+      "summary": "A GUI for your coding agents.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "1devtool",
+      "title": "1DevTool",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://1devtool.com/features",
+      "summary": "Explore all features of 1DevTool: multi-agent terminals, HTTP client, database client, Docker manager, design tool, workflow automation, developer toolbox, a\u2026",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "petit-software-ultra-swift",
+      "title": "petit-software/ultra-swift",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/petit-software/ultra-swift",
+      "summary": "Ultra is an macOS native terminal for agentic work - petit-software/ultra-swift",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "termany",
+      "title": "Termany",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "freemium",
+      "url": "https://termany.sh/",
+      "summary": "Run many coding agents in one window, turn them into reusable Bots that work together, and keep sessions, diffs, worktrees, ports, and token cost in sight.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "zeron",
+      "title": "Zeron",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://zeron.sh/",
+      "summary": "Zeron runs Claude Code, Codex, Grok, Hermes and Pi on your machines.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "iamcorey-wake",
+      "title": "iAmCorey/Wake",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/iAmCorey/Wake",
+      "summary": "All your AI agent sessions in one place \u2014 browse, search, resume.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "zaidmukaddam-fx-ui",
+      "title": "zaidmukaddam/fx-ui",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/zaidmukaddam/fx-ui",
+      "summary": "A desktop app for the fx coding agent, built on libfx and GPUIX.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "hieunc229-pie",
+      "title": "hieunc229/Pie",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://github.com/hieunc229/Pie",
+      "summary": "Native macOS GUI for Pi Coding Agent.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "t3-code",
+      "title": "T3 Code",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://t3.codes/",
+      "summary": "T3 Code.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "openchamber",
+      "title": "OpenChamber",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://openchamber.dev/",
+      "summary": "OpenChamber is an agentic development environment for AI coding across desktop, browser, phone, and VS Code.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "gitlab-com-droppyformac1-droppy-code",
+      "title": "gitlab.com/droppyformac1/droppy-code",
+      "kind": "tool",
+      "group": "coding tools",
+      "stage": "build",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://gitlab.com/droppyformac1/droppy-code",
+      "summary": "The coding app by Droppy.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "koboyo",
+      "title": "Koboyo",
+      "kind": "tool",
+      "group": "apps",
+      "stage": "learn",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://koboyo.com/",
+      "summary": "A free infinite canvas for sketches, diagrams, and notes.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "open-slide",
+      "title": "open-slide",
+      "kind": "tool",
+      "group": "apps",
+      "stage": "learn",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://demo.open-slide.dev/",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "tokokino-2",
+      "title": "Tokokino",
+      "kind": "tool",
+      "group": "apps",
+      "stage": "learn",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://tokokino.com/app",
+      "summary": "Create polished product screenshots and animated demos with device frames, backgrounds, annotations, timeline editing, and fast image or GIF/WebM exports.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "cursa",
+      "title": "Cursa",
+      "kind": "tool",
+      "group": "apps",
+      "stage": "learn",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://cursa.so/",
+      "summary": "A macOS menu bar app that loops a circle, figure-8, or line cursor preset over your shot \u2014 designed motion for screen recordings.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "tldraw-offline",
+      "title": "tldraw offline",
+      "kind": "tool",
+      "group": "apps",
+      "stage": "learn",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://offline.tldraw.com/",
+      "summary": "tldraw offline is a local, file-based desktop whiteboard built on tldraw",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "kloi",
+      "title": "KLOI",
+      "kind": "tool",
+      "group": "apps",
+      "stage": "learn",
+      "status": "to-try",
+      "pricing": "paid",
+      "url": "https://kloi.app/",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "usenotate-mean",
+      "title": "usenotate \u00b7 Mean",
+      "kind": "tool",
+      "group": "apps",
+      "stage": "learn",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://usenotate.app/",
+      "summary": "A macOS menu bar app for visual handoff.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "squig",
+      "title": "squig",
+      "kind": "tool",
+      "group": "apps",
+      "stage": "learn",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://squig.sh/",
+      "summary": "An infinite canvas of real UI components that all render like you sketched them on a napkin.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "fehey-flodo",
+      "title": "fehey \u00b7 flodo",
+      "kind": "tool",
+      "group": "apps",
+      "stage": "learn",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://flodo.fehey.com/",
+      "summary": "A quiet little todo app for Mac and iPhone.",
+      "note": "later, this week, today and done: todos flow from left to right (flow + todo)",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "inklish-practice-english-where-you-write-it",
+      "title": "Inklish: practice English where you write it",
+      "kind": "tool",
+      "group": "apps",
+      "stage": "learn",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://fahrezi.fyi/inklish/prepare/email",
+      "summary": "Practice English conversations in the formats you actually use: email, Slack, GitHub, chat.",
+      "note": "practise English where you write it: email a PM, reply to a maintainer, keep up in a busy chat",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "shoogle-dev",
+      "title": "shoogle.dev",
+      "kind": "tool",
+      "group": "directories",
+      "stage": "inspire",
+      "status": "to-try",
+      "pricing": "free",
+      "url": "https://shoogle.dev/directory",
+      "summary": "The open source registry index is a list of all community registries that are pulled from the shadcn official docs.",
+      "note": "galaxy ui ux",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "libraries-dev",
+      "title": "Libraries.dev",
+      "kind": "tool",
+      "group": "directories",
+      "stage": "inspire",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://libraries.dev/accessibility",
+      "summary": "How the Libraries.dev effect libraries handle reduced motion, semantics, keyboard use and performance.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "libraries-dev-2",
+      "title": "Libraries.dev",
+      "kind": "tool",
+      "group": "directories",
+      "stage": "inspire",
+      "status": "to-try",
+      "pricing": "unknown",
+      "url": "https://libraries.dev/bots",
+      "summary": "Animated bot avatars for AI agents: eighteen plush, furry 3D shapes with living faces that turn, hop and flip, in three states: idle, working and sleeping.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "superlog",
+      "title": "Superlog",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://superlog.sh/",
+      "summary": "Superlog can triage alerts, answer support questions, watch deploys, performance and observability in your code and infrastructure.",
+      "note": "nice reference for the sui cli web",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "open-slide-2",
+      "title": "open-slide",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://open-slide.dev/",
+      "summary": "A React-first slide framework authored by AI agents.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "coding-canvas-demo-vercel-app",
+      "title": "coding-canvas-demo.vercel.app",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://coding-canvas-demo.vercel.app/",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "post-by-aria-086",
+      "title": "post by @Aria_086",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://x.com/Aria_086/status/2080370213498089572",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "adrien-lamy-d",
+      "title": "Adrien Lamy :D",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://adrienlamy.fr/",
+      "summary": "Freelance Creative Developer based in Paris, passionate about animation and storytelling.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "post-by-harshil1712",
+      "title": "post by @harshil1712",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://x.com/harshil1712/status/2082832896855773352",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "codex-resets",
+      "title": "Codex Resets",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://codex-resets.com/",
+      "summary": "Track the latest OpenAI Codex limit reset, browse Codex reset history, and get notified when new Codex resets are announced.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "frontierswe",
+      "title": "FrontierSWE",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://www.frontierswe.com/",
+      "summary": "Benchmarking software engineering skill at the edge of human capability",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "moguzbulbul-blueprint-animation",
+      "title": "moguzbulbul/blueprint-animation",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://github.com/moguzbulbul/blueprint-animation",
+      "summary": "Claude Design skill: animated before \u2192 after UX redesign, explained step by step through a blueprint drawing.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "khalidabdi1-factory",
+      "title": "Khalidabdi1/factory",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://github.com/Khalidabdi1/factory",
+      "summary": "A live isometric world in the browser: a seaside town, a new city, a farming village and a Starship launch site, all simulated in real time.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "post-by-mona-biasia",
+      "title": "post by @mona_biasia",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://x.com/mona_biasia/status/2082749385629462603",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "post-by-zochelebe",
+      "title": "post by @zochelebe",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://x.com/zochelebe/status/2084676941886411142",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "vibes-stunning-react-components-for-commerce-marketing",
+      "title": "VIBES: Stunning React components for commerce & marketing",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://vibes.site/",
+      "summary": "Stunning React components for commerce and marketing, optimized for fashion and function.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "variant",
+      "title": "Variant",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://variant.com/community",
+      "summary": "Enter an idea for an app or site and see endless design options just by scrolling.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "pixel-perfect-ui",
+      "title": "Pixel Perfect UI",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://www.pixel-perfect.space/",
+      "summary": "A lightweight, documentation-first UI library for React.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "visu-haus",
+      "title": "Visu.Haus",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://visu.haus/",
+      "summary": "A no-code creative coding tool for building interactive generative visuals with custom controls and live playback.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "bakai-tolondu-uulu",
+      "title": "Bakai Tolondu uulu",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://www.bakai.me/lab",
+      "summary": "Design Engineer from Kyrgyzstan",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "bezel",
+      "title": "bezel",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://bezel.gallery/",
+      "summary": "Design tokens, motion, and materials for native Rust apps, built on gpui.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "bad-cards-online-party-card-game-for-friends-and-discord",
+      "title": "Bad Cards: Online Party Card Game for Friends and Discord",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://bad.cards/",
+      "summary": "Bad Cards is a free online party card game for 3 to 16 friends.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "mysterylink",
+      "title": "MysteryLink",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://www.mysterylink.lol/",
+      "summary": "A stranger paid to put a link in front of you.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "yoheinakajima-graph-deck",
+      "title": "yoheinakajima \u00b7 graph-deck",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://yoheinakajima.github.io/graphcon-deck/",
+      "note": "graphcon deck",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "yoheinakajima-graphcon-deck",
+      "title": "yoheinakajima/graphcon-deck",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://github.com/yoheinakajima/graphcon-deck",
+      "summary": "Contribute to yoheinakajima/graphcon-deck development by creating an account on GitHub.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "iamthecode-okpe-onoja-godwin",
+      "title": "iamthecode \u00b7 Okpe Onoja Godwin",
+      "kind": "inspiration",
+      "group": "portfolios",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://www.iamthecode.xyz/",
+      "summary": "I enjoy building fullstack projects and complex stacks \u2014 a builder and a solution maker.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "suraj-gaud",
+      "title": "Suraj Gaud",
+      "kind": "inspiration",
+      "group": "portfolios",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://www.surajgaud.com/",
+      "summary": "Portfolio | Suraj Gaud - Software Engineer",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "swamii-me",
+      "title": "swamii.me",
+      "kind": "inspiration",
+      "group": "portfolios",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://swamii.me/",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "yshubham-hire-me",
+      "title": "yshubham \u00b7 Hire me",
+      "kind": "inspiration",
+      "group": "portfolios",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://yshubham.com/hire-me/",
+      "summary": "Hire Shubham Kira for backend, infrastructure, LLM systems, DevOps, and production engineering work.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "xevrion-breakscale",
+      "title": "xevrion/breakscale",
+      "kind": "inspiration",
+      "group": "repos to clone",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://github.com/xevrion/breakscale",
+      "summary": "Build a system, load it until it breaks, and watch why.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "madhuri-maram",
+      "title": "Madhuri Maram",
+      "kind": "read",
+      "group": "writing",
+      "stage": "learn",
+      "status": "to-try",
+      "url": "https://madhurimaram.com/harness",
+      "summary": "How Madhuri harnesses AI and coding agents for deterministic design \u2014 shared rules, tokens, bake pipelines, and pre-ship checks on madhurimaram.com.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "julesblom-com",
+      "title": "JulesBlom.com",
+      "kind": "read",
+      "group": "writing",
+      "stage": "learn",
+      "status": "to-try",
+      "url": "https://julesblom.com/writing/parents-owners-data-flow",
+      "summary": "There are two, similar but different component trees in React.",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "charmiekapoor-the-thoughtful-list",
+      "title": "charmiekapoor \u00b7 The Thoughtful List",
+      "kind": "read",
+      "group": "writing",
+      "stage": "learn",
+      "status": "to-try",
+      "url": "http://thoughtful.charmiekapoor.com/",
+      "summary": "The Thoughtful List \u2014 small things worth doing for someone else.",
+      "note": "keep going\u2026",
+      "tags": [],
+      "added": "2026-10-13"
+    },
+    {
       "id": "dinil-crafts",
       "title": "Dinil \u00b7 Crafts",
       "kind": "inspiration",
@@ -44,7 +2547,8 @@
         "templates",
         "dashboards"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "mono-charts",
@@ -59,7 +2563,8 @@
         "charts",
         "mono"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "sv-dai",
@@ -75,7 +2580,8 @@
         "motion",
         "blocks"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "free"
     },
     {
       "id": "sv-table",
@@ -92,7 +2598,8 @@
         "filters"
       ],
       "added": "2026-10-13",
-      "note": "The filter pattern condomdom's own table is built on."
+      "note": "The filter pattern condomdom's own table is built on.",
+      "pricing": "unknown"
     },
     {
       "id": "sv-blocks",
@@ -108,7 +2615,8 @@
         "shadcn",
         "blocks"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "free"
     },
     {
       "id": "kibo-ui",
@@ -124,7 +2632,8 @@
         "react",
         "accessibility"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "free"
     },
     {
       "id": "react-aria",
@@ -140,7 +2649,8 @@
         "accessibility",
         "headless"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "1st-pouf",
@@ -156,7 +2666,8 @@
         "claymorphism",
         "shadcn"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "free"
     },
     {
       "id": "obsidian-ui",
@@ -172,7 +2683,8 @@
         "glass"
       ],
       "added": "2026-10-13",
-      "note": "The fractal-glass docs page you saved now returns 404; this points at the library's home."
+      "note": "The fractal-glass docs page you saved now returns 404; this points at the library's home.",
+      "pricing": "free"
     },
     {
       "id": "liquefy-ui",
@@ -189,7 +2701,8 @@
         "webgl",
         "shadcn"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "rewamp-kinetic-reel-text",
@@ -205,7 +2718,8 @@
         "text",
         "motion"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "spectrum-nav-list-card",
@@ -221,7 +2735,8 @@
         "navigation",
         "motion"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "free"
     },
     {
       "id": "sona-ui",
@@ -236,7 +2751,8 @@
         "react",
         "motion"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "componentry",
@@ -252,7 +2768,8 @@
         "tailwind",
         "motion"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "rare-ui",
@@ -268,7 +2785,8 @@
         "react",
         "motion"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "free"
     },
     {
       "id": "unlumen-ui",
@@ -284,7 +2802,8 @@
         "react",
         "motion"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "skiper-ui",
@@ -300,7 +2819,8 @@
         "react",
         "motion"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "freemium"
     },
     {
       "id": "number-flow",
@@ -317,7 +2837,8 @@
         "numbers"
       ],
       "added": "2026-10-13",
-      "group": "animated-react"
+      "group": "animated-react",
+      "pricing": "free"
     },
     {
       "id": "beautiful-ui",
@@ -334,7 +2855,8 @@
         "copy-paste"
       ],
       "added": "2026-10-13",
-      "group": "ai-ui"
+      "group": "ai-ui",
+      "pricing": "freemium"
     },
     {
       "id": "aicss",
@@ -350,7 +2872,8 @@
         "agents"
       ],
       "added": "2026-10-13",
-      "group": "ai-ui"
+      "group": "ai-ui",
+      "pricing": "freemium"
     },
     {
       "id": "dot-matrix",
@@ -366,7 +2889,8 @@
         "loaders"
       ],
       "added": "2026-10-13",
-      "group": "loaders"
+      "group": "loaders",
+      "pricing": "free"
     },
     {
       "id": "thinking-orbs",
@@ -382,7 +2906,8 @@
         "loaders"
       ],
       "added": "2026-10-13",
-      "group": "ai-ui"
+      "group": "ai-ui",
+      "pricing": "unknown"
     },
     {
       "id": "loading-dev",
@@ -398,7 +2923,8 @@
         "loaders"
       ],
       "added": "2026-10-13",
-      "group": "loaders"
+      "group": "loaders",
+      "pricing": "unknown"
     },
     {
       "id": "liquid-glass",
@@ -414,7 +2940,8 @@
         "effects"
       ],
       "added": "2026-10-13",
-      "group": "glass & effects"
+      "group": "glass & effects",
+      "pricing": "unknown"
     },
     {
       "id": "liquid-gooey",
@@ -430,7 +2957,8 @@
         "effects"
       ],
       "added": "2026-10-13",
-      "group": "glass & effects"
+      "group": "glass & effects",
+      "pricing": "unknown"
     },
     {
       "id": "morphicons",
@@ -446,7 +2974,8 @@
         "motion"
       ],
       "added": "2026-10-13",
-      "group": "icons"
+      "group": "icons",
+      "pricing": "free"
     },
     {
       "id": "interior-dev",
@@ -462,7 +2991,8 @@
         "micro-interactions"
       ],
       "added": "2026-10-13",
-      "group": "animated-react"
+      "group": "animated-react",
+      "pricing": "free"
     },
     {
       "id": "uselayouts",
@@ -479,7 +3009,8 @@
         "motion"
       ],
       "added": "2026-10-13",
-      "group": "animated-react"
+      "group": "animated-react",
+      "pricing": "free"
     },
     {
       "id": "fluid-functionalism",
@@ -494,7 +3025,8 @@
         "open-source"
       ],
       "added": "2026-10-13",
-      "group": "animated-react"
+      "group": "animated-react",
+      "pricing": "freemium"
     },
     {
       "id": "bencho",
@@ -509,7 +3041,8 @@
         "blocks"
       ],
       "added": "2026-10-13",
-      "group": "blocks & templates"
+      "group": "blocks & templates",
+      "pricing": "unknown"
     },
     {
       "id": "shoogle",
@@ -524,7 +3057,8 @@
         "shadcn",
         "search"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "cuelume",
@@ -540,7 +3074,8 @@
         "micro-interactions"
       ],
       "added": "2026-10-13",
-      "group": "sound"
+      "group": "sound",
+      "pricing": "unknown"
     },
     {
       "id": "dither-kit",
@@ -556,7 +3091,8 @@
         "dither"
       ],
       "added": "2026-10-13",
-      "group": "charts"
+      "group": "charts",
+      "pricing": "unknown"
     },
     {
       "id": "kugiri",
@@ -572,7 +3108,8 @@
         "motion"
       ],
       "added": "2026-10-13",
-      "group": "text-motion"
+      "group": "text-motion",
+      "pricing": "free"
     },
     {
       "id": "corner-radii",
@@ -587,7 +3124,8 @@
         "radius",
         "detail"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "design-tokens",
@@ -603,7 +3141,8 @@
         "tailwind",
         "agents"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "gradientool",
@@ -617,7 +3156,8 @@
       "tags": [
         "gradients"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "ui-camera",
@@ -632,7 +3172,8 @@
         "mockups",
         "launch"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "agentation",
@@ -647,7 +3188,8 @@
         "agents",
         "feedback"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "pricing": "unknown"
     },
     {
       "id": "interface-cheat-sheet",
@@ -781,7 +3323,8 @@
         "motion"
       ],
       "added": "2026-10-13",
-      "group": "skill packs"
+      "group": "skill packs",
+      "pricing": "free"
     },
     {
       "id": "jakub-skills",
@@ -797,7 +3340,8 @@
         "design"
       ],
       "added": "2026-10-13",
-      "group": "skill packs"
+      "group": "skill packs",
+      "pricing": "free"
     }
   ]
 }

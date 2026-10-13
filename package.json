@@ -1,14 +1,15 @@
 {
   "name": "condomdom",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
-  "description": "My personal library of UI components, videos and skills, arranged around how I build.",
+  "description": "My personal library of UI components, videos and skills, arranged around how I build. Drawn in ASCII, under the project name condomdom.",
   "type": "module",
   "scripts": {
     "dev": "next dev -H 127.0.0.1 -p 4321",
     "build": "next build",
     "start": "next start -H 127.0.0.1 -p 4321",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "inbox": "node scripts/import.ts"
   },
   "engines": {
     "node": ">=20.9"

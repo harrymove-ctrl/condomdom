@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "condomdom",
-  description: "My personal library of UI components, videos and skills, arranged around how I build.",
+  description: "My personal library of UI components, videos and skills, arranged around how I build. Drawn in ASCII, under the project name condomdom.",
   icons: { icon: "/favicon.svg" },
 };
 

@@ -1,7 +1,8 @@
 # condomdom
 
 My personal library of UI components, videos and skills, arranged around how I build.
-It's inspired by [desengs.com](https://desengs.com/), but curated for my own workflow, and drawn in ascii with [ascii.rest](https://ascii.rest).
+
+Drawn in ASCII, under the project name condomdom. Inspired by [desengs.com](https://desengs.com/), but curated for my own workflow, and drawn with [ascii.rest](https://ascii.rest).
 
 ## Run
 
@@ -41,7 +42,16 @@ Each item points at where the resource lives:
 
 Every item also has a **kind** (component, skill pages on the web, read, tool, inspiration, video) and an optional **group**: a category inside the kind, such as `animated-react`, `svelte`, `glass & effects` or `primitives`. Groups are folders in the explorer, a column in the table and a filter. Set or change one in the editor: pick an existing group or type a new one.
 
-There are two ways to add items:
+Every component, tool and skill also has a **pricing**: `free`, `free + pro` (free to start, with paid parts), `paid`, or `?` when it isn't clear. References, portfolios and articles have none. It's a column in the table, a filter (**filter → pricing**), a badge on every item, and a field in the editor. Pricing found by the importer is a best guess from the site's own words, so correct it in the editor when you know better.
+
+### The inbox: adding many links at once
+
+1. Write your links into `content/inbox/<date>.md`: one `## kind / group` heading per section, one `- link — note` a line, and optionally `stage: design` under a heading. See `content/inbox/2026-10-13.md`.
+2. `pnpm inbox content/inbox/<date>.md` fetches every new link and shows what it would add: title, summary, pricing, group. Links already in the library are skipped.
+3. `pnpm inbox content/inbox/<date>.md --apply` adds them as "to try".
+4. `pnpm inbox --pricing --apply` checks pricing for older items that don't have it.
+
+Other ways to add items:
 
 - **In the page:** press **n** (or click *(add)*).
 - **By hand:** edit `content/library.json`.
