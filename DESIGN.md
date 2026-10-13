@@ -84,7 +84,7 @@ Page order is always: boot screen (first visit) → hero → toolbar → view �
 | View | What it is | Required states |
 |---|---|---|
 | **boot screen** | ascii.rest `boot-log` over the whole page: a self test counts memory, then the log scrolls. First visit in a tab only; any key or click skips it. | reduced motion: 0.5s, still |
-| **explorer** | a 320px tree of your collections (folders = kinds, core first, each file says where it lives: `link` · `folder` · `video`), and the chosen item large on the right. ↑/↓ move through the tree | nothing yet |
+| **explorer** | a 320px tree of your collections (folders = kinds, core first, each file says where it lives: `link` · `folder` · `video`), and the chosen item large on the right. ↑/↓ move through the tree. With nothing chosen (or `condomdom/` clicked) the right side is the **whole library as ascii.rest's `file-tree`**, each collection with its first three files, plus every file as a `├──` tree | nothing yet |
 | **library** | a data table: preview, title, kind, stage, status, tags, added. Sortable headers, a `(columns)` menu, pages of 15 | searching · empty (filters) · empty (no items) |
 | **workflow** | one column per stage: question, playbook, items (core first) | loading · empty stage (`nothing here yet`) |
 | **detail** (and **editor**) | an item panel in one of three modes, chosen with `side · center · full` in its header or `m`, remembered per browser: **side** a 560px right-hand drawer · **center** a 760px card in the middle · **full** the whole page with content in an 880px reading column. Every mode sits over the page **blurred** (8px, paper at 45%). Contents: kicker, title, summary, preview, note, tags, links | broken preview says why |

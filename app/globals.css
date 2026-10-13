@@ -197,7 +197,14 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 /* ───────── explorer (§7) ───────── */
 .explorer { display: grid; grid-template-columns: 320px minmax(0, 1fr); border: var(--rule); border-radius: var(--r-panel); background: var(--paper-raised); min-height: 70vh; }
 .explorer-tree { border-right: var(--rule); padding: var(--s-4) var(--s-3); overflow-y: auto; max-height: 80vh; position: sticky; top: 0; }
-.tree-root { margin: 0 0 var(--s-2); font-size: var(--text-sm); color: var(--ink-100); font-weight: 500; }
+.tree-root { display: flex; width: 100%; gap: var(--s-2); align-items: baseline; margin: 0 0 var(--s-2); padding: 2px var(--s-2); border-radius: 4px; font-size: var(--text-md); color: var(--ink-100); font-weight: 500; text-align: left; }
+.tree-root .count { margin-left: auto; font-size: var(--text-sm); font-weight: 400; color: var(--ink-40); }
+.tree-root:hover, .tree-root[aria-current="true"] { background: var(--ink-08); }
+.overview .preview.large.tree { place-items: center; }
+.overview .preview.large.tree .ascii, .overview .preview.large.tree .ascii pre { font-size: 14px; }
+.all-files { margin-top: var(--s-4); font-size: var(--text-sm); }
+.all-files summary { cursor: pointer; color: var(--ink-60); }
+.all-files .static-tree { font-size: var(--text-sm); line-height: 1.45; color: var(--ink-80); margin-top: var(--s-2); }
 .explorer-pane { padding: var(--s-5); min-width: 0; }
 .explorer-pane h2 { font: 500 var(--text-xl)/1.25 var(--mono); color: var(--ink-100); margin: var(--s-3) 0 var(--s-2); }
 .tree { list-style: none; margin: 0; padding: 0; font-size: var(--text-md); }
