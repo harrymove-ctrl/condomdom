@@ -70,7 +70,7 @@ Disabled = `--ink-40` text on no fill. Never use opacity on a whole element that
 
 | Rule | Value |
 |---|---|
-| Shell | one column, `min(1440px, 100% - 48px)`, under a top bar (name left, theme toggle right). No sidebar: structure lives in the **explorer** view, at a size you can read. |
+| Shell | one column, `min(1920px, 100% - 64px)`: the full width of the screen, under a top bar (name left, theme toggle right). No sidebar: structure lives in the **explorer** view, at a size you can read. |
 | Spacing scale | `4 8 12 16 24 32 48 72` px only (`--s-1` … `--s-8`) |
 | Radius | `6px` controls, `10px` panels; pills are fully rounded |
 | Borders | `1px solid var(--ink-16)`; section breaks are `1px dashed var(--ink-16)` |
@@ -116,8 +116,8 @@ Page order is always: boot screen (first visit) → hero → toolbar → view �
 
 - Motion comes **only** from ascii.rest pieces and ≤150ms colour/underline transitions. Nothing slides, scales or bounces.
 - With `prefers-reduced-motion: reduce`, pieces hold still on their resting frame (ascii.rest does this itself) and transitions are off.
-- The **background** is ascii.rest's `earthrise`, fixed behind everything: in colour at 55% in dark mode, in one ink at 13% in light mode, under a veil that fades to paper so text always reads.
-- The **heading** is ascii.rest's `marquee`: `condomdom · components · skill packs · reads · tools · inspiration` on a bulb-framed sign.
+- The **background** is ascii.rest's `earthrise`, fixed behind everything: in its own colours in both modes. Dark: 60%. Light: the same scene inverted and hue-rotated (black sky → paper, the earth stays blue), multiplied into the page. A veil fades to paper towards the bottom, and text that sits straight on it (stats, nav, brand) gets a soft paper halo.
+- The **heading** is ascii.rest's `marquee`: `condomdom · components · skill packs · reads · tools · inspiration` on a bulb-framed sign, sized to the full width of the column (`100cqw / 36.8`).
 - The pieces that may move at once: the background, the heading, and **one** of: the boot screen, the searching state, the empty state, the drawer or explorer preview. Table previews never move.
 
 ## 10. Interaction and accessibility
