@@ -16,6 +16,9 @@ Open http://127.0.0.1:4321. Needs Node 20.9+. The dev server only listens on you
 ## What's on the page
 
 - **Boot screen**: the first time a tab opens it, ascii.rest's `boot-log` runs (a self test counts memory, then the boot log scrolls). Press any key to skip it.
+Every view has its own address: `/library` (or `/`), `/gallery`, `/explorer`, `/workflow`. An open item adds `?item=<id>`, so any item can be bookmarked or shared, and back and forward work.
+
+- **Gallery**: every item as a card with its screenshot.
 - **Library**: a data table with a preview for every item, sortable columns, a `(columns)` menu and pages of 15.
 - **Explorer**: your collections as a tree on the left and the chosen item large on the right. A skill shows its real folder as ascii.rest's `file-tree`, a link shows its logo, and a video shows a frame plus the player.
 - **Filters**: `filter` → a column → its values, with counts. Each filter becomes a chip you can change or remove, after [sv-table's filters](https://sv-table.vercel.app/components/filters) / Bazza UI.
@@ -43,6 +46,15 @@ Each item points at where the resource lives:
 Every item also has a **kind** (component, skill pages on the web, read, tool, inspiration, video) and an optional **group**: a category inside the kind, such as `animated-react`, `svelte`, `glass & effects` or `primitives`. Groups are folders in the explorer, a column in the table and a filter. Set or change one in the editor: pick an existing group or type a new one.
 
 Every component, tool and skill also has a **pricing**: `free`, `free + pro` (free to start, with paid parts), `paid`, or `?` when it isn't clear. References, portfolios and articles have none. It's a column in the table, a filter (**filter → pricing**), a badge on every item, and a field in the editor. Pricing found by the importer is a best guess from the site's own words, so correct it in the editor when you know better.
+
+### Screenshots and descriptions
+
+`pnpm enrich` opens every link in headless Chrome (needs Google Chrome installed) and saves:
+- a screenshot of the page as you'd see it (`media/shots/<id>.webp`)
+- the site's share image (`media/og/<id>.webp`)
+- a longer description, read after the page's JavaScript has run, plus a pricing guess where the item had none
+
+It skips items it has already done. `pnpm enrich --only <id>,<id> --wait 18000` redoes chosen items and gives slow pages longer to draw. Images stay on this drive and out of git.
 
 ### The inbox: adding many links at once
 

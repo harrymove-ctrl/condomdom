@@ -1,4 +1,6 @@
 export const KINDS = ["component", "video", "skill", "read", "tool", "inspiration"] as const;
+/** The page's views, each at its own address: /library, /gallery, /explorer, /workflow. */
+export const VIEW_LIST = ["library", "gallery", "explorer", "workflow"] as const;
 export const STAGES = ["inspire", "design", "build", "ship", "learn"] as const;
 export const STATUSES = ["core", "using", "to-try"] as const;
 /** What it costs to use. "freemium": free to start, with paid pro parts. "unknown": not checked or not clear. */
@@ -22,6 +24,10 @@ export interface Item {
   also?: { label: string; url: string }[];
   /** Set when the link couldn't be verified automatically, with why (blocked, server error). */
   check?: string;
+  /** A longer description, read from the page by pnpm enrich. */
+  about?: string;
+  /** Pictures made by pnpm enrich, under media/: a screenshot of the page and its share image. */
+  media?: { shot?: string; og?: string };
   url?: string;
   path?: string;
   file?: string;

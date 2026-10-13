@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start -H 127.0.0.1 -p 4321",
     "typecheck": "tsc --noEmit",
-    "inbox": "node scripts/import.ts"
+    "inbox": "node scripts/import.ts",
+    "enrich": "node scripts/enrich.ts"
   },
   "engines": {
     "node": ">=20.9"

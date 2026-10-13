@@ -59,7 +59,26 @@ export function ItemDetail({ item, stage, onEdit, onClose, mode, onMode }: {
       </div>
       <h2>{item.title}</h2>
       {item.summary && <p>{item.summary}</p>}
-      <Preview key={item.id} item={item} size="large" />
+      {item.about && <p className="about">{item.about}</p>}
+      {item.media?.shot || item.media?.og ? (
+        <div className="shots">
+          {item.media.shot && (
+            <a className="shot main" href={`/api/media/${item.media.shot}`} target="_blank" rel="noopener" title="open the full screenshot">
+              <img src={`/api/media/${item.media.shot}`} alt={`${item.title}: screenshot of the site`} loading="lazy" />
+              <span className="cap">screenshot</span>
+            </a>
+          )}
+          <div className="shots-row">
+            {item.media.og && (
+              <a className="shot" href={`/api/media/${item.media.og}`} target="_blank" rel="noopener" title="open the share image">
+                <img src={`/api/media/${item.media.og}`} alt={`${item.title}: share image`} loading="lazy" />
+                <span className="cap">share image</span>
+              </a>
+            )}
+            <Preview key={item.id} item={item} size="large" />
+          </div>
+        </div>
+      ) : <Preview key={item.id} item={item} size="large" />}
       {item.note && <p className="note">{item.note}</p>}
       {item.tags.length > 0 && <div className="tags">{item.tags.map((t) => <span key={t}>#{t}</span>)}</div>}
       <div className="links">

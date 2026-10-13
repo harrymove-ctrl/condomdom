@@ -7,8 +7,8 @@
 // (free / free + pro / paid / unknown). GitHub and GitLab repos count as free. Links already in the library are skipped.
 import { readFile, rename, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { pricingOf, type Pricing } from "./pricing.ts";
 
-type Pricing = "free" | "freemium" | "paid" | "unknown";
 type Item = { id: string; title: string; kind: string; group?: string; stage: string; status: string; pricing?: Pricing; url?: string; also?: { label: string; url: string }[]; summary?: string; note?: string; tags: string[]; added: string };
 
 const LIBRARY = join(process.cwd(), "content", "library.json");
@@ -60,18 +60,6 @@ const meta = (html: string, name: string) => {
   }
   return "";
 };
-
-const PAID = /\b(buy now|buy|purchase|get (?:all[- ]access|pro|lifetime|access)|lifetime (?:access|deal|license)|all[- ]access|upgrade to pro|go pro|pro plan|one[- ]time (?:payment|purchase)|per month|\/mo\b|\/month|commercial license|unlock (?:all|pro))\b|[$€£]\s?\d{1,4}\b/i;
-const FREE = /\b(open[- ]source|mit licen[cs]e|100% free|free forever|completely free|free to use|free and open|copy (?:and|&) paste|copy[- ]paste|free components?)\b/i;
-
-/** Pricing from what the page says about itself. Repos are free; a ".pro" site or a "-pro" page is paid. */
-export function pricingOf(url: string, text: string): Pricing {
-  const host = new URL(url).hostname;
-  if (/(^|\.)(github|gitlab)\.com$/.test(host) || host.endsWith("github.io")) return "free";
-  const proHint = /\.pro$/.test(host) || /[-/]pro(\b|$)/.test(new URL(url).pathname);
-  const paid = proHint || PAID.test(text), free = FREE.test(text);
-  return paid && free ? "freemium" : paid ? "paid" : free ? "free" : "unknown";
-}
 
 const cleanTitle = (t: string, host: string) => {
   const parts = t.split(/\s+[|·–—-]\s+/).map((p) => p.trim()).filter(Boolean);

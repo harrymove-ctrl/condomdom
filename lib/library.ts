@@ -54,6 +54,8 @@ function clean(input: Record<string, unknown>, existing?: Item): Item {
     pricing: PRICINGS.includes(merged.pricing as never) ? (merged.pricing as Item["pricing"]) : undefined,
     also: Array.isArray(merged.also) ? (merged.also as Item["also"]) : undefined,
     check: typeof merged.check === "string" && merged.check ? merged.check : undefined,
+    about: opt("about"),
+    media: merged.media && typeof merged.media === "object" ? (merged.media as Item["media"]) : undefined,
     tags: tags.map((t) => t.trim()).filter(Boolean),
     added: existing?.added ?? new Date().toISOString().slice(0, 10),
   };

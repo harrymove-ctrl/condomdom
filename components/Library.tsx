@@ -9,10 +9,11 @@ import { DetailDrawer, EditorDrawer, PANEL_MODES, type PanelMode, type Saved } f
 import { ColumnsMenu, FilterBar } from "./FilterBar";
 import { Preloader } from "./Preloader";
 import { Explorer } from "./Explorer";
+import { Gallery } from "./Gallery";
 import { WorkflowBoard } from "./WorkflowBoard";
 
 const THEMES = ["system", "light", "dark"] as const;
-const VIEWS = ["library", "explorer", "workflow"] as const;
+const VIEWS = ["library", "gallery", "explorer", "workflow"] as const;
 type View = (typeof VIEWS)[number];
 type Theme = (typeof THEMES)[number];
 const SEARCH_MS = 650; // the boot log runs this long while a search settles (DESIGN.md §7)
@@ -23,9 +24,12 @@ const store = {
   set(k: string, v: unknown) { try { localStorage.setItem("condomdom:" + k, JSON.stringify(v)); } catch {} },
 };
 
-export function Library({ initialItems, stages }: { initialItems: Item[]; stages: Stage[] }) {
+/** The page: every view at its own address (/library, /gallery, /explorer, /workflow), an open item as ?item=<id>. */
+export function Library({ initialItems, stages, initialView = "library", initialItem = null }: {
+  initialItems: Item[]; stages: Stage[]; initialView?: string; initialItem?: string | null;
+}) {
   const [items, setItems] = useState(initialItems);
-  const [view, setView] = useState<View>("library");
+  const [view, setView] = useState<View>((VIEWS as readonly string[]).includes(initialView) ? (initialView as View) : "library");
   const [explored, setExplored] = useState<string | null>(null);
   const [q, setQ] = useState("");
   const [appliedQ, setAppliedQ] = useState("");
@@ -34,7 +38,38 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
   const [sort, setSort] = useState<Sort>({ column: "added", dir: "desc" });
   const [visible, setVisible] = useState<Set<string>>(() => new Set(TABLE_COLUMNS.map((c) => c.id)));
   const [page, setPage] = useState(0);
-  const [detailId, setDetailId] = useState<string | null>(null);
+  const [detailId, setDetailId] = useState<string | null>(initialItem);
+
+  // The address bar follows the view and the open item, so either can be bookmarked or shared; back and forward work.
+  const urlFor = (v: View, item: string | null) => `/${v}${item ? `?item=${encodeURIComponent(item)}` : ""}`;
+  // Refs hold the latest view and item, so a late close event can't push a stale address,
+  // and closing what is already closed does nothing.
+  const viewRef = useRef(view);
+  const itemRef = useRef(detailId);
+  viewRef.current = view;
+  itemRef.current = detailId;
+  const go = useCallback((v: View) => {
+    viewRef.current = v;
+    itemRef.current = null;
+    setView(v);
+    setDetailId(null);
+    history.pushState(null, "", urlFor(v, null));
+  }, []);
+  const openItem = useCallback((id: string | null) => {
+    if (id === itemRef.current) return;
+    itemRef.current = id;
+    setDetailId(id);
+    history.pushState(null, "", urlFor(viewRef.current, id));
+  }, []);
+  useEffect(() => {
+    const onPop = () => {
+      const seg = location.pathname.split("/").filter(Boolean)[0] ?? "library";
+      setView((VIEWS as readonly string[]).includes(seg) ? (seg as View) : "library");
+      setDetailId(new URLSearchParams(location.search).get("item"));
+    };
+    addEventListener("popstate", onPop);
+    return () => removeEventListener("popstate", onPop);
+  }, []);
   const [editor, setEditor] = useState<{ open: boolean; item: Item | null }>({ open: false, item: null });
   const [theme, setTheme] = useState<Theme>("system");
   const [panelMode, setPanelMode] = useState<PanelMode>("center");
@@ -45,8 +80,6 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
   useEffect(() => {
     const t = document.documentElement.dataset.theme;
     setTheme(t === "light" || t === "dark" ? t : "system");
-    const v = store.get<string>("view", "library");
-    if ((VIEWS as readonly string[]).includes(v)) setView(v as View);
     setFilters(store.get("filters", []));
     // Hidden columns are remembered (not shown ones), so a column added later shows up on its own.
     const hidden = store.get<string[]>("hidden-columns", []);
@@ -54,7 +87,6 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
     const pm = store.get<string>("panel", "center");
     if ((PANEL_MODES as readonly string[]).includes(pm)) setPanelMode(pm as PanelMode);
   }, []);
-  useEffect(() => store.set("view", view), [view]);
   useEffect(() => store.set("filters", filters), [filters]);
   useEffect(() => store.set("hidden-columns", TABLE_COLUMNS.map((c) => c.id).filter((id) => !visible.has(id))), [visible]);
   useEffect(() => store.set("panel", panelMode), [panelMode]);
@@ -91,8 +123,8 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
   const openAdd = useCallback(() => setEditor({ open: true, item: null }), []);
   const randomPick = useCallback(() => {
     const pool = filtered.length ? filtered : items;
-    if (pool.length) setDetailId(pool[Math.floor(Math.random() * pool.length)].id);
-  }, [filtered, items]);
+    if (pool.length) openItem(pool[Math.floor(Math.random() * pool.length)].id);
+  }, [filtered, items, openItem]);
 
   function onSaved(s: Saved) {
     if ("deleted" in s) {
@@ -103,7 +135,7 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
       say(s.created ? `added “${s.item.title}”` : "saved");
     }
     setEditor({ open: false, item: null });
-    setDetailId(null);
+    openItem(null);
   }
 
   // DESIGN.md §10 shortcuts.
@@ -118,12 +150,13 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
       else if (e.key === "r") randomPick();
       else if (e.key === "n") openAdd();
       else if (e.key === "t") cycleTheme();
-      else if (e.key === "w") setView((v) => VIEWS[(VIEWS.indexOf(v) + 1) % VIEWS.length]);
-      else if (e.key === "e") setView("explorer");
+      else if (e.key === "w") go(VIEWS[(VIEWS.indexOf(view) + 1) % VIEWS.length]);
+      else if (e.key === "e") go("explorer");
+      else if (e.key === "g") go("gallery");
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [randomPick, openAdd, cycleTheme]);
+  }, [randomPick, openAdd, cycleTheme, go, view]);
 
   const count = (k: Kind) => items.filter((i) => i.kind === k).length;
   const detail = items.find((i) => i.id === detailId) ?? null;
@@ -151,7 +184,7 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
       <DataTable
         rows={pageRows} total={filtered.length} visible={visible}
         sort={sort} onSort={(s) => { setSort(s); setPage(0); }}
-        page={page} onPage={setPage} onOpen={setDetailId}
+        page={page} onPage={setPage} onOpen={openItem}
       />
     );
   }
@@ -181,9 +214,10 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
                 .filter(([k, v]) => k === "items" || v > 0).map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
             </dl>
             <nav className="paren-nav" aria-label="views">
-              <button aria-label="library" aria-current={view === "library"} onClick={() => setView("library")}>(<span>library</span>)</button>
-              <button aria-label="explorer" aria-current={view === "explorer"} onClick={() => setView("explorer")}>(<span>explorer</span>)</button>
-              <button aria-label="workflow" aria-current={view === "workflow"} onClick={() => setView("workflow")}>(<span>workflow</span>)</button>
+              <a aria-label="library" aria-current={view === "library"} href={`/library`} onClick={(e) => { e.preventDefault(); go("library"); }}>(<span>library</span>)</a>
+              <a aria-label="gallery" aria-current={view === "gallery"} href={`/gallery`} onClick={(e) => { e.preventDefault(); go("gallery"); }}>(<span>gallery</span>)</a>
+              <a aria-label="explorer" aria-current={view === "explorer"} href={`/explorer`} onClick={(e) => { e.preventDefault(); go("explorer"); }}>(<span>explorer</span>)</a>
+              <a aria-label="workflow" aria-current={view === "workflow"} href={`/workflow`} onClick={(e) => { e.preventDefault(); go("workflow"); }}>(<span>workflow</span>)</a>
               <button aria-label="random item" onClick={randomPick}>(<span>random</span>)</button>
               <button aria-label="add an item" onClick={openAdd}>(<span>add</span>)</button>
             </nav>
@@ -202,23 +236,24 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
           />
 
           {view === "library" && <section aria-live="polite" aria-busy={searching}>{results}</section>}
+          {view === "gallery" && (searching ? results : <Gallery items={filtered} onOpen={openItem} />)}
           {view === "explorer" && (
             <Explorer
               items={applyFilters(items, filters, appliedQ)} stages={stages} selected={explored} onSelect={setExplored}
               onEdit={(it) => setEditor({ open: true, item: it })}
             />
           )}
-          {view === "workflow" && <WorkflowBoard items={applyFilters(items, filters, appliedQ)} stages={stages} onOpen={setDetailId} />}
+          {view === "workflow" && <WorkflowBoard items={applyFilters(items, filters, appliedQ)} stages={stages} onOpen={openItem} />}
 
           <footer className="foot">
             <span>condomdom · on the dev drive</span>
             <button aria-label={`theme: ${theme}`} onClick={cycleTheme}>(theme: <span>{theme}</span>)</button>
-            <span><kbd>/</kbd> search · <kbd>r</kbd> random · <kbd>n</kbd> add · <kbd>e</kbd> explorer · <kbd>w</kbd> next view · <kbd>m</kbd> panel · <kbd>t</kbd> theme</span>
+            <span><kbd>/</kbd> search · <kbd>r</kbd> random · <kbd>n</kbd> add · <kbd>g</kbd> gallery · <kbd>e</kbd> explorer · <kbd>w</kbd> next view · <kbd>m</kbd> panel · <kbd>t</kbd> theme</span>
           </footer>
         </main>
       </div>
 
-      <DetailDrawer mode={panelMode} onMode={setPanelMode} item={detail} stage={stages.find((s) => s.id === detail?.stage)} onClose={() => setDetailId(null)} onEdit={(it) => { setDetailId(null); setEditor({ open: true, item: it }); }} />
+      <DetailDrawer mode={panelMode} onMode={setPanelMode} item={detail} stage={stages.find((s) => s.id === detail?.stage)} onClose={() => openItem(null)} onEdit={(it) => { openItem(null); setEditor({ open: true, item: it }); }} />
       <EditorDrawer groups={[...new Set(items.map((i) => i.group).filter((g): g is string => !!g))].sort()} mode={panelMode} onMode={setPanelMode} open={editor.open} item={editor.item} stages={stages} defaults={defaults} onClose={() => setEditor({ open: false, item: null })} onSaved={onSaved} />
       {toast && <div className="toast" role="status">{toast}</div>}
     </>

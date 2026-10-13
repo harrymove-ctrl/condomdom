@@ -106,10 +106,10 @@ main { min-width: 0; }
 .stats dt { color: var(--ink-40); }
 .stats dd { margin: 0; color: var(--ink-100); }
 .paren-nav { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-4); font-size: var(--text-sm); color: var(--ink-40); }
-.paren-nav button { min-height: 32px; color: var(--ink-40); }
-.paren-nav button span { color: var(--ink-60); transition: color var(--fast); }
-.paren-nav button:hover span { color: var(--ink-100); }
-.paren-nav button[aria-current="true"] span { color: var(--ink-100); font-weight: 500; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 5px; }
+.paren-nav :is(a, button) { min-height: 32px; color: var(--ink-40); text-decoration: none; display: inline-flex; align-items: center; }
+.paren-nav :is(a, button) span { color: var(--ink-60); transition: color var(--fast); }
+.paren-nav :is(a, button):hover span { color: var(--ink-100); }
+.paren-nav :is(a, button)[aria-current="true"] span { color: var(--ink-100); font-weight: 500; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 5px; }
 
 /* ───────── toolbar: search, filter menu, chips ───────── */
 .toolbar { border-top: var(--rule-dashed); padding: var(--s-5) 0 var(--s-3); display: grid; gap: var(--s-3); }
@@ -226,6 +226,31 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 .preview.large .description { margin: 0; color: var(--ink-80); font-size: var(--text-sm); border-left: 2px solid var(--ink-16); padding-left: var(--s-3); }
 .preview.large.empty { min-height: 0; padding: var(--s-3); }
 .preview video { width: 100%; border-radius: var(--r-control); background: #000; }
+
+/* ───────── screenshots in the item panel (§7) ───────── */
+.about { color: var(--ink-80); font-size: var(--text-sm); line-height: 1.7; margin: var(--s-2) 0 var(--s-3); }
+.shots { display: grid; gap: var(--s-2); margin: var(--s-3) 0; }
+.shots-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-2); align-items: stretch; }
+.shots-row .preview.large { margin: 0; min-height: 0; height: 100%; }
+.shots-row .preview.large .ascii, .shots-row .preview.large .ascii pre { font-size: 5px; }
+.shot { position: relative; display: block; border: var(--rule); border-radius: var(--r-panel); overflow: hidden; background: var(--paper); }
+.shot img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.shot .cap { position: absolute; left: var(--s-2); bottom: var(--s-2); font-size: var(--text-xs); color: var(--ink-100); background: var(--paper-raised); border: var(--rule); border-radius: 999px; padding: 0 var(--s-2); }
+.shot:hover { border-color: var(--ink-40); }
+@media (max-width: 560px) { .shots-row { grid-template-columns: 1fr; } }
+
+/* ───────── gallery (§7) ───────── */
+.gallery { list-style: none; margin: var(--s-4) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--s-3); }
+.card { display: grid; grid-template-rows: auto 1fr; width: 100%; height: 100%; text-align: left; border: var(--rule); border-radius: var(--r-panel); overflow: hidden; background: var(--paper-raised); transition: border-color var(--fast); }
+.card:hover { border-color: var(--ink-40); }
+.card-pic { display: grid; place-items: center; aspect-ratio: 16 / 10; overflow: hidden; background: var(--paper); border-bottom: var(--rule); }
+.card-pic img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.card-pic .preview { width: 100%; height: 100%; border: 0; border-radius: 0; }
+.card-pic .preview .ascii, .card-pic .preview .ascii pre { font-size: 4.5px; }
+.card-body { display: grid; gap: var(--s-1); padding: var(--s-3); align-content: start; }
+.card-title { color: var(--ink-100); font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-sum { color: var(--ink-60); font-size: var(--text-sm); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card-meta { display: flex; gap: var(--s-2); align-items: center; font-size: var(--text-xs); color: var(--ink-40); margin-top: var(--s-1); }
 
 /* ───────── explorer (§7) ───────── */
 .explorer { display: grid; grid-template-columns: 320px minmax(0, 1fr); border: var(--rule); border-radius: var(--r-panel); background: var(--paper-raised); min-height: 70vh; }
