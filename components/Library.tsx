@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Ascii, Banner } from "ascii.rest/react";
+import { Ascii } from "ascii.rest/react";
+import { Background } from "./Background";
 import { applyFilters, type Filter } from "@/lib/filters";
 import type { Item, Kind, Stage } from "@/lib/types";
 import { DataTable, PAGE_SIZE, sortItems, TABLE_COLUMNS, type Sort } from "./DataTable";
@@ -76,14 +77,16 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
   const activeKind = (kindFilter?.values[0] as Kind | undefined) ?? null;
 
   const clearAll = useCallback(() => { setQ(""); setAppliedQ(""); setFilters([]); setPage(0); }, []);
-  const cycleTheme = useCallback(() => {
-    setTheme((cur) => {
-      const next = THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length];
-      if (next === "system") delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = next;
-      try { next === "system" ? localStorage.removeItem("condomdom:theme") : localStorage.setItem("condomdom:theme", next); } catch {}
-      return next;
-    });
+  const chooseTheme = useCallback((next: Theme) => {
+    if (next === "system") delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = next;
+    try { next === "system" ? localStorage.removeItem("condomdom:theme") : localStorage.setItem("condomdom:theme", next); } catch {}
+    setTheme(next);
   }, []);
+  // The toggle (and t) flips between light and dark from whatever is showing now, system included.
+  const cycleTheme = useCallback(() => {
+    const showingDark = theme === "dark" || (theme === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+    chooseTheme(showingDark ? "light" : "dark");
+  }, [theme, chooseTheme]);
   const say = (msg: string) => { setToast(msg); setTimeout(() => setToast(null), 2400); };
   const openAdd = useCallback(() => setEditor({ open: true, item: null }), []);
   const randomPick = useCallback(() => {
@@ -156,19 +159,22 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
   return (
     <>
       <Preloader />
+      <Background />
       <div className="shell">
         <main>
+          <div className="topbar">
+            <span className="brand">condomdom<span className="dim"> · personal library</span></span>
+            <div className="theme-toggle" role="group" aria-label="theme">
+              <button aria-pressed={theme === "light"} onClick={() => chooseTheme("light")}>☀ light</button>
+              <button aria-pressed={theme === "dark"} onClick={() => chooseTheme("dark")}>☾ dark</button>
+              <button aria-pressed={theme === "system"} onClick={() => chooseTheme("system")} title="follow your Mac">auto</button>
+            </div>
+          </div>
           <header className="hero">
             <h1 className="sr-only">condomdom</h1>
-            <p className="sr-only">a personal library of components, videos and skills, arranged around how i build.</p>
-            <div className="wordmark" aria-hidden="true">
-              <Banner text="condomdom" font="block" pixel={1} shadow="rounded" effect="glint" className="ascii" />
-            </div>
-            <div className="tagline" aria-hidden="true">
-              <Ascii
-                piece="typewriter" className="ascii"
-                options={{ prefix: "i keep ", phrases: ["components that feel right.", "skill packs worth installing.", "reads that changed how i build.", "tools i reach for."] }}
-              />
+            <p className="sr-only">a personal library of components, skill packs, reads and tools, arranged around how i build.</p>
+            <div className="marquee" aria-hidden="true">
+              <Ascii piece="marquee" className="ascii" options={{ text: "condomdom · components · skill packs · reads · tools · inspiration ·", speed: 10 }} />
             </div>
             <dl className="stats">
               {([["items", items.length], ["components", count("component")], ["videos", count("video")], ["skills", count("skill")], ["core", items.filter((i) => i.status === "core").length]] as const)

@@ -12,12 +12,12 @@ The look comes from [ascii.rest](https://ascii.rest): plain text, one monospace 
 |---|---|
 | Family | **one face**: `JetBrains Mono`, falling back to `ui-monospace, SFMono-Regular, Menlo, monospace`. No serif, no sans. Loaded **whole** from Google Fonts, never through `next/font`: the ascii art needs its block and box-drawing glyphs (`▓ ╭ │`), which no `next/font` subset includes. |
 | Weights | `400` for everything, `500` for titles and the active state. Nothing else. |
-| Scale (px) | `11` meta · `12` labels, pills, buttons · `14` body · `16` lede · `22` drawer title |
+| Scale (px) | `12` meta · `13` labels, pills, buttons · `15` body · `18` lede · `28` panel title |
 | Line height | `1.6` body · `1.25` titles · `1` for ascii art (set by the piece) |
 | Measure | max `72ch` per line |
 | Numbers | `font-variant-numeric: tabular-nums` wherever numbers line up (stats, dates) |
 
-Token names: `--text-xs` 11, `--text-sm` 12, `--text-md` 14, `--text-lg` 16, `--text-xl` 22.
+Token names: `--text-xs` 12, `--text-sm` 13, `--text-md` 15, `--text-lg` 18, `--text-xl` 28.
 
 ## 2. Text and voice
 
@@ -60,7 +60,7 @@ Disabled = `--ink-40` text on no fill. Never use opacity on a whole element that
 
 ## 5. Light and dark mode
 
-- Three modes: **system** (default), **light**, **dark**. The `(theme: …)` control in the footer cycles them, and the choice is remembered per browser.
+- Three modes: **light**, **dark** and **auto** (follow the Mac; the default). The `☀ light · ☾ dark · auto` toggle sits top right; `t` flips between light and dark. The choice is remembered per browser.
 - `<html data-theme="light|dark">` overrides; with no attribute, `prefers-color-scheme` decides.
 - The theme is applied before first paint (inline script in `<head>`), so there's no flash.
 - Ascii pieces read the text color, so they redraw correctly in either mode with no extra code.
@@ -70,7 +70,7 @@ Disabled = `--ink-40` text on no fill. Never use opacity on a whole element that
 
 | Rule | Value |
 |---|---|
-| Shell | one column, `min(1200px, 100% - 32px)`. No sidebar: structure lives in the **explorer** view, at a size you can read. |
+| Shell | one column, `min(1440px, 100% - 48px)`, under a top bar (name left, theme toggle right). No sidebar: structure lives in the **explorer** view, at a size you can read. |
 | Spacing scale | `4 8 12 16 24 32 48 72` px only (`--s-1` … `--s-8`) |
 | Radius | `6px` controls, `10px` panels; pills are fully rounded |
 | Borders | `1px solid var(--ink-16)`; section breaks are `1px dashed var(--ink-16)` |
@@ -83,7 +83,7 @@ Page order is always: boot screen (first visit) → hero → toolbar → view �
 
 | View | What it is | Required states |
 |---|---|---|
-| **boot screen** | ascii.rest `boot-log` over the whole page: a self test counts memory, then the log scrolls. First visit in a tab only; any key or click skips it. | reduced motion: 0.5s, still |
+| **boot screen** | ascii.rest `typewriter` over the whole page: `condomdom › opening components… skill packs… reads… ready.` First visit in a tab only (3.4s); any key or click skips it. | reduced motion: 0.5s, still |
 | **explorer** | a 320px tree of your collections (folders = kinds, then groups inside them, e.g. `components/animated-react/`; core first, each file says where it lives: `link` · `folder` · `video`), and the chosen item large on the right. ↑/↓ move through the tree. With nothing chosen (or `condomdom/` clicked) the right side is the **whole library as ascii.rest's `file-tree`**, each collection with its first three files, plus every file as a `├──` tree | nothing yet |
 | **library** | a data table: preview, title, kind, stage, status, tags, added. Sortable headers, a `(columns)` menu, pages of 15 | searching · empty (filters) · empty (no items) |
 | **workflow** | one column per stage: question, playbook, items (core first) | loading · empty stage (`nothing here yet`) |
@@ -116,7 +116,9 @@ Page order is always: boot screen (first visit) → hero → toolbar → view �
 
 - Motion comes **only** from ascii.rest pieces and ≤150ms colour/underline transitions. Nothing slides, scales or bounces.
 - With `prefers-reduced-motion: reduce`, pieces hold still on their resting frame (ascii.rest does this itself) and transitions are off.
-- The pieces that may move at once: the wordmark (glint), the tagline (typewriter), and **one** of: the boot screen, the searching state, the empty state, the drawer or explorer preview. Table previews never move.
+- The **background** is ascii.rest's `earthrise`, fixed behind everything: in colour at 55% in dark mode, in one ink at 13% in light mode, under a veil that fades to paper so text always reads.
+- The **heading** is ascii.rest's `marquee`: `condomdom · components · skill packs · reads · tools · inspiration` on a bulb-framed sign.
+- The pieces that may move at once: the background, the heading, and **one** of: the boot screen, the searching state, the empty state, the drawer or explorer preview. Table previews never move.
 
 ## 10. Interaction and accessibility
 

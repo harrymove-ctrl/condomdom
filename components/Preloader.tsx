@@ -1,10 +1,10 @@
 "use client";
-// The boot screen (DESIGN.md §7): ascii.rest's boot-log, where a self test counts memory and then the log scrolls.
+// The first-visit screen (DESIGN.md §7): ascii.rest's typewriter types what condomdom holds, then the page opens.
 // Shown once per tab; any key or click skips it. Server-rendered, so it covers the page from the first paint.
 import { useEffect } from "react";
 import { Ascii } from "ascii.rest/react";
 
-const BOOT_MS = 3200;
+const BOOT_MS = 3400;
 
 export function Preloader() {
   useEffect(() => {
@@ -28,8 +28,11 @@ export function Preloader() {
 
   return (
     <div className="preloader" role="status" aria-label="loading condomdom">
-      <Ascii piece="boot-log" className="ascii" label="condomdom starting up" />
-      <p>booting condomdom… <span aria-hidden="true">press any key to skip</span></p>
+      <Ascii
+        piece="typewriter" className="ascii" label="condomdom is opening"
+        options={{ prefix: "condomdom › ", phrases: ["opening components…", "opening skill packs…", "opening reads…", "ready."] }}
+      />
+      <p>press any key to skip</p>
     </div>
   );
 }

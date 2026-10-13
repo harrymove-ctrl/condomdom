@@ -32,12 +32,12 @@
 
   /* §1 typography */
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --text-xs: 11px; --text-sm: 12px; --text-md: 14px; --text-lg: 16px; --text-xl: 22px;
+  --text-xs: 12px; --text-sm: 13px; --text-md: 15px; --text-lg: 18px; --text-xl: 28px;
 
   /* §6 layout */
   --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 72px;
   --r-control: 6px; --r-panel: 10px;
-  --shell: min(1200px, 100% - 32px);
+  --shell: min(1440px, 100% - 48px);
     --rule: 1px solid var(--ink-16);
   --rule-dashed: 1px dashed var(--ink-16);
   --fast: 150ms;
@@ -66,15 +66,34 @@ pre { margin: 0; font-family: var(--mono); }
   position: fixed; inset: 0; z-index: 50; display: grid; place-content: center; justify-items: center; gap: var(--s-4);
   background: var(--paper); color: var(--ink-60); font-size: var(--text-sm);
 }
-.preloader .ascii { font-size: clamp(6px, 1.6vw, 11px); color: var(--ink-80); }
+.preloader .ascii, .preloader pre { font-size: clamp(14px, 2.2vw, 28px); line-height: 1.4; color: var(--ink-100); }
 :root[data-booted] .preloader { display: none; }
 
+/* ───────── backdrop (§9): earthrise behind everything ───────── */
+.backdrop { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: var(--paper); }
+.backdrop-art { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: max(100vw, 200vh); }
+.backdrop-art canvas { display: block; width: 100% !important; height: auto !important; }
+.backdrop-art.colour { opacity: 0.55; }
+.backdrop-art.ink { opacity: 0.13; }
+.backdrop-art.ink .ascii, .backdrop-art.ink pre { font-size: calc(max(100vw, 200vh) / 120); line-height: 1; color: var(--ink); white-space: pre; }
+.backdrop-veil { position: absolute; inset: 0; background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 35%, transparent) 0%, color-mix(in srgb, var(--paper) 70%, transparent) 55%, var(--paper) 100%); }
+
 /* ───────── shell (§6) ───────── */
-.shell { width: var(--shell); margin: 0 auto; }
+.shell { position: relative; z-index: 1; width: var(--shell); margin: 0 auto; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); padding: var(--s-5) 0 0; font-size: var(--text-sm); }
+.brand { color: var(--ink-100); font-weight: 500; }
+.brand .dim { color: var(--ink-40); font-weight: 400; }
+.theme-toggle { display: inline-flex; border: var(--rule); border-radius: 999px; overflow: hidden; background: var(--paper-raised); }
+.theme-toggle button { padding: var(--s-1) var(--s-4); min-height: 34px; color: var(--ink-60); font-size: var(--text-sm); transition: background var(--fast), color var(--fast); }
+.theme-toggle button + button { border-left: var(--rule); }
+.theme-toggle button:hover { color: var(--ink-100); background: var(--ink-08); }
+.theme-toggle button[aria-pressed="true"] { color: var(--paper); background: var(--ink-100); }
+.marquee { font-size: clamp(9px, 1.35vw, 19px); margin-bottom: var(--s-5); }
+.marquee .ascii, .marquee pre { line-height: 1.05; color: var(--ink-100); }
 main { min-width: 0; }
 
 /* ───────── hero ───────── */
-.hero { padding: var(--s-7) 0 var(--s-5); }
+.hero { padding: var(--s-6) 0 var(--s-5); }
 .wordmark { font-size: clamp(5px, 1.1vw, 9px); }
 .tagline { margin: var(--s-4) 0 var(--s-4); min-height: 3em; }
 .tagline .ascii { font-size: var(--text-lg); line-height: 1.5; color: var(--ink-80); }
@@ -149,7 +168,7 @@ main { min-width: 0; }
 .text-btn:hover { color: var(--ink-100); }
 
 /* ───────── data table ───────── */
-.table-wrap { border: var(--rule); border-radius: var(--r-panel); overflow: hidden; background: var(--paper-raised); }
+.table-wrap { border: var(--rule); border-radius: var(--r-panel); overflow-x: auto; background: var(--paper-raised); }
 table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
 .data th {
   text-align: left; font-weight: 400; color: var(--ink-40); padding: var(--s-2) var(--s-3); border-bottom: var(--rule);
@@ -162,6 +181,7 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 .data tbody tr { cursor: pointer; transition: background var(--fast); }
 .data tbody tr:hover { background: var(--ink-04); }
 .data tbody tr:last-child td { border-bottom: 0; }
+.data .c-title { min-width: 30ch; }
 .data .c-title .t { color: var(--ink-100); font-weight: 500; }
 .data .c-title .s { color: var(--ink-60); display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
 .data .c-thumb { width: 1%; padding-right: 0; }
@@ -180,8 +200,8 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 .mark.to-try { color: var(--ink-40); }
 
 /* previews (§7): link → logo, folder → file tree, video → frame */
-.preview { display: grid; place-items: center; width: 84px; height: 54px; border: var(--rule); border-radius: var(--r-control); overflow: hidden; background: var(--paper); }
-.preview .ascii, .preview .ascii pre { font-size: 3px; color: var(--ink-80); }
+.preview { display: grid; place-items: center; width: 104px; height: 66px; border: var(--rule); border-radius: var(--r-control); overflow: hidden; background: var(--paper); }
+.preview .ascii, .preview .ascii pre { font-size: 3.6px; color: var(--ink-80); }
 .preview.empty { color: var(--ink-40); font-size: var(--text-xs); text-align: center; }
 .preview.tree { place-items: center start; padding: var(--s-1) var(--s-2); }
 .preview.tree pre { font-size: 9px; line-height: 1.35; color: var(--ink-60); white-space: pre; overflow: hidden; }
