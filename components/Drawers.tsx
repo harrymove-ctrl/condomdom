@@ -2,7 +2,7 @@
 // Right-hand drawers on <dialog> (DESIGN.md §7, §10): focus moves in, esc closes, focus returns.
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { KINDS, KIND_PLURAL, STATUSES, STATUS_LABEL, STATUS_MARK, type Item, type Stage } from "@/lib/types";
-import { Thumb } from "./Thumb";
+import { Preview } from "./Preview";
 
 function Drawer({ open, onClose, label, children }: { open: boolean; onClose: () => void; label: string; children: ReactNode }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -23,39 +23,39 @@ function Drawer({ open, onClose, label, children }: { open: boolean; onClose: ()
   );
 }
 
+/** An item in full: what it is, its preview, why you keep it, where it is. Used by the drawer and the explorer. */
+export function ItemDetail({ item, stage, onEdit, onClose }: { item: Item; stage?: Stage; onEdit: (it: Item) => void; onClose?: () => void }) {
+  return (
+    <>
+      <div className="kicker">
+        <span><span className={`mark ${item.status}`} aria-hidden="true">{STATUS_MARK[item.status]}</span>{STATUS_LABEL[item.status]}</span>
+        <span>{KIND_PLURAL[item.kind].replace(/s$/, "")}</span>
+        <span>{stage?.label.toLowerCase() ?? item.stage}</span>
+        <span>{item.added}</span>
+      </div>
+      <h2>{item.title}</h2>
+      {item.summary && <p>{item.summary}</p>}
+      <Preview key={item.id} item={item} size="large" />
+      {item.note && <p className="note">{item.note}</p>}
+      {item.tags.length > 0 && <div className="tags">{item.tags.map((t) => <span key={t}>#{t}</span>)}</div>}
+      <div className="links">
+        {item.url && <a className="btn primary" href={item.url} target="_blank" rel="noopener">open ↗</a>}
+        {item.path && <span className="hint">folder: <code>{item.path}</code></span>}
+        {item.file && <span className="hint">file: <code>{item.file}</code></span>}
+      </div>
+      <div className="actions">
+        <button className="btn" onClick={() => onEdit(item)}>edit</button>
+        <span className="spacer" />
+        {onClose && <button className="btn" onClick={onClose}>close</button>}
+      </div>
+    </>
+  );
+}
+
 export function DetailDrawer({ item, stage, onClose, onEdit }: { item: Item | null; stage?: Stage; onClose: () => void; onEdit: (it: Item) => void }) {
   return (
     <Drawer open={!!item} onClose={onClose} label={item?.title ?? "item"}>
-      {item && (
-        <>
-          <div className="kicker">
-            <span><span className={`mark ${item.status}`} aria-hidden="true">{STATUS_MARK[item.status]}</span>{STATUS_LABEL[item.status]}</span>
-            <span>{KIND_PLURAL[item.kind].replace(/s$/, "")}</span>
-            <span>{stage?.label.toLowerCase() ?? item.stage}</span>
-            <span>{item.added}</span>
-          </div>
-          <h2>{item.title}</h2>
-          {item.summary && <p>{item.summary}</p>}
-          {item.url && <Thumb item={item} big />}
-          {item.file && (
-            <>
-              <video src={`/${item.file}`} controls preload="metadata" />
-              <p className="hint">no picture? put the file at <code>{item.file}</code>.</p>
-            </>
-          )}
-          {item.note && <p className="note">{item.note}</p>}
-          {item.tags.length > 0 && <div className="tags">{item.tags.map((t) => <span key={t}>#{t}</span>)}</div>}
-          <div className="links">
-            {item.url && <a className="btn primary" href={item.url} target="_blank" rel="noopener">open ↗</a>}
-            {item.path && <span className="hint">local: <code>{item.path}</code></span>}
-          </div>
-          <div className="actions">
-            <button className="btn" onClick={() => onEdit(item)}>edit</button>
-            <span className="spacer" />
-            <button className="btn" onClick={onClose}>close</button>
-          </div>
-        </>
-      )}
+      {item && <ItemDetail item={item} stage={stage} onEdit={onEdit} onClose={onClose} />}
     </Drawer>
   );
 }
@@ -108,9 +108,9 @@ export function EditorDrawer({ open, item, stages, defaults, onClose, onSaved }:
           <label>stage<select name="stage" defaultValue={v.stage ?? "build"}>{stages.map((s) => <option key={s.id} value={s.id}>{s.label.toLowerCase()}</option>)}</select></label>
           <label>status<select name="status" defaultValue={v.status ?? "to-try"}>{STATUSES.map((s) => <option key={s} value={s}>{STATUS_LABEL[s]}</option>)}</select></label>
         </div>
-        <label>link <small>its share image becomes the ascii preview</small><input name="url" type="url" placeholder="https://" defaultValue={v.url ?? ""} /></label>
-        <label>local path <small>skill folder, project</small><input name="path" placeholder="~/.agents/skills/…" defaultValue={v.path ?? ""} /></label>
-        <label>video file <small>inside media/videos</small><input name="file" placeholder="media/videos/demo.mp4" defaultValue={v.file ?? ""} /></label>
+        <label>link <small>its logo becomes the ascii preview</small><input name="url" type="url" placeholder="https://" defaultValue={v.url ?? ""} /></label>
+        <label>folder <small>a skill or project on this Mac: its files become the preview</small><input name="path" placeholder="~/.agents/skills/…" defaultValue={v.path ?? ""} /></label>
+        <label>video file <small>anywhere in your home folder or on the Dev drive</small><input name="file" placeholder="~/Downloads/demo.mp4" defaultValue={v.file ?? ""} /></label>
         <label>what it is<input name="summary" defaultValue={v.summary ?? ""} /></label>
         <label>why i keep it / how i use it<textarea name="note" rows={3} defaultValue={v.note ?? ""} /></label>
         <label>tags <small>comma separated</small><input name="tags" placeholder="react, motion" defaultValue={(v.tags ?? []).join(", ")} /></label>

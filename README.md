@@ -15,8 +15,8 @@ Open http://127.0.0.1:4321. Needs Node 20.9+. The dev server only listens on you
 ## What's on the page
 
 - **Boot screen**: the first time a tab opens it, ascii.rest's `boot-log` runs (a self test counts memory, then the boot log scrolls). Press any key to skip it.
-- **Sidebar**: the library's structure as ascii.rest's `file-tree`, with a clickable tree under it. A folder filters the table, and a file opens the item.
-- **Library**: a data table with an ascii preview of every link, sortable columns, a `(columns)` menu and pages of 15.
+- **Library**: a data table with a preview for every item, sortable columns, a `(columns)` menu and pages of 15.
+- **Explorer**: your collections as a tree on the left and the chosen item large on the right. A skill shows its real folder as ascii.rest's `file-tree`, a link shows its logo, and a video shows a frame plus the player.
 - **Filters**: `filter` → a column → its values, with counts. Each filter becomes a chip you can change or remove, after [sv-table's filters](https://sv-table.vercel.app/components/filters) / Bazza UI.
 - **Search**: the boot log plays while a search settles.
 - **Workflow**: one column per stage (inspire → design → build → ship → learn), with its playbook and its items.
@@ -29,17 +29,32 @@ Every screen follows [DESIGN.md](DESIGN.md), the UI/UX contract. It covers:
 - **Layout:** a fixed spacing scale.
 - **States:** rules for every state, motion and keyboard shortcut.
 
-## Adding things
+## Adding your own resources
 
-- In the page: press **n** (or click *(add)*), fill it in and save. It's written to `content/library.json`.
-- By hand: edit `content/library.json`.
-- Videos: copy the file into `media/videos/` and set `file` to `media/videos/<name>`.
+Each item points at where the resource lives:
 
-Shortcuts: `/` search · `r` random pick · `n` add · `w` switch view · `t` theme (system → light → dark) · `esc` close.
+| field | for | preview |
+|---|---|---|
+| `url` | a website, a repo | the site's logo as ascii |
+| `path` | a folder on this Mac: a skill, a project (`~/.agents/skills/orca-cli`) | its real file tree + SKILL.md description |
+| `file` | a video anywhere in your home folder or on the Dev drive (`~/Downloads/demo.mp4`) | a frame as ascii, plus the player |
 
-## How the ascii previews are made
+There are three ways to add items:
 
-`GET /api/thumb/<id>` fetches the item's page on the server and picks its logo (falling back to its share image). It then decodes the image with `sharp` and draws it with `drawing()` from `ascii.rest/kit`, the same drawing ascii.rest's [image to ascii](https://ascii.rest/docs/images/) makes. The drawing is cached in `content/thumbs/<id>.json`, and the browser plays it with `fromDrawing()`. Add `?refresh=1` to redraw one. Delete the file to retry a link that failed.
+- **Scan:** `pnpm scan` finds your skills in `~/.agents/skills` and `~/.claude/skills` and lists the new ones. Add `--apply` to save them. `pnpm scan --videos ~/Movies/demos --apply` adds every video in a folder too.
+- **In the page:** press **n** (or click *(add)*).
+- **By hand:** edit `content/library.json`.
+
+Shortcuts: `/` search · `r` random pick · `n` add · `e` explorer · `w` next view · `t` theme (system → light → dark) · `esc` close.
+
+## How previews are made
+
+`GET /api/preview/<id>` makes each item's preview:
+- **Link:** fetch the page, pick its logo (or share image), decode it with `sharp` and draw it with `drawing()` from `ascii.rest/kit`. This is the same drawing ascii.rest's [image to ascii](https://ascii.rest/docs/images/) makes.
+- **Folder:** read the folder's tree and its SKILL.md / README.
+- **Video:** grab a frame with `ffmpeg` and draw it the same way.
+
+Drawings are cached in `content/thumbs/<id>.json`. Add `?refresh=1` to redraw one. Videos stream from `/api/video/<id>`.
 
 ## Files
 
@@ -47,13 +62,13 @@ Shortcuts: `/` search · `r` random pick · `n` add · `w` switch view · `t` th
 app/
   layout.tsx, page.tsx, globals.css   the page; globals.css implements DESIGN.md
   api/items/                          add / edit / delete (writes content/library.json)
-  api/thumb/[id]/                     a link → an ascii drawing, cached
-  media/[...path]/                    streams media/ (videos, with seeking)
-components/                           Library, Preloader, Sidebar, FilterBar, DataTable, Thumb, WorkflowBoard, Drawers
-lib/                                  types, library storage, filter model, thumbnail maker
+  api/preview/[id]/                   link → logo, folder → tree, video → frame
+  api/video/[id]/                     streams an item's video, with seeking
+components/                           Library, Preloader, Explorer, FilterBar, DataTable, Preview, WorkflowBoard, Drawers
+lib/                                  types, library storage, filter model, previews, local files
+scripts/scan.ts                       pnpm scan: import your skills and videos
 content/library.json                  all items
 content/workflow.json                 stages + playbooks
 content/thumbs/                       cached ascii previews
-media/videos/                         local video files (ignored by git)
 DESIGN.md                             the UI/UX contract
 ```

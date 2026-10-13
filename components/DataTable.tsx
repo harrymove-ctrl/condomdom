@@ -1,7 +1,7 @@
 "use client";
 // The library as a data table: sortable headers, hideable columns, pages of 15 (DESIGN.md §7).
 import { KIND_PLURAL, STATUS_LABEL, STATUS_MARK, STATUS_RANK, type Item } from "@/lib/types";
-import { Thumb } from "./Thumb";
+import { Preview } from "./Preview";
 
 export const TABLE_COLUMNS = [
   { id: "thumb", label: "preview", sortable: false },
@@ -72,7 +72,7 @@ export function DataTable({ rows, total, visible, sort, onSort, page, onPage, on
           <tbody>
             {rows.map((it) => (
               <tr key={it.id} tabIndex={0} onClick={() => onOpen(it.id)} onKeyDown={(e) => { if (e.key === "Enter") onOpen(it.id); }}>
-                {visible.has("thumb") && <td className="c-thumb"><Thumb item={it} /></td>}
+                {visible.has("thumb") && <td className="c-thumb"><Preview item={it} /></td>}
                 {visible.has("title") && (
                   <td className="c-title">
                     <div className="t">{it.title}</div>

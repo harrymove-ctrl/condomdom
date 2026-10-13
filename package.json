@@ -1,6 +1,6 @@
 {
   "name": "condomdom",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "My personal library of UI components, videos and skills, arranged around how I build.",
   "type": "module",
@@ -8,7 +8,8 @@
     "dev": "next dev -H 127.0.0.1 -p 4321",
     "build": "next build",
     "start": "next start -H 127.0.0.1 -p 4321",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "scan": "node scripts/scan.ts"
   },
   "engines": {
     "node": ">=20.9"

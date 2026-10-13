@@ -70,21 +70,21 @@ Disabled = `--ink-40` text on no fill. Never use opacity on a whole element that
 
 | Rule | Value |
 |---|---|
-| Shell | `min(1200px, 100% - 32px)`: a **264px sidebar** (the library's structure) and the main column. Below 960px the sidebar stacks on top and drops its ascii art. |
+| Shell | one column, `min(1200px, 100% - 32px)`. No sidebar: structure lives in the **explorer** view, at a size you can read. |
 | Spacing scale | `4 8 12 16 24 32 48 72` px only (`--s-1` … `--s-8`) |
 | Radius | `6px` controls, `10px` panels; pills are fully rounded |
 | Borders | `1px solid var(--ink-16)`; section breaks are `1px dashed var(--ink-16)` |
-| Breakpoints | `960px` (sidebar stacks, workflow columns stack) · `700px` (table keeps preview, title, status) · `560px` (table keeps title, status; form rows stack) |
+| Breakpoints | `960px` (explorer tree stacks above its pane, workflow columns stack) · `700px` (table keeps preview, title, status) · `560px` (table keeps title, status; form rows stack) |
 | Scroll | never horizontal at any width ≥ 320px |
 
-Page order is always: boot screen (first visit) → sidebar | hero → toolbar → view → footer.
+Page order is always: boot screen (first visit) → hero → toolbar → view → footer.
 
 ## 7. Views and states
 
 | View | What it is | Required states |
 |---|---|---|
 | **boot screen** | ascii.rest `boot-log` over the whole page: a self test counts memory, then the log scrolls. First visit in a tab only; any key or click skips it. | reduced motion: 0.5s, still |
-| **sidebar** | ascii.rest `file-tree` drawn from the real library (folders = kinds, core items first), and under it the same tree as text: a folder filters the table, a file opens the item | — |
+| **explorer** | a 320px tree of your collections (folders = kinds, core first, each file says where it lives: `link` · `folder` · `video`), and the chosen item large on the right. ↑/↓ move through the tree | nothing yet |
 | **library** | a data table: preview, title, kind, stage, status, tags, added. Sortable headers, a `(columns)` menu, pages of 15 | searching · empty (filters) · empty (no items) |
 | **workflow** | one column per stage: question, playbook, items (core first) | loading · empty stage (`nothing here yet`) |
 | **detail** | right-hand drawer: kicker, title, summary, video, note, tags, links | video missing hint · read-only hint |
@@ -92,7 +92,11 @@ Page order is always: boot screen (first visit) → sidebar | hero → toolbar �
 
 - **Searching**: while a search settles (650ms), the table area plays `boot-log` with `searching for “…”…`. Clearing the search is instant.
 - **Filters** follow Bazza UI / sv-table: `filter` → a column → its values with counts. Each filter is a chip, `column · operator · values · ×`; click the operator to cycle it (`is any of` / `is none of`, `contains` / `does not contain`, `include any of` / `include all of` / `exclude`, `is after` / `is before` / `is on`), click the values to edit them.
-- **Previews**: every link gets an ascii preview. The server takes the site's logo (falling back to its share image), draws it with ascii.rest's `drawing()`, the same drawing `/make/` does, and caches it in `content/thumbs/`. Previews are in one ink (`mono`); table previews are stills, the drawer's glints. No link → `no link`; nothing usable → `no image`.
+- **Previews** are made from where the resource lives, never a dead end:
+  - **link** → the site's logo (falling back to its share image), drawn with ascii.rest's `drawing()` like `/make/` does, cached in `content/thumbs/`.
+  - **folder** (a skill, a project) → its **real file tree**, read fresh from disk. Row: the top level with counts (`references/ 6 · SKILL.md`). Large: ascii.rest's `file-tree` piece (or a full `├──` tree when longer than 21 lines) and the SKILL.md/README description.
+  - **video** → a frame a second in (ffmpeg), drawn as ascii; large views add the player, streamed from the file where it is.
+  - Only paths inside your home folder or `/Volumes/Dev` are read. Previews are in one ink (`mono`); row previews are stills. A broken source says why (`no preview: can't open …`).
 - **Empty after filters** shows the ascii `not-found` piece with `nothing matches` and a `(clear filters)` action.
 - **Error** is one line in `--danger` saying what failed and how to retry.
 - **Read-only** (opened without the server): editing is hidden and the detail drawer says `run node server.mjs to edit`.
@@ -112,7 +116,7 @@ Page order is always: boot screen (first visit) → sidebar | hero → toolbar �
 
 - Motion comes **only** from ascii.rest pieces and ≤150ms colour/underline transitions. Nothing slides, scales or bounces.
 - With `prefers-reduced-motion: reduce`, pieces hold still on their resting frame (ascii.rest does this itself) and transitions are off.
-- The pieces that may move at once: the wordmark (glint), the tagline (typewriter), the sidebar file tree, and **one** of: the boot screen, the searching state, the empty state, the drawer's preview. Table previews never move.
+- The pieces that may move at once: the wordmark (glint), the tagline (typewriter), and **one** of: the boot screen, the searching state, the empty state, the drawer or explorer preview. Table previews never move.
 
 ## 10. Interaction and accessibility
 

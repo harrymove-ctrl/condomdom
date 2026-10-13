@@ -7,3 +7,6 @@ media/videos/*
 .next/
 next-env.d.ts
 *.tsbuildinfo
+
+# previews are made on demand and can hold frames of your own videos: keep them local
+content/thumbs/

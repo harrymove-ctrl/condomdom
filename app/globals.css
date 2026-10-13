@@ -38,8 +38,7 @@
   --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 72px;
   --r-control: 6px; --r-panel: 10px;
   --shell: min(1200px, 100% - 32px);
-  --sidebar: 264px;
-  --rule: 1px solid var(--ink-16);
+    --rule: 1px solid var(--ink-16);
   --rule-dashed: 1px dashed var(--ink-16);
   --fast: 150ms;
 }
@@ -70,27 +69,8 @@ pre { margin: 0; font-family: var(--mono); }
 .preloader .ascii { font-size: clamp(6px, 1.6vw, 11px); color: var(--ink-80); }
 :root[data-booted] .preloader { display: none; }
 
-/* ───────── shell: sidebar + main (§6) ───────── */
-.shell { width: var(--shell); margin: 0 auto; display: grid; grid-template-columns: var(--sidebar) minmax(0, 1fr); gap: var(--s-6); }
-.sidebar {
-  position: sticky; top: 0; align-self: start; height: 100vh; overflow-y: auto; padding: var(--s-6) 0 var(--s-5);
-  border-right: var(--rule-dashed); padding-right: var(--s-4); display: grid; align-content: start; gap: var(--s-4);
-}
-.sidebar .tree-art { font-size: 7px; color: var(--ink-60); }
-.sidebar .tree-art pre { color: var(--ink-60); }
-.side-label { font-size: var(--text-xs); color: var(--ink-40); margin: 0; }
-.tree { list-style: none; margin: 0; padding: 0; font-size: var(--text-sm); }
-.tree details > summary { list-style: none; display: flex; gap: var(--s-2); align-items: baseline; cursor: pointer; padding: 2px var(--s-1); border-radius: 4px; color: var(--ink-80); }
-.tree details > summary::-webkit-details-marker { display: none; }
-.tree details > summary::before { content: "▸"; color: var(--ink-40); width: 1ch; }
-.tree details[open] > summary::before { content: "▾"; }
-.tree summary:hover, .tree .leaf:hover { background: var(--ink-08); color: var(--ink-100); }
-.tree summary .count { margin-left: auto; color: var(--ink-40); }
-.tree summary .folder-btn { text-align: left; }
-.tree summary .folder-btn[aria-pressed="true"] { color: var(--ink-100); font-weight: 500; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
-.tree ul { list-style: none; margin: 0; padding: 0 0 var(--s-1) calc(1ch + var(--s-3)); border-left: var(--rule-dashed); margin-left: calc(var(--s-1) + 0.5ch); }
-.tree .leaf { display: flex; gap: var(--s-1); width: 100%; text-align: left; padding: 1px var(--s-1); border-radius: 4px; color: var(--ink-60); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-.tree .leaf .name { overflow: hidden; text-overflow: ellipsis; }
+/* ───────── shell (§6) ───────── */
+.shell { width: var(--shell); margin: 0 auto; }
 main { min-width: 0; }
 
 /* ───────── hero ───────── */
@@ -188,6 +168,7 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 .data .c-added, .data .c-status, .data .c-kind, .data .c-stage { white-space: nowrap; }
 .data .c-added { color: var(--ink-40); }
 .data .c-tags { color: var(--ink-40); max-width: 18ch; }
+.data .c-tags span { white-space: nowrap; }
 .data .c-tags span + span::before { content: " "; }
 .table-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-2); padding: var(--s-3) 0; font-size: var(--text-sm); color: var(--ink-40); }
 .table-foot .pager { display: flex; gap: var(--s-2); }
@@ -198,13 +179,40 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 .mark.using { color: var(--ink-100); }
 .mark.to-try { color: var(--ink-40); }
 
-/* ascii thumbnails (§7) */
-.thumb { display: grid; place-items: center; width: 76px; height: 50px; border: var(--rule); border-radius: var(--r-control); overflow: hidden; background: var(--paper); }
-.thumb .ascii { font-size: 3px; color: var(--ink-80); }
-.thumb .ascii pre { color: var(--ink-80); }
-.thumb.empty { color: var(--ink-40); font-size: var(--text-xs); }
-.thumb.big { width: 100%; height: auto; min-height: 140px; padding: var(--s-3); }
-.thumb.big .ascii { font-size: 8px; }
+/* previews (§7): link → logo, folder → file tree, video → frame */
+.preview { display: grid; place-items: center; width: 84px; height: 54px; border: var(--rule); border-radius: var(--r-control); overflow: hidden; background: var(--paper); }
+.preview .ascii, .preview .ascii pre { font-size: 3px; color: var(--ink-80); }
+.preview.empty { color: var(--ink-40); font-size: var(--text-xs); text-align: center; }
+.preview.tree { place-items: center start; padding: var(--s-1) var(--s-2); }
+.preview.tree pre { font-size: 9px; line-height: 1.35; color: var(--ink-60); white-space: pre; overflow: hidden; }
+.preview.large { width: 100%; height: auto; min-height: 160px; padding: var(--s-4); margin: var(--s-3) 0; gap: var(--s-3); place-items: center; }
+.preview.large .ascii, .preview.large .ascii pre { font-size: 8px; }
+.preview.large.tree { place-items: start; }
+.preview.large.tree .ascii, .preview.large.tree .ascii pre { font-size: 12px; line-height: 1.25; color: var(--ink-80); }
+.preview.large .static-tree { font-size: 12px; line-height: 1.4; color: var(--ink-80); overflow-x: auto; max-width: 100%; }
+.preview.large .description { margin: 0; color: var(--ink-80); font-size: var(--text-sm); border-left: 2px solid var(--ink-16); padding-left: var(--s-3); }
+.preview.large.empty { min-height: 0; padding: var(--s-3); }
+.preview video { width: 100%; border-radius: var(--r-control); background: #000; }
+
+/* ───────── explorer (§7) ───────── */
+.explorer { display: grid; grid-template-columns: 320px minmax(0, 1fr); border: var(--rule); border-radius: var(--r-panel); background: var(--paper-raised); min-height: 70vh; }
+.explorer-tree { border-right: var(--rule); padding: var(--s-4) var(--s-3); overflow-y: auto; max-height: 80vh; position: sticky; top: 0; }
+.tree-root { margin: 0 0 var(--s-2); font-size: var(--text-sm); color: var(--ink-100); font-weight: 500; }
+.explorer-pane { padding: var(--s-5); min-width: 0; }
+.explorer-pane h2 { font: 500 var(--text-xl)/1.25 var(--mono); color: var(--ink-100); margin: var(--s-3) 0 var(--s-2); }
+.tree { list-style: none; margin: 0; padding: 0; font-size: var(--text-md); }
+.tree details > summary { list-style: none; display: flex; gap: var(--s-2); align-items: baseline; cursor: pointer; padding: 2px var(--s-1); border-radius: 4px; color: var(--ink-80); }
+.tree details > summary::-webkit-details-marker { display: none; }
+.tree details > summary::before { content: "▸"; color: var(--ink-40); width: 1ch; }
+.tree details[open] > summary::before { content: "▾"; }
+.tree summary:hover, .tree .leaf:hover { background: var(--ink-08); color: var(--ink-100); }
+.tree summary .count { margin-left: auto; color: var(--ink-40); font-size: var(--text-sm); }
+.tree ul { list-style: none; margin: 0 0 0 calc(var(--s-1) + 0.5ch); padding: 0 0 var(--s-2) calc(1ch + var(--s-2)); border-left: var(--rule-dashed); }
+.tree .leaf { display: flex; align-items: baseline; gap: var(--s-1); width: 100%; min-height: 28px; text-align: left; padding: 2px var(--s-2); border-radius: 4px; color: var(--ink-60); font-size: var(--text-sm); white-space: nowrap; }
+.tree .leaf .name { overflow: hidden; text-overflow: ellipsis; }
+.tree .leaf .src { margin-left: auto; padding-left: var(--s-2); font-size: var(--text-xs); color: var(--ink-40); }
+.tree .leaf[aria-current="true"] { background: var(--ink-08); color: var(--ink-100); }
+.tree .leaf[aria-current="true"] .name { font-weight: 500; }
 
 /* states */
 .state { padding: var(--s-6) var(--s-4); display: grid; justify-items: center; gap: var(--s-3); text-align: center; color: var(--ink-60); }
@@ -257,9 +265,8 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--i
 
 /* ───────── breakpoints (§6) ───────── */
 @media (max-width: 960px) {
-  .shell { grid-template-columns: 1fr; gap: 0; }
-  .sidebar { position: static; height: auto; border-right: 0; border-bottom: var(--rule-dashed); padding: var(--s-4) 0; }
-  .sidebar .tree-art { display: none; }
+  .explorer { grid-template-columns: 1fr; }
+  .explorer-tree { position: static; max-height: 40vh; border-right: 0; border-bottom: var(--rule); }
   .board { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px) {

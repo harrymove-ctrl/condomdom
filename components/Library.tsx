@@ -7,10 +7,12 @@ import { DataTable, PAGE_SIZE, sortItems, TABLE_COLUMNS, type Sort } from "./Dat
 import { DetailDrawer, EditorDrawer, type Saved } from "./Drawers";
 import { ColumnsMenu, FilterBar } from "./FilterBar";
 import { Preloader } from "./Preloader";
-import { Sidebar } from "./Sidebar";
+import { Explorer } from "./Explorer";
 import { WorkflowBoard } from "./WorkflowBoard";
 
 const THEMES = ["system", "light", "dark"] as const;
+const VIEWS = ["library", "explorer", "workflow"] as const;
+type View = (typeof VIEWS)[number];
 type Theme = (typeof THEMES)[number];
 const SEARCH_MS = 650; // the boot log runs this long while a search settles (DESIGN.md §7)
 
@@ -22,7 +24,8 @@ const store = {
 
 export function Library({ initialItems, stages }: { initialItems: Item[]; stages: Stage[] }) {
   const [items, setItems] = useState(initialItems);
-  const [view, setView] = useState<"library" | "workflow">("library");
+  const [view, setView] = useState<View>("library");
+  const [explored, setExplored] = useState<string | null>(null);
   const [q, setQ] = useState("");
   const [appliedQ, setAppliedQ] = useState("");
   const [searching, setSearching] = useState(false);
@@ -40,7 +43,8 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
   useEffect(() => {
     const t = document.documentElement.dataset.theme;
     setTheme(t === "light" || t === "dark" ? t : "system");
-    setView(store.get("view", "library"));
+    const v = store.get<string>("view", "library");
+    if ((VIEWS as readonly string[]).includes(v)) setView(v as View);
     setFilters(store.get("filters", []));
     const cols = store.get<string[] | null>("columns", null);
     if (cols) setVisible(new Set(cols));
@@ -62,13 +66,9 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
   const pageRows = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
   useEffect(() => { if (page * PAGE_SIZE >= filtered.length && page > 0) setPage(0); }, [filtered.length, page]);
 
+  // New items default to the kind you're filtered to, if it's just one.
   const kindFilter = filters.find((f) => f.column === "kind" && f.operator === "is any of" && f.values.length === 1);
   const activeKind = (kindFilter?.values[0] as Kind | undefined) ?? null;
-  const setKind = (k: Kind | null) => {
-    const rest = filters.filter((f) => f.column !== "kind");
-    setFilters(k ? [...rest, { column: "kind", operator: "is any of", values: [k] }] : rest);
-    setView("library"); setPage(0);
-  };
 
   const clearAll = useCallback(() => { setQ(""); setAppliedQ(""); setFilters([]); setPage(0); }, []);
   const cycleTheme = useCallback(() => {
@@ -108,7 +108,8 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
       else if (e.key === "r") randomPick();
       else if (e.key === "n") openAdd();
       else if (e.key === "t") cycleTheme();
-      else if (e.key === "w") setView((v) => (v === "library" ? "workflow" : "library"));
+      else if (e.key === "w") setView((v) => VIEWS[(VIEWS.indexOf(v) + 1) % VIEWS.length]);
+      else if (e.key === "e") setView("explorer");
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -149,7 +150,6 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
     <>
       <Preloader />
       <div className="shell">
-        <Sidebar items={items} activeKind={activeKind} onKind={setKind} onOpen={setDetailId} />
         <main>
           <header className="hero">
             <h1 className="sr-only">condomdom</h1>
@@ -169,6 +169,7 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
             </dl>
             <nav className="paren-nav" aria-label="views">
               <button aria-label="library" aria-current={view === "library"} onClick={() => setView("library")}>(<span>library</span>)</button>
+              <button aria-label="explorer" aria-current={view === "explorer"} onClick={() => setView("explorer")}>(<span>explorer</span>)</button>
               <button aria-label="workflow" aria-current={view === "workflow"} onClick={() => setView("workflow")}>(<span>workflow</span>)</button>
               <button aria-label="random item" onClick={randomPick}>(<span>random</span>)</button>
               <button aria-label="add an item" onClick={openAdd}>(<span>add</span>)</button>
@@ -187,14 +188,19 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
             ) : null}
           />
 
-          {view === "library"
-            ? <section aria-live="polite" aria-busy={searching}>{results}</section>
-            : <WorkflowBoard items={applyFilters(items, filters, appliedQ)} stages={stages} onOpen={setDetailId} />}
+          {view === "library" && <section aria-live="polite" aria-busy={searching}>{results}</section>}
+          {view === "explorer" && (
+            <Explorer
+              items={applyFilters(items, filters, appliedQ)} stages={stages} selected={explored} onSelect={setExplored}
+              onEdit={(it) => setEditor({ open: true, item: it })}
+            />
+          )}
+          {view === "workflow" && <WorkflowBoard items={applyFilters(items, filters, appliedQ)} stages={stages} onOpen={setDetailId} />}
 
           <footer className="foot">
             <span>condomdom · on the dev drive</span>
             <button aria-label={`theme: ${theme}`} onClick={cycleTheme}>(theme: <span>{theme}</span>)</button>
-            <span><kbd>/</kbd> search · <kbd>r</kbd> random · <kbd>n</kbd> add · <kbd>w</kbd> view · <kbd>t</kbd> theme</span>
+            <span><kbd>/</kbd> search · <kbd>r</kbd> random · <kbd>n</kbd> add · <kbd>e</kbd> explorer · <kbd>w</kbd> next view · <kbd>t</kbd> theme</span>
           </footer>
         </main>
       </div>
