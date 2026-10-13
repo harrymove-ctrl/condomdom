@@ -18,6 +18,10 @@ export interface Item {
   /** A category inside its kind, e.g. "animated-react" or "svelte": a folder in the explorer. */
   group?: string;
   pricing?: Pricing;
+  /** More pages on the same site: specific components, docs, an old address. */
+  also?: { label: string; url: string }[];
+  /** Set when the link couldn't be verified automatically, with why (blocked, server error). */
+  check?: string;
   url?: string;
   path?: string;
   file?: string;

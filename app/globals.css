@@ -186,6 +186,10 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 .data tbody tr:last-child td { border-bottom: 0; }
 .data .c-title { min-width: 30ch; }
 .data .c-title .t { color: var(--ink-100); font-weight: 500; }
+.data .c-title .more { color: var(--ink-40); font-weight: 400; font-size: var(--text-xs); }
+.data .c-title .warn { color: var(--ink-40); font-weight: 400; }
+.also { margin: 0; font-size: var(--text-sm); color: var(--ink-60); }
+.also a { color: var(--ink-100); text-underline-offset: 3px; }
 .data .c-title .s { color: var(--ink-60); display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
 .data .c-thumb { width: 1%; padding-right: 0; }
 .data .c-added, .data .c-status, .data .c-kind, .data .c-group, .data .c-stage { white-space: nowrap; }

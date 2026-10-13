@@ -79,7 +79,7 @@ export function DataTable({ rows, total, visible, sort, onSort, page, onPage, on
                 {visible.has("thumb") && <td className="c-thumb"><Preview item={it} /></td>}
                 {visible.has("title") && (
                   <td className="c-title">
-                    <div className="t">{it.title}</div>
+                    <div className="t">{it.title}{it.also?.length ? <span className="more"> +{it.also.length}</span> : null}{it.check ? <span className="warn" title={`couldn't check: ${it.check}`}> ⚠</span> : null}</div>
                     {it.summary && <div className="s">{it.summary}</div>}
                   </td>
                 )}

@@ -141,7 +141,8 @@
       "pricing": "unknown",
       "url": "https://uiverse.io/Yaya12085/quick-husky-74",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "check": "blocks automated checks"
     },
     {
       "id": "radiumcoders-ui",
@@ -166,7 +167,8 @@
       "pricing": "unknown",
       "url": "https://viraui.dev/",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "check": "answered 500 (server error) on 2026-10-13"
     },
     {
       "id": "fancy-components",
@@ -233,19 +235,6 @@
       "added": "2026-10-13"
     },
     {
-      "id": "fluid-functionalism-2",
-      "title": "Fluid Functionalism",
-      "kind": "component",
-      "group": "component libraries",
-      "stage": "build",
-      "status": "to-try",
-      "pricing": "unknown",
-      "url": "https://www.fluidfunctionalism.com/docs/tabs",
-      "summary": "Segmented control with sliding indicator and fluid hover.",
-      "tags": [],
-      "added": "2026-10-13"
-    },
-    {
       "id": "beui",
       "title": "beUI",
       "kind": "component",
@@ -260,19 +249,6 @@
       "added": "2026-10-13"
     },
     {
-      "id": "vengenceui-pop-button",
-      "title": "vengenceui \u00b7 Pop Button",
-      "kind": "component",
-      "group": "motion",
-      "stage": "build",
-      "status": "to-try",
-      "pricing": "unknown",
-      "url": "https://www.vengenceui.com/components/pop-button",
-      "summary": "Interactive 3D pushable pop button.",
-      "tags": [],
-      "added": "2026-10-13"
-    },
-    {
       "id": "vengeance-ui",
       "title": "Vengeance UI",
       "kind": "component",
@@ -280,10 +256,20 @@
       "stage": "build",
       "status": "to-try",
       "pricing": "unknown",
-      "url": "https://vengeanceui.com/components/typing-keyboard",
-      "summary": "3D isometric keyboard with auto-typing screen.",
+      "url": "https://www.vengeanceui.com/",
+      "summary": "Animated React components.",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "also": [
+        {
+          "label": "typing keyboard",
+          "url": "https://www.vengeanceui.com/components/typing-keyboard"
+        },
+        {
+          "label": "pop button",
+          "url": "https://www.vengeanceui.com/components/pop-button"
+        }
+      ]
     },
     {
       "id": "watermelon-ui",
@@ -308,19 +294,6 @@
       "pricing": "free",
       "url": "https://chanhdai.com/components/theme-toggle-effect",
       "summary": "Animated transitions when switching between light and dark themes.",
-      "tags": [],
-      "added": "2026-10-13"
-    },
-    {
-      "id": "rare-ui-2",
-      "title": "Rare UI",
-      "kind": "component",
-      "group": "motion",
-      "stage": "build",
-      "status": "to-try",
-      "pricing": "free",
-      "url": "https://www.rareui.com/components/foldercomponent",
-      "summary": "An animated folder whose cards fan out on hover and lift open on click, with a 3D-tilted flap.",
       "tags": [],
       "added": "2026-10-13"
     },
@@ -377,29 +350,17 @@
     },
     {
       "id": "reactvibe-com-docs-text-motion-linear-reveal",
-      "title": "reactvibe.com/docs/text-motion/linear-reveal",
+      "title": "React Vibe",
       "kind": "component",
       "group": "text-motion",
       "stage": "build",
       "status": "to-try",
       "pricing": "unknown",
-      "url": "https://reactvibe.com/docs/text-motion/linear-reveal",
-      "note": "react vibe",
+      "url": "https://reactvibe.com/docs",
+      "note": "react vibe \u00b7 the linear-reveal page is gone; see text motion in the docs",
       "tags": [],
-      "added": "2026-10-13"
-    },
-    {
-      "id": "unlumen-ui-2",
-      "title": "unlumen UI",
-      "kind": "component",
-      "group": "text-motion",
-      "stage": "build",
-      "status": "to-try",
-      "pricing": "freemium",
-      "url": "https://ui.unlumen.com/components/dia-text-reveal",
-      "summary": "Animated text reveal with a colorful gradient sweep effect, inspired by the Dia app.",
-      "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "summary": "Animated, motion-first UI components for React."
     },
     {
       "id": "textmotion-slot-text",
@@ -424,7 +385,8 @@
       "pricing": "unknown",
       "url": "https://www.chatcn.me/docs/misc/video-carousel",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "check": "refused the link checker"
     },
     {
       "id": "animated-react-widgets-copy-and-paste-ui-elements",
@@ -453,19 +415,6 @@
       "added": "2026-10-13"
     },
     {
-      "id": "beautiful-ui-five-beautiful-ui",
-      "title": "beautiful-ui-five \u00b7 Beautiful UI",
-      "kind": "component",
-      "group": "ai-ui",
-      "stage": "build",
-      "status": "to-try",
-      "pricing": "freemium",
-      "url": "https://beautiful-ui-five.vercel.app/",
-      "summary": "A small library of extremely crafted, copy-paste components for chat agents, thinking states, human-in-the-loop approvals, and everything agents need to talk\u2026",
-      "tags": [],
-      "added": "2026-10-13"
-    },
-    {
       "id": "svelte-ai-elements",
       "title": "Svelte AI Elements",
       "kind": "component",
@@ -489,19 +438,6 @@
       "url": "https://sv-agentation.com/",
       "summary": "Minimal source-inspection tooling for Svelte apps, inspired by Agentation and designed for dev-only workflows.",
       "note": "Svelte Agentation: turns UI annotations into structured context that AI coding agents can understand",
-      "tags": [],
-      "added": "2026-10-13"
-    },
-    {
-      "id": "beautiful-ui-2",
-      "title": "Beautiful UI",
-      "kind": "component",
-      "group": "ai-ui",
-      "stage": "build",
-      "status": "to-try",
-      "pricing": "unknown",
-      "url": "https://www.beautifului.dev/harness",
-      "summary": "An interactive chat window built entirely from Beautiful UI primitives.",
       "tags": [],
       "added": "2026-10-13"
     },
@@ -617,22 +553,9 @@
       "stage": "build",
       "status": "to-try",
       "pricing": "free",
-      "url": "https://mdx-graphs.kshv.me/",
+      "url": "https://www.mdxcn.dev/",
       "summary": "markdown-friendly react components for mdx.",
-      "note": "markdown charts and tables in a dashed frame",
-      "tags": [],
-      "added": "2026-10-13"
-    },
-    {
-      "id": "componentry-2",
-      "title": "Componentry",
-      "kind": "component",
-      "group": "pixel & ascii",
-      "stage": "design",
-      "status": "to-try",
-      "pricing": "free",
-      "url": "https://componentry.dev/docs/components/dither-gradient",
-      "summary": "Gradient background with dithering noise.",
+      "note": "markdown charts and tables in a dashed frame \u00b7 was mdx-graphs.kshv.me",
       "tags": [],
       "added": "2026-10-13"
     },
@@ -659,19 +582,6 @@
       "pricing": "unknown",
       "url": "https://www.asciistudio.space/showcase",
       "summary": "Browse a community showcase of ASCII animations built with ascii studio \u2014 explore real-time, character-based art and find inspiration for your own.",
-      "tags": [],
-      "added": "2026-10-13"
-    },
-    {
-      "id": "retro-ui-components-for-react",
-      "title": "Retro UI components for React",
-      "kind": "component",
-      "group": "pixel & ascii",
-      "stage": "design",
-      "status": "to-try",
-      "pricing": "freemium",
-      "url": "https://retroui.dev/",
-      "summary": "NeoBrutalism is a retro UI component library for React and Next.js \u2014 components, blocks, templates and themes (formerly RetroUI).",
       "tags": [],
       "added": "2026-10-13"
     },
@@ -777,7 +687,13 @@
       "url": "https://neobrutalism.com/",
       "summary": "NeoBrutalism is a retro UI component library for React and Next.js \u2014 components, blocks, templates and themes (formerly RetroUI).",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "also": [
+        {
+          "label": "retroui.dev (now redirects here)",
+          "url": "https://retroui.dev/"
+        }
+      ]
     },
     {
       "id": "syabro-neat-annotations",
@@ -794,21 +710,8 @@
       "added": "2026-10-13"
     },
     {
-      "id": "drawably-site-pages-dev",
-      "title": "drawably-site.pages.dev",
-      "kind": "component",
-      "group": "hand-drawn",
-      "stage": "design",
-      "status": "to-try",
-      "pricing": "unknown",
-      "url": "https://drawably-site.pages.dev/",
-      "note": "drawably",
-      "tags": [],
-      "added": "2026-10-13"
-    },
-    {
       "id": "danilaa1-drawably",
-      "title": "Danilaa1/drawably",
+      "title": "drawably",
       "kind": "component",
       "group": "hand-drawn",
       "stage": "design",
@@ -817,7 +720,8 @@
       "url": "https://github.com/Danilaa1/drawably",
       "summary": "Hand-drawn UI controls.",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "note": "drawably-site.pages.dev no longer resolves"
     },
     {
       "id": "handdrawn-grug-hand-font-downloads",
@@ -841,7 +745,7 @@
       "stage": "design",
       "status": "to-try",
       "pricing": "freemium",
-      "url": "https://oreoui.com/doodle-icons",
+      "url": "https://doodle.oreoui.com/",
       "summary": "A growing set of hand-drawn doodle icons with stroke-drawn entrances and a boiling wiggle filter.",
       "note": "doodle icons",
       "tags": [],
@@ -1133,7 +1037,8 @@
       "pricing": "unknown",
       "url": "https://www.term-v0.app/",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "check": "refused the link checker"
     },
     {
       "id": "trees-from-pierre",
@@ -1460,7 +1365,7 @@
       "stage": "ship",
       "status": "to-try",
       "pricing": "freemium",
-      "url": "https://app.butter.video/",
+      "url": "https://www.butter.video/",
       "summary": "The first video editor and design platform built with creative code for creative teams.",
       "tags": [],
       "added": "2026-10-13"
@@ -1527,7 +1432,13 @@
       "url": "https://tokokino.com/",
       "summary": "Create polished product screenshots and animated demos with device frames, backgrounds, annotations, timeline editing, and fast image or GIF/WebM exports.",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "also": [
+        {
+          "label": "app",
+          "url": "https://tokokino.com/app"
+        }
+      ]
     },
     {
       "id": "render-labs-by-evlog",
@@ -1617,7 +1528,8 @@
       "pricing": "unknown",
       "url": "https://dump.cam/",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "check": "refused the link checker"
     },
     {
       "id": "codekarma",
@@ -2000,20 +1912,13 @@
       "pricing": "unknown",
       "url": "https://demo.open-slide.dev/",
       "tags": [],
-      "added": "2026-10-13"
-    },
-    {
-      "id": "tokokino-2",
-      "title": "Tokokino",
-      "kind": "tool",
-      "group": "apps",
-      "stage": "learn",
-      "status": "to-try",
-      "pricing": "unknown",
-      "url": "https://tokokino.com/app",
-      "summary": "Create polished product screenshots and animated demos with device frames, backgrounds, annotations, timeline editing, and fast image or GIF/WebM exports.",
-      "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "also": [
+        {
+          "label": "demo",
+          "url": "https://open-slide.dev/"
+        }
+      ]
     },
     {
       "id": "cursa",
@@ -2055,16 +1960,17 @@
     },
     {
       "id": "usenotate-mean",
-      "title": "usenotate \u00b7 Mean",
+      "title": "Mean",
       "kind": "tool",
       "group": "apps",
       "stage": "learn",
       "status": "to-try",
       "pricing": "unknown",
-      "url": "https://usenotate.app/",
+      "url": "https://mean.app/",
       "summary": "A macOS menu bar app for visual handoff.",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "note": "usenotate.app now redirects to mean.app"
     },
     {
       "id": "squig",
@@ -2108,44 +2014,27 @@
       "added": "2026-10-13"
     },
     {
-      "id": "shoogle-dev",
-      "title": "shoogle.dev",
-      "kind": "tool",
-      "group": "directories",
-      "stage": "inspire",
-      "status": "to-try",
-      "pricing": "free",
-      "url": "https://shoogle.dev/directory",
-      "summary": "The open source registry index is a list of all community registries that are pulled from the shadcn official docs.",
-      "note": "galaxy ui ux",
-      "tags": [],
-      "added": "2026-10-13"
-    },
-    {
       "id": "libraries-dev",
-      "title": "Libraries.dev",
+      "title": "libraries.dev",
       "kind": "tool",
       "group": "directories",
       "stage": "inspire",
       "status": "to-try",
       "pricing": "unknown",
-      "url": "https://libraries.dev/accessibility",
+      "url": "https://libraries.dev/",
       "summary": "How the Libraries.dev effect libraries handle reduced motion, semantics, keyboard use and performance.",
       "tags": [],
-      "added": "2026-10-13"
-    },
-    {
-      "id": "libraries-dev-2",
-      "title": "Libraries.dev",
-      "kind": "tool",
-      "group": "directories",
-      "stage": "inspire",
-      "status": "to-try",
-      "pricing": "unknown",
-      "url": "https://libraries.dev/bots",
-      "summary": "Animated bot avatars for AI agents: eighteen plush, furry 3D shapes with living faces that turn, hop and flip, in three states: idle, working and sleeping.",
-      "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "also": [
+        {
+          "label": "bots",
+          "url": "https://libraries.dev/bots"
+        },
+        {
+          "label": "accessibility",
+          "url": "https://libraries.dev/accessibility"
+        }
+      ]
     },
     {
       "id": "superlog",
@@ -2161,18 +2050,6 @@
       "added": "2026-10-13"
     },
     {
-      "id": "open-slide-2",
-      "title": "open-slide",
-      "kind": "inspiration",
-      "group": "ui references",
-      "stage": "inspire",
-      "status": "to-try",
-      "url": "https://open-slide.dev/",
-      "summary": "A React-first slide framework authored by AI agents.",
-      "tags": [],
-      "added": "2026-10-13"
-    },
-    {
       "id": "coding-canvas-demo-vercel-app",
       "title": "coding-canvas-demo.vercel.app",
       "kind": "inspiration",
@@ -2181,7 +2058,8 @@
       "status": "to-try",
       "url": "https://coding-canvas-demo.vercel.app/",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "check": "asks for payment (402) to automated checks"
     },
     {
       "id": "post-by-aria-086",
@@ -2440,7 +2318,8 @@
       "status": "to-try",
       "url": "https://swamii.me/",
       "tags": [],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "check": "asks for payment (402) to automated checks"
     },
     {
       "id": "yshubham-hire-me",
@@ -2573,7 +2452,7 @@
       "group": "svelte",
       "stage": "build",
       "status": "to-try",
-      "url": "https://sv-dai.vercel.app/",
+      "url": "https://sv-chan.vercel.app/",
       "summary": "Svelte 5 / SvelteKit components and blocks with polished animations.",
       "tags": [
         "svelte",
@@ -2581,7 +2460,8 @@
         "blocks"
       ],
       "added": "2026-10-13",
-      "pricing": "free"
+      "pricing": "free",
+      "note": "sv-dai.vercel.app now redirects here"
     },
     {
       "id": "sv-table",
@@ -2711,7 +2591,7 @@
       "group": "text-motion",
       "stage": "build",
       "status": "to-try",
-      "url": "https://www.rewampui.com/components/kinetic-reel-text",
+      "url": "https://rewampui.com/components/kinetic-reel-text",
       "summary": "Kinetic reel text animation component.",
       "tags": [
         "react",
@@ -2764,12 +2644,18 @@
       "url": "https://componentry.dev/",
       "summary": "Animated React components with styling and motion already handled.",
       "tags": [
+        "motion",
         "react",
-        "tailwind",
-        "motion"
+        "tailwind"
       ],
       "added": "2026-10-13",
-      "pricing": "unknown"
+      "pricing": "unknown",
+      "also": [
+        {
+          "label": "dither gradient",
+          "url": "https://componentry.dev/docs/components/dither-gradient"
+        }
+      ]
     },
     {
       "id": "rare-ui",
@@ -2781,12 +2667,18 @@
       "url": "https://www.rareui.com/",
       "summary": "Free, open-source registry of rare animated React components.",
       "tags": [
-        "shadcn",
+        "motion",
         "react",
-        "motion"
+        "shadcn"
       ],
       "added": "2026-10-13",
-      "pricing": "free"
+      "pricing": "free",
+      "also": [
+        {
+          "label": "folder component",
+          "url": "https://www.rareui.com/components/foldercomponent"
+        }
+      ]
     },
     {
       "id": "unlumen-ui",
@@ -2798,12 +2690,18 @@
       "url": "https://ui.unlumen.com/",
       "summary": "Registry of React components built with TypeScript, Tailwind and Motion.",
       "tags": [
-        "shadcn",
+        "motion",
         "react",
-        "motion"
+        "shadcn"
       ],
       "added": "2026-10-13",
-      "pricing": "unknown"
+      "pricing": "unknown",
+      "also": [
+        {
+          "label": "dia text reveal",
+          "url": "https://ui.unlumen.com/components/dia-text-reveal"
+        }
+      ]
     },
     {
       "id": "skiper-ui",
@@ -2850,13 +2748,23 @@
       "summary": "Copy-paste components for chat agents: thinking states, approvals, human-in-the-loop.",
       "note": "Reference for agent UIs (Prydea, MemWal console).",
       "tags": [
-        "ai-ui",
         "agents",
+        "ai-ui",
         "copy-paste"
       ],
       "added": "2026-10-13",
       "group": "ai-ui",
-      "pricing": "freemium"
+      "pricing": "freemium",
+      "also": [
+        {
+          "label": "harness",
+          "url": "https://www.beautifului.dev/harness"
+        },
+        {
+          "label": "beautiful-ui-five (old address, now redirects here)",
+          "url": "https://beautiful-ui-five.vercel.app/"
+        }
+      ]
     },
     {
       "id": "aicss",
@@ -3026,7 +2934,13 @@
       ],
       "added": "2026-10-13",
       "group": "animated-react",
-      "pricing": "freemium"
+      "pricing": "freemium",
+      "also": [
+        {
+          "label": "tabs",
+          "url": "https://www.fluidfunctionalism.com/docs/tabs"
+        }
+      ]
     },
     {
       "id": "bencho",
@@ -3052,13 +2966,19 @@
       "status": "using",
       "url": "https://shoogle.dev/",
       "summary": "Search shadcn blocks, components and templates across registries.",
-      "note": "First stop before building a shadcn component myself.",
+      "note": "First stop before building a shadcn component myself. \u00b7 galaxy ui ux",
       "tags": [
-        "shadcn",
-        "search"
+        "search",
+        "shadcn"
       ],
       "added": "2026-10-13",
-      "pricing": "unknown"
+      "pricing": "unknown",
+      "also": [
+        {
+          "label": "directory",
+          "url": "https://shoogle.dev/directory"
+        }
+      ]
     },
     {
       "id": "cuelume",
@@ -3342,6 +3262,22 @@
       "added": "2026-10-13",
       "group": "skill packs",
       "pricing": "free"
+    },
+    {
+      "id": "desengs",
+      "title": "DesEngs",
+      "kind": "inspiration",
+      "group": "ui references",
+      "stage": "inspire",
+      "status": "core",
+      "url": "https://desengs.com/",
+      "summary": "The ultimate resource for design engineers, curated by design engineers.",
+      "note": "The site condomdom is modelled on.",
+      "tags": [
+        "directory",
+        "design-engineering"
+      ],
+      "added": "2026-10-13"
     }
   ]
 }

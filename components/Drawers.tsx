@@ -64,6 +64,10 @@ export function ItemDetail({ item, stage, onEdit, onClose, mode, onMode }: {
       {item.tags.length > 0 && <div className="tags">{item.tags.map((t) => <span key={t}>#{t}</span>)}</div>}
       <div className="links">
         {item.url && <a className="btn primary" href={item.url} target="_blank" rel="noopener">open ↗</a>}
+        {item.also?.length ? (
+          <p className="also">also: {item.also.map((a, i) => <span key={a.url}>{i ? " · " : ""}<a href={a.url} target="_blank" rel="noopener">{a.label} ↗</a></span>)}</p>
+        ) : null}
+        {item.check && <p className="hint">⚠ couldn&apos;t check this link: {item.check}. it may still open fine in your browser.</p>}
         {item.path && <span className="hint">folder: <code>{item.path}</code></span>}
         {item.file && <span className="hint">file: <code>{item.file}</code></span>}
       </div>

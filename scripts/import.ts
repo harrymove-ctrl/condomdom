@@ -9,7 +9,7 @@ import { readFile, rename, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 type Pricing = "free" | "freemium" | "paid" | "unknown";
-type Item = { id: string; title: string; kind: string; group?: string; stage: string; status: string; pricing?: Pricing; url?: string; summary?: string; note?: string; tags: string[]; added: string };
+type Item = { id: string; title: string; kind: string; group?: string; stage: string; status: string; pricing?: Pricing; url?: string; also?: { label: string; url: string }[]; summary?: string; note?: string; tags: string[]; added: string };
 
 const LIBRARY = join(process.cwd(), "content", "library.json");
 const KINDS = ["component", "video", "skill", "read", "tool", "inspiration"];
@@ -80,7 +80,7 @@ const cleanTitle = (t: string, host: string) => {
   return (parts.find((p) => p.toLowerCase().replace(/[^a-z0-9]/g, "").includes(name.replace(/[^a-z0-9]/g, ""))) ?? parts[0] ?? t).slice(0, 80);
 };
 
-async function look(url: string): Promise<{ title?: string; summary?: string; pricing: Pricing; error?: string }> {
+async function look(url: string): Promise<{ title?: string; summary?: string; pricing: Pricing; final?: string; error?: string }> {
   const u = new URL(url);
   if (/(^|\.)(x|twitter)\.com$/.test(u.hostname)) {
     return { title: `post by @${u.pathname.split("/")[1]}`, pricing: "free" }; // x.com blocks fetching; the note is the summary
@@ -94,6 +94,7 @@ async function look(url: string): Promise<{ title?: string; summary?: string; pr
     const desc = meta(html, "description") || meta(html, "og:description") || meta(html, "twitter:description");
     const short = (s: string) => { const f = s.split(/(?<=[.!?])\s/)[0]; return f.length > 160 ? f.slice(0, 157) + "…" : f; };
     return {
+      final: res.url,
       title: title ? cleanTitle(title, u.hostname) : undefined,
       summary: desc ? short(desc) : undefined,
       pricing: pricingOf(url, `${title} ${desc} ${text}`),
@@ -120,6 +121,15 @@ async function pool<T, R>(xs: T[], n: number, fn: (x: T, i: number) => Promise<R
   let next = 0;
   await Promise.all(Array.from({ length: n }, async () => { while (next < xs.length) { const i = next++; out[i] = await fn(xs[i], i); } }));
   return out;
+}
+
+/** One site, however it's linked: the host, or owner/repo on GitHub and GitLab, or the author on x.com. */
+function siteOf(u: string) {
+  try {
+    const x = new URL(u), host = x.hostname.replace(/^www\./, "").toLowerCase();
+    if (/^(github\.com|gitlab\.com|x\.com|twitter\.com)$/.test(host)) return host + "/" + x.pathname.split("/").filter(Boolean).slice(0, host.startsWith("x") || host.startsWith("tw") ? 3 : 2).join("/").toLowerCase();
+    return host;
+  } catch { return u; }
 }
 
 // ---------- main ----------
@@ -157,7 +167,23 @@ const looked = await pool(fresh, 8, async (e) => {
 });
 console.log("\n");
 
-const added: Item[] = fresh.map((e, k) => {
+// A link to a site the library already has (directly, or after following its redirects) becomes an "also" link
+// on that item instead of a second item.
+const bySite = new Map(lib.items.filter((i) => i.url).map((i) => [siteOf(i.url!), i] as const));
+let merged = 0;
+const keep: number[] = [];
+fresh.forEach((e, k) => {
+  const home = bySite.get(siteOf(looked[k].final ?? e.url)) ?? bySite.get(siteOf(e.url));
+  if (!home) { keep.push(k); return; }
+  const label = new URL(e.url).pathname.split("/").filter(Boolean).pop()?.replace(/[-_]/g, " ") || e.note || "page";
+  home.also ??= [];
+  if (home.url !== e.url && !home.also.some((a) => a.url === e.url)) home.also.push({ label, url: e.url });
+  merged++;
+  console.log(`~ same site as "${home.title}": ${e.url} → also`);
+});
+
+const added: Item[] = keep.map((k) => fresh[k]).map((e, j) => {
+  const k = keep[j];
   const r = looked[k];
   const u = new URL(e.url);
   const fallback = u.hostname.endsWith("github.com") ? u.pathname.split("/").filter(Boolean).slice(0, 2).join("/") : u.hostname.replace(/^www\./, "") + (u.pathname.length > 1 ? u.pathname.replace(/\/$/, "") : "");
@@ -174,12 +200,13 @@ const added: Item[] = fresh.map((e, k) => {
     pricing: PRICED.includes(e.kind) ? r.pricing : undefined, url: e.url, summary: r.summary, note: e.note, tags: [], added: today,
   };
   for (const key of Object.keys(it) as (keyof Item)[]) if (it[key] === undefined) delete it[key];
+  if (it.url) bySite.set(siteOf(it.url), it);
   console.log(`+ ${(it.pricing ?? "—").padEnd(8)} ${`${e.kind}/${e.group}`.padEnd(28)} ${title}${r.error ? `   (${r.error})` : ""}`);
   return it;
 });
 
 const counts = added.reduce<Record<string, number>>((a, i) => ((a[i.pricing ?? "no price"] = (a[i.pricing ?? "no price"] ?? 0) + 1), a), {});
-console.log(`\n${added.length} new · ${Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(" · ")}`);
+console.log(`\n${added.length} new · ${merged} merged into existing items · ${Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(" · ")}`);
 if (!apply) { console.log("dry run: add --apply to write them into content/library.json"); process.exit(0); }
 lib.items = [...added, ...lib.items];
 await save();
