@@ -8,8 +8,7 @@
     "dev": "next dev -H 127.0.0.1 -p 4321",
     "build": "next build",
     "start": "next start -H 127.0.0.1 -p 4321",
-    "typecheck": "tsc --noEmit",
-    "scan": "node scripts/scan.ts"
+    "typecheck": "tsc --noEmit"
   },
   "engines": {
     "node": ">=20.9"

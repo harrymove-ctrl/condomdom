@@ -167,12 +167,12 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
             <div className="tagline" aria-hidden="true">
               <Ascii
                 piece="typewriter" className="ascii"
-                options={{ prefix: "i keep ", phrases: ["components that feel right.", "videos worth rewatching.", "skills my agents load.", "notes on how i build."] }}
+                options={{ prefix: "i keep ", phrases: ["components that feel right.", "skill packs worth installing.", "reads that changed how i build.", "tools i reach for."] }}
               />
             </div>
             <dl className="stats">
               {([["items", items.length], ["components", count("component")], ["videos", count("video")], ["skills", count("skill")], ["core", items.filter((i) => i.status === "core").length]] as const)
-                .map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
+                .filter(([k, v]) => k === "items" || v > 0).map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
             </dl>
             <nav className="paren-nav" aria-label="views">
               <button aria-label="library" aria-current={view === "library"} onClick={() => setView("library")}>(<span>library</span>)</button>

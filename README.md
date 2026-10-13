@@ -36,14 +36,13 @@ Each item points at where the resource lives:
 | field | for | preview |
 |---|---|---|
 | `url` | a website, a repo | the site's logo as ascii |
-| `path` | a folder on this Mac: a skill, a project (`~/.agents/skills/orca-cli`) | its real file tree + SKILL.md description |
+| `path` | a folder on this Mac: a project (`~/Documents/dev/Prydea`) | its real file tree + README description |
 | `file` | a video anywhere in your home folder or on the Dev drive (`~/Downloads/demo.mp4`) | a frame as ascii, plus the player |
 
-Every item also has a **kind** (component, skill, read, tool, inspiration, video) and an optional **group**: a category inside the kind, such as `animated-react`, `svelte`, `glass & effects` or `primitives`. Groups are folders in the explorer, a column in the table and a filter. Set or change one in the editor: pick an existing group or type a new one.
+Every item also has a **kind** (component, skill pages on the web, read, tool, inspiration, video) and an optional **group**: a category inside the kind, such as `animated-react`, `svelte`, `glass & effects` or `primitives`. Groups are folders in the explorer, a column in the table and a filter. Set or change one in the editor: pick an existing group or type a new one.
 
-There are three ways to add items:
+There are two ways to add items:
 
-- **Scan:** `pnpm scan` finds your skills in `~/.agents/skills` and `~/.claude/skills` and lists the new ones. Add `--apply` to save them. `pnpm scan --videos ~/Movies/demos --apply` adds every video in a folder too.
 - **In the page:** press **n** (or click *(add)*).
 - **By hand:** edit `content/library.json`.
 
@@ -70,7 +69,6 @@ app/
   api/video/[id]/                     streams an item's video, with seeking
 components/                           Library, Preloader, Explorer, FilterBar, DataTable, Preview, WorkflowBoard, Drawers
 lib/                                  types, library storage, filter model, previews, local files
-scripts/scan.ts                       pnpm scan: import your skills and videos
 content/library.json                  all items
 content/workflow.json                 stages + playbooks
 content/thumbs/                       cached ascii previews

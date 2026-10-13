@@ -168,9 +168,8 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 .data .c-added, .data .c-status, .data .c-kind, .data .c-group, .data .c-stage { white-space: nowrap; }
 .data .c-group { color: var(--ink-60); }
 .data .c-added { color: var(--ink-40); }
-.data .c-tags { color: var(--ink-40); max-width: 18ch; }
-.data .c-tags span { white-space: nowrap; }
-.data .c-tags span + span::before { content: " "; }
+.data .c-tags { color: var(--ink-40); width: 20ch; max-width: 20ch; line-height: 1.5; }
+.data .c-tags span { display: inline-block; white-space: nowrap; margin-right: 1ch; }
 .table-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-2); padding: var(--s-3) 0; font-size: var(--text-sm); color: var(--ink-40); }
 .table-foot .pager { display: flex; gap: var(--s-2); }
 
