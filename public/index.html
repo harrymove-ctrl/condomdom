@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>condomdom</title>
+  <meta name="description" content="My personal library of UI components, videos and skills, arranged around how I build." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <header class="hero">
+    <a class="mark" href="#" aria-label="condomdom home">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="11" stroke-dasharray="2 3"/><circle cx="16" cy="16" r="4"/></g></svg>
+      <span>condomdom</span>
+    </a>
+    <h1>The <em>personal</em> library<br /><span class="small">for how I</span> <em>build.</em></h1>
+    <p class="lede">Components, videos and skills I trust;<br />— arranged around my workflow.</p>
+
+    <dl class="stats" id="stats"></dl>
+
+    <nav class="paren-nav" aria-label="Views">
+      <button data-view="library" class="active">(<span>Library</span>)</button>
+      <button data-view="workflow">(<span>Workflow</span>)</button>
+      <button id="random-btn">(<span>Random</span>)</button>
+      <button id="add-btn">(<span>Add</span>)</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Filters">
+      <div class="search">
+        <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14 14l4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+        <input id="q" type="search" placeholder="Search titles, notes, tags…" autocomplete="off" />
+        <kbd>/</kbd>
+      </div>
+      <div class="filter-row"><span class="label">Browse:</span><div id="kind-filters" class="pills"></div></div>
+      <div class="filter-row"><span class="label">Stage:</span><div id="stage-filters" class="pills"></div></div>
+      <div class="filter-row"><span class="label">Status:</span><div id="status-filters" class="pills"></div><button id="clear" class="clear">Clear all</button></div>
+    </section>
+
+    <section id="library-view" aria-live="polite">
+      <ol id="list" class="list"></ol>
+      <p id="empty" class="empty" hidden>Nothing matches. <button id="empty-clear">Clear filters</button></p>
+    </section>
+
+    <section id="workflow-view" class="board" hidden></section>
+  </main>
+
+  <footer class="foot">
+    <span>condomdom · lives on the Dev drive</span>
+    <span><kbd>/</kbd> search · <kbd>r</kbd> random · <kbd>n</kbd> add · <kbd>w</kbd> workflow</span>
+  </footer>
+
+  <dialog id="detail" class="drawer"></dialog>
+
+  <dialog id="editor" class="drawer">
+    <form id="editor-form" method="dialog">
+      <h2 id="editor-title">Add to the library</h2>
+      <label>Title<input name="title" required /></label>
+      <div class="row">
+        <label>Kind<select name="kind"></select></label>
+        <label>Stage<select name="stage"></select></label>
+        <label>Status<select name="status"></select></label>
+      </div>
+      <label>Link <small>(website or repo)</small><input name="url" type="url" placeholder="https://" /></label>
+      <label>Local path <small>(skill folder, project)</small><input name="path" placeholder="~/.agents/skills/…" /></label>
+      <label>Video file <small>(inside media/videos)</small><input name="file" placeholder="media/videos/demo.mp4" /></label>
+      <label>What it is<input name="summary" /></label>
+      <label>Why I keep it / how I use it<textarea name="note" rows="3"></textarea></label>
+      <label>Tags <small>(comma separated)</small><input name="tags" placeholder="react, motion" /></label>
+      <p id="editor-error" class="error" hidden></p>
+      <div class="actions">
+        <button type="button" id="delete-btn" class="danger" hidden>Delete</button>
+        <span class="spacer"></span>
+        <button type="button" data-close>Cancel</button>
+        <button type="submit" class="primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

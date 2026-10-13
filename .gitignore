@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+content/*.tmp
+# keep big video files out of git; they live on the Dev drive
+media/videos/*
+!media/videos/.gitkeep
