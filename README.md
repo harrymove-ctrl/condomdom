@@ -45,7 +45,9 @@ There are three ways to add items:
 - **In the page:** press **n** (or click *(add)*).
 - **By hand:** edit `content/library.json`.
 
-Shortcuts: `/` search · `r` random pick · `n` add · `e` explorer · `w` next view · `t` theme (system → light → dark) · `esc` close.
+Opening an item shows it as a panel: **side**, **center** (a card over the blurred page) or **full**. Switch in the panel's header or with `m`.
+
+Shortcuts: `/` search · `r` random pick · `n` add · `e` explorer · `w` next view · `m` panel mode · `t` theme (system → light → dark) · `esc` close.
 
 ## How previews are made
 

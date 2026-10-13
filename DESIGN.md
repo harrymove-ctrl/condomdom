@@ -87,7 +87,7 @@ Page order is always: boot screen (first visit) → hero → toolbar → view �
 | **explorer** | a 320px tree of your collections (folders = kinds, core first, each file says where it lives: `link` · `folder` · `video`), and the chosen item large on the right. ↑/↓ move through the tree | nothing yet |
 | **library** | a data table: preview, title, kind, stage, status, tags, added. Sortable headers, a `(columns)` menu, pages of 15 | searching · empty (filters) · empty (no items) |
 | **workflow** | one column per stage: question, playbook, items (core first) | loading · empty stage (`nothing here yet`) |
-| **detail** | right-hand drawer: kicker, title, summary, video, note, tags, links | video missing hint · read-only hint |
+| **detail** (and **editor**) | an item panel in one of three modes, chosen with `side · center · full` in its header or `m`, remembered per browser: **side** a 560px right-hand drawer · **center** a 760px card in the middle · **full** the whole page with content in an 880px reading column. Every mode sits over the page **blurred** (8px, paper at 45%). Contents: kicker, title, summary, preview, note, tags, links | broken preview says why |
 | **editor** | right-hand drawer form for add/edit/delete | validation error inline · saving · delete confirm |
 
 - **Searching**: while a search settles (650ms), the table area plays `boot-log` with `searching for “…”…`. Clearing the search is instant.
@@ -120,11 +120,11 @@ Page order is always: boot screen (first visit) → hero → toolbar → view �
 
 ## 10. Interaction and accessibility
 
-- Every action works by keyboard: `/` search, `r` random, `n` add, `w` switch view, `t` theme, `esc` close.
+- Every action works by keyboard: `/` search, `r` random, `n` add, `e` explorer, `w` next view, `m` panel mode, `t` theme, `esc` close.
 - Focus is always visible: a 2px accent ring offset by 2px.
 - Hit targets are at least 32px tall on touch.
 - Ascii art is decorative (`aria-hidden="true"`); its meaning is repeated in real text next to it.
-- Drawers use `<dialog>`: focus moves in, `esc` closes, focus returns to the row that opened it.
+- Item panels use `<dialog>` in every mode: focus moves in, `esc` closes, focus returns to the row that opened it. With `prefers-reduced-transparency`, the backdrop is a flat 85% paper instead of a blur.
 
 ## Checklist for any change
 

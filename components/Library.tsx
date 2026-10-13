@@ -4,7 +4,7 @@ import { Ascii, Banner } from "ascii.rest/react";
 import { applyFilters, type Filter } from "@/lib/filters";
 import type { Item, Kind, Stage } from "@/lib/types";
 import { DataTable, PAGE_SIZE, sortItems, TABLE_COLUMNS, type Sort } from "./DataTable";
-import { DetailDrawer, EditorDrawer, type Saved } from "./Drawers";
+import { DetailDrawer, EditorDrawer, PANEL_MODES, type PanelMode, type Saved } from "./Drawers";
 import { ColumnsMenu, FilterBar } from "./FilterBar";
 import { Preloader } from "./Preloader";
 import { Explorer } from "./Explorer";
@@ -36,6 +36,7 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
   const [detailId, setDetailId] = useState<string | null>(null);
   const [editor, setEditor] = useState<{ open: boolean; item: Item | null }>({ open: false, item: null });
   const [theme, setTheme] = useState<Theme>("system");
+  const [panelMode, setPanelMode] = useState<PanelMode>("center");
   const [toast, setToast] = useState<string | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
 
@@ -48,10 +49,13 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
     setFilters(store.get("filters", []));
     const cols = store.get<string[] | null>("columns", null);
     if (cols) setVisible(new Set(cols));
+    const pm = store.get<string>("panel", "center");
+    if ((PANEL_MODES as readonly string[]).includes(pm)) setPanelMode(pm as PanelMode);
   }, []);
   useEffect(() => store.set("view", view), [view]);
   useEffect(() => store.set("filters", filters), [filters]);
   useEffect(() => store.set("columns", [...visible]), [visible]);
+  useEffect(() => store.set("panel", panelMode), [panelMode]);
 
   // Typing shows the boot log until the search settles, then the results.
   useEffect(() => {
@@ -101,8 +105,10 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
   // DESIGN.md §10 shortcuts.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.metaKey || e.ctrlKey || e.altKey || document.querySelector("dialog[open]")) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement as HTMLElement | null)?.tagName ?? "")) return;
+      if (e.key === "m") { setPanelMode((m) => PANEL_MODES[(PANEL_MODES.indexOf(m) + 1) % PANEL_MODES.length]); return; }
+      if (document.querySelector("dialog[open]")) return;
       if (!("booted" in document.documentElement.dataset)) return; // the boot screen takes the first key
       if (e.key === "/") { e.preventDefault(); searchRef.current?.focus(); }
       else if (e.key === "r") randomPick();
@@ -200,13 +206,13 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
           <footer className="foot">
             <span>condomdom · on the dev drive</span>
             <button aria-label={`theme: ${theme}`} onClick={cycleTheme}>(theme: <span>{theme}</span>)</button>
-            <span><kbd>/</kbd> search · <kbd>r</kbd> random · <kbd>n</kbd> add · <kbd>e</kbd> explorer · <kbd>w</kbd> next view · <kbd>t</kbd> theme</span>
+            <span><kbd>/</kbd> search · <kbd>r</kbd> random · <kbd>n</kbd> add · <kbd>e</kbd> explorer · <kbd>w</kbd> next view · <kbd>m</kbd> panel · <kbd>t</kbd> theme</span>
           </footer>
         </main>
       </div>
 
-      <DetailDrawer item={detail} stage={stages.find((s) => s.id === detail?.stage)} onClose={() => setDetailId(null)} onEdit={(it) => { setDetailId(null); setEditor({ open: true, item: it }); }} />
-      <EditorDrawer open={editor.open} item={editor.item} stages={stages} defaults={defaults} onClose={() => setEditor({ open: false, item: null })} onSaved={onSaved} />
+      <DetailDrawer mode={panelMode} onMode={setPanelMode} item={detail} stage={stages.find((s) => s.id === detail?.stage)} onClose={() => setDetailId(null)} onEdit={(it) => { setDetailId(null); setEditor({ open: true, item: it }); }} />
+      <EditorDrawer mode={panelMode} onMode={setPanelMode} open={editor.open} item={editor.item} stages={stages} defaults={defaults} onClose={() => setEditor({ open: false, item: null })} onSaved={onSaved} />
       {toast && <div className="toast" role="status">{toast}</div>}
     </>
   );

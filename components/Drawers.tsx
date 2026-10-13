@@ -1,10 +1,25 @@
 "use client";
-// Right-hand drawers on <dialog> (DESIGN.md §7, §10): focus moves in, esc closes, focus returns.
+// Item panels on <dialog> (DESIGN.md §7, §10), in three modes: side (a right-hand drawer), center (a card over the
+// blurred page) and full (the whole page, content in a reading column). Focus moves in, esc closes, focus returns.
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { KINDS, KIND_PLURAL, STATUSES, STATUS_LABEL, STATUS_MARK, type Item, type Stage } from "@/lib/types";
 import { Preview } from "./Preview";
 
-function Drawer({ open, onClose, label, children }: { open: boolean; onClose: () => void; label: string; children: ReactNode }) {
+export const PANEL_MODES = ["side", "center", "full"] as const;
+export type PanelMode = (typeof PANEL_MODES)[number];
+
+/** The side · center · full switch in a panel's header. */
+export function ModeSwitch({ mode, onMode }: { mode: PanelMode; onMode: (m: PanelMode) => void }) {
+  return (
+    <div className="mode-switch" role="group" aria-label="how to show this">
+      {PANEL_MODES.map((m) => (
+        <button key={m} aria-pressed={mode === m} onClick={() => onMode(m)} title={`show as ${m} (m cycles)`}>{m}</button>
+      ))}
+    </div>
+  );
+}
+
+function Drawer({ open, mode, onClose, label, children }: { open: boolean; mode: PanelMode; onClose: () => void; label: string; children: ReactNode }) {
   const ref = useRef<HTMLDialogElement>(null);
   const back = useRef<HTMLElement | null>(null); // what had focus before, to return it on close
   useEffect(() => {
@@ -14,19 +29,27 @@ function Drawer({ open, onClose, label, children }: { open: boolean; onClose: ()
   }, [open]);
   return (
     <dialog
-      ref={ref} className="drawer" aria-label={label}
+      ref={ref} className={`panel panel-${mode}`} aria-label={label}
       onClose={() => { back.current?.focus?.(); onClose(); }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
-      {open && children}
+      {open && <div className="panel-body">{children}</div>}
     </dialog>
   );
 }
 
 /** An item in full: what it is, its preview, why you keep it, where it is. Used by the drawer and the explorer. */
-export function ItemDetail({ item, stage, onEdit, onClose }: { item: Item; stage?: Stage; onEdit: (it: Item) => void; onClose?: () => void }) {
+export function ItemDetail({ item, stage, onEdit, onClose, mode, onMode }: {
+  item: Item; stage?: Stage; onEdit: (it: Item) => void; onClose?: () => void; mode?: PanelMode; onMode?: (m: PanelMode) => void;
+}) {
   return (
     <>
+      {mode && onMode && (
+        <div className="panel-head">
+          <ModeSwitch mode={mode} onMode={onMode} />
+          {onClose && <button className="btn ghost" onClick={onClose} aria-label="close">esc ×</button>}
+        </div>
+      )}
       <div className="kicker">
         <span><span className={`mark ${item.status}`} aria-hidden="true">{STATUS_MARK[item.status]}</span>{STATUS_LABEL[item.status]}</span>
         <span>{KIND_PLURAL[item.kind].replace(/s$/, "")}</span>
@@ -46,24 +69,28 @@ export function ItemDetail({ item, stage, onEdit, onClose }: { item: Item; stage
       <div className="actions">
         <button className="btn" onClick={() => onEdit(item)}>edit</button>
         <span className="spacer" />
-        {onClose && <button className="btn" onClick={onClose}>close</button>}
+        {onClose && !mode && <button className="btn" onClick={onClose}>close</button>}
       </div>
     </>
   );
 }
 
-export function DetailDrawer({ item, stage, onClose, onEdit }: { item: Item | null; stage?: Stage; onClose: () => void; onEdit: (it: Item) => void }) {
+export function DetailDrawer({ item, stage, mode, onMode, onClose, onEdit }: {
+  item: Item | null; stage?: Stage; mode: PanelMode; onMode: (m: PanelMode) => void; onClose: () => void; onEdit: (it: Item) => void;
+}) {
   return (
-    <Drawer open={!!item} onClose={onClose} label={item?.title ?? "item"}>
-      {item && <ItemDetail item={item} stage={stage} onEdit={onEdit} onClose={onClose} />}
+    <Drawer open={!!item} mode={mode} onClose={onClose} label={item?.title ?? "item"}>
+      {item && <ItemDetail item={item} stage={stage} onEdit={onEdit} onClose={onClose} mode={mode} onMode={onMode} />}
     </Drawer>
   );
 }
 
 export type Saved = { item: Item; created: boolean } | { deleted: Item };
 
-export function EditorDrawer({ open, item, stages, defaults, onClose, onSaved }: {
+export function EditorDrawer({ open, item, stages, defaults, mode, onMode, onClose, onSaved }: {
   open: boolean;
+  mode: PanelMode;
+  onMode: (m: PanelMode) => void;
   item: Item | null;
   stages: Stage[];
   defaults: Partial<Item>;
@@ -99,7 +126,8 @@ export function EditorDrawer({ open, item, stages, defaults, onClose, onSaved }:
   }
 
   return (
-    <Drawer open={open} onClose={onClose} label={item ? "edit item" : "add to the library"}>
+    <Drawer open={open} mode={mode} onClose={onClose} label={item ? "edit item" : "add to the library"}>
+      <div className="panel-head"><ModeSwitch mode={mode} onMode={onMode} /><button className="btn ghost" onClick={onClose} aria-label="close">esc ×</button></div>
       <form className="editor" onSubmit={save} key={item?.id ?? "new"}>
         <h2>{item ? "edit item" : "add to the library"}</h2>
         <label>title<input name="title" required autoFocus defaultValue={v.title ?? ""} /></label>
