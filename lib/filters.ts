@@ -2,7 +2,7 @@
 import { KINDS, KIND_PLURAL, STAGES, STATUSES, STATUS_LABEL, type Item } from "./types";
 
 export type ColumnType = "text" | "option" | "multiOption" | "date";
-export type ColumnId = "title" | "kind" | "stage" | "status" | "tags" | "added";
+export type ColumnId = "title" | "kind" | "group" | "stage" | "status" | "tags" | "added";
 
 export const OPERATORS: Record<ColumnType, readonly string[]> = {
   text: ["contains", "does not contain"],
@@ -23,6 +23,7 @@ export interface FilterColumn {
 export const COLUMNS: FilterColumn[] = [
   { id: "title", label: "title", type: "text", get: (it) => `${it.title} ${it.summary ?? ""} ${it.note ?? ""}` },
   { id: "kind", label: "kind", type: "option", options: KINDS.map((k) => ({ value: k, label: KIND_PLURAL[k] })), get: (it) => it.kind },
+  { id: "group", label: "group", type: "option", get: (it) => it.group ?? "no group" },
   { id: "stage", label: "stage", type: "option", options: STAGES.map((s) => ({ value: s, label: s })), get: (it) => it.stage },
   { id: "status", label: "status", type: "option", options: STATUSES.map((s) => ({ value: s, label: STATUS_LABEL[s] })), get: (it) => it.status },
   { id: "tags", label: "tags", type: "multiOption", get: (it) => it.tags },

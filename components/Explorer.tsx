@@ -16,20 +16,35 @@ export function Explorer({ items, stages, selected, onSelect, onEdit }: {
   onSelect: (id: string) => void;
   onEdit: (it: Item) => void;
 }) {
+  // kind/ → group/ → files. Items without a group sit directly in their kind's folder, after the groups.
   const folders = useMemo(() => KINDS
-    .map((k) => ({ kind: k, items: items.filter((i) => i.kind === k).sort((a, b) => STATUS_RANK[a.status] - STATUS_RANK[b.status] || a.title.localeCompare(b.title)) }))
+    .map((k) => {
+      const inKind = items.filter((i) => i.kind === k).sort((a, b) => STATUS_RANK[a.status] - STATUS_RANK[b.status] || a.title.localeCompare(b.title));
+      const names = [...new Set(inKind.map((i) => i.group).filter((g): g is string => !!g))].sort();
+      return {
+        kind: k, items: inKind,
+        groups: names.map((g) => ({ name: g, items: inKind.filter((i) => i.group === g) })),
+        loose: inKind.filter((i) => !i.group),
+      };
+    })
     .filter((f) => f.items.length), [items]);
-  const order = useMemo(() => folders.flatMap((f) => f.items.map((i) => i.id)), [folders]);
+  const order = useMemo(() => folders.flatMap((f) => [...f.groups.flatMap((g) => g.items), ...f.loose].map((i) => i.id)), [folders]);
   // Nothing chosen (or "condomdom/" clicked) shows the whole library as a file tree.
   const current = items.find((i) => i.id === selected) ?? null;
   const fileName = (it: Item) => `${it.id.length > 24 ? it.id.slice(0, 23) + "…" : it.id}${it.file ? ".mp4" : it.path ? "/" : ".md"}`;
   // The animated piece has room for 21 lines: each folder with its first three files (core first).
+  // The animated piece: each kind with its groups as folders (and their sizes), or its first files when it has none.
   const overview = useMemo(() => folders.map((f) => [
     `${KIND_PLURAL[f.kind]}/`,
-    ...f.items.slice(0, 3).map((it) => `  ${fileName(it)}`),
-    ...(f.items.length > 3 ? [`  +${f.items.length - 3} more`] : []),
+    ...(f.groups.length
+      ? f.groups.map((g) => `  ${g.name}/ (${g.items.length})`)
+      : [...f.items.slice(0, 3).map((it) => `  ${fileName(it)}`), ...(f.items.length > 3 ? [`  +${f.items.length - 3} more`] : [])]),
   ].join("\n")).join("\n"), [folders]);
-  const everything = useMemo(() => folders.map((f) => [`${KIND_PLURAL[f.kind]}/`, ...f.items.map((it) => `  ${fileName(it)}`)].join("\n")).join("\n"), [folders]);
+  const everything = useMemo(() => folders.map((f) => [
+    `${KIND_PLURAL[f.kind]}/`,
+    ...f.groups.flatMap((g) => [`  ${g.name}/`, ...g.items.map((it) => `    ${fileName(it)}`)]),
+    ...f.loose.map((it) => `  ${fileName(it)}`),
+  ].join("\n")).join("\n"), [folders]);
   const treeRef = useRef<HTMLElement>(null);
 
   // Keep the chosen file in view as the arrows move it.
@@ -45,6 +60,16 @@ export function Explorer({ items, stages, selected, onSelect, onEdit }: {
     if (next) { onSelect(next); treeRef.current?.querySelector<HTMLElement>(`[data-id="${CSS.escape(next)}"]`)?.focus(); }
   };
 
+  const leaf = (it: Item) => (
+    <li key={it.id}>
+      <button className="leaf" data-id={it.id} aria-current={current?.id === it.id} onClick={() => onSelect(it.id)} title={it.title}>
+        <span className={`mark ${it.status}`} aria-hidden="true">{STATUS_MARK[it.status]}</span>
+        <span className="name">{it.title}</span>
+        <span className="src">{SOURCE_LABEL(it)}</span>
+      </button>
+    </li>
+  );
+
   if (!items.length) return <div className="state"><p>nothing to explore yet. press <kbd>n</kbd> to add something.</p></div>;
 
   return (
@@ -57,18 +82,15 @@ export function Explorer({ items, stages, selected, onSelect, onEdit }: {
               <details open>
                 <summary><span className="folder">{KIND_PLURAL[f.kind]}/</span><span className="count">{f.items.length}</span></summary>
                 <ul>
-                  {f.items.map((it) => (
-                    <li key={it.id}>
-                      <button
-                        className="leaf" data-id={it.id} aria-current={current?.id === it.id}
-                        onClick={() => onSelect(it.id)} title={it.title}
-                      >
-                        <span className={`mark ${it.status}`} aria-hidden="true">{STATUS_MARK[it.status]}</span>
-                        <span className="name">{it.title}</span>
-                        <span className="src">{SOURCE_LABEL(it)}</span>
-                      </button>
+                  {f.groups.map((g) => (
+                    <li key={g.name}>
+                      <details open>
+                        <summary><span className="folder">{g.name}/</span><span className="count">{g.items.length}</span></summary>
+                        <ul>{g.items.map(leaf)}</ul>
+                      </details>
                     </li>
                   ))}
+                  {f.loose.map(leaf)}
                 </ul>
               </details>
             </li>

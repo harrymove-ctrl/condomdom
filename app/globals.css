@@ -165,7 +165,8 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 .data .c-title .t { color: var(--ink-100); font-weight: 500; }
 .data .c-title .s { color: var(--ink-60); display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
 .data .c-thumb { width: 1%; padding-right: 0; }
-.data .c-added, .data .c-status, .data .c-kind, .data .c-stage { white-space: nowrap; }
+.data .c-added, .data .c-status, .data .c-kind, .data .c-group, .data .c-stage { white-space: nowrap; }
+.data .c-group { color: var(--ink-60); }
 .data .c-added { color: var(--ink-40); }
 .data .c-tags { color: var(--ink-40); max-width: 18ch; }
 .data .c-tags span { white-space: nowrap; }
@@ -217,6 +218,7 @@ table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 .tree ul { list-style: none; margin: 0 0 0 calc(var(--s-1) + 0.5ch); padding: 0 0 var(--s-2) calc(1ch + var(--s-2)); border-left: var(--rule-dashed); }
 .tree .leaf { display: flex; align-items: baseline; gap: var(--s-1); width: 100%; min-height: 28px; text-align: left; padding: 2px var(--s-2); border-radius: 4px; color: var(--ink-60); font-size: var(--text-sm); white-space: nowrap; }
 .tree .leaf .name { overflow: hidden; text-overflow: ellipsis; }
+.tree details details > summary { font-size: var(--text-sm); color: var(--ink-60); }
 .tree .leaf .src { margin-left: auto; padding-left: var(--s-2); font-size: var(--text-xs); color: var(--ink-40); }
 .tree .leaf[aria-current="true"] { background: var(--ink-08); color: var(--ink-100); }
 .tree .leaf[aria-current="true"] .name { font-weight: 500; }
@@ -294,7 +296,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--i
 @media (max-width: 700px) {
   .toolbar-row > .menu-anchor .menu { left: auto; right: 0; }
   .menu { max-width: calc(100vw - 32px); }
-  .data .c-kind, .data .c-stage, .data .c-tags, .data .c-added { display: none; }
+  .data .c-kind, .data .c-group, .data .c-stage, .data .c-tags, .data .c-added { display: none; }
 }
 @media (max-width: 560px) {
   .hero { padding-top: var(--s-5); }

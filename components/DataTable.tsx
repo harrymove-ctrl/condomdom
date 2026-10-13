@@ -7,6 +7,7 @@ export const TABLE_COLUMNS = [
   { id: "thumb", label: "preview", sortable: false },
   { id: "title", label: "title", sortable: true },
   { id: "kind", label: "kind", sortable: true },
+  { id: "group", label: "group", sortable: true },
   { id: "stage", label: "stage", sortable: true },
   { id: "status", label: "status", sortable: true },
   { id: "tags", label: "tags", sortable: false },
@@ -25,6 +26,7 @@ export function sortItems(items: Item[], sort: Sort) {
       case "status": return STATUS_RANK[it.status];
       case "stage": return STAGE_ORDER.indexOf(it.stage);
       case "kind": return it.kind;
+      case "group": return it.group ?? "~";
       case "added": return it.added;
       default: return it.title.toLowerCase();
     }
@@ -80,6 +82,7 @@ export function DataTable({ rows, total, visible, sort, onSort, page, onPage, on
                   </td>
                 )}
                 {visible.has("kind") && <td className="c-kind">{KIND_PLURAL[it.kind].replace(/s$/, "")}</td>}
+                {visible.has("group") && <td className="c-group">{it.group ?? "—"}</td>}
                 {visible.has("stage") && <td className="c-stage">{it.stage}</td>}
                 {visible.has("status") && (
                   <td className="c-status"><span className={`mark ${it.status}`} aria-hidden="true">{STATUS_MARK[it.status]}</span>{STATUS_LABEL[it.status]}</td>

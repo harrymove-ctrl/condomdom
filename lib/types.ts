@@ -12,6 +12,8 @@ export interface Item {
   kind: Kind;
   stage: StageId;
   status: Status;
+  /** A category inside its kind, e.g. "animated-react" or "svelte": a folder in the explorer. */
+  group?: string;
   url?: string;
   path?: string;
   file?: string;

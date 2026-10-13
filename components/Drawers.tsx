@@ -52,7 +52,7 @@ export function ItemDetail({ item, stage, onEdit, onClose, mode, onMode }: {
       )}
       <div className="kicker">
         <span><span className={`mark ${item.status}`} aria-hidden="true">{STATUS_MARK[item.status]}</span>{STATUS_LABEL[item.status]}</span>
-        <span>{KIND_PLURAL[item.kind].replace(/s$/, "")}</span>
+        <span>{KIND_PLURAL[item.kind].replace(/s$/, "")}{item.group ? ` / ${item.group}` : ""}</span>
         <span>{stage?.label.toLowerCase() ?? item.stage}</span>
         <span>{item.added}</span>
       </div>
@@ -87,8 +87,9 @@ export function DetailDrawer({ item, stage, mode, onMode, onClose, onEdit }: {
 
 export type Saved = { item: Item; created: boolean } | { deleted: Item };
 
-export function EditorDrawer({ open, item, stages, defaults, mode, onMode, onClose, onSaved }: {
+export function EditorDrawer({ open, item, stages, groups, defaults, mode, onMode, onClose, onSaved }: {
   open: boolean;
+  groups: string[];
   mode: PanelMode;
   onMode: (m: PanelMode) => void;
   item: Item | null;
@@ -136,6 +137,10 @@ export function EditorDrawer({ open, item, stages, defaults, mode, onMode, onClo
           <label>stage<select name="stage" defaultValue={v.stage ?? "build"}>{stages.map((s) => <option key={s.id} value={s.id}>{s.label.toLowerCase()}</option>)}</select></label>
           <label>status<select name="status" defaultValue={v.status ?? "to-try"}>{STATUSES.map((s) => <option key={s} value={s}>{STATUS_LABEL[s]}</option>)}</select></label>
         </div>
+        <label>group <small>a category inside its kind, e.g. animated-react, svelte: pick one or type a new one</small>
+          <input name="group" list="groups" placeholder="animated-react" defaultValue={v.group ?? ""} />
+          <datalist id="groups">{groups.map((g) => <option key={g} value={g} />)}</datalist>
+        </label>
         <label>link <small>its logo becomes the ascii preview</small><input name="url" type="url" placeholder="https://" defaultValue={v.url ?? ""} /></label>
         <label>folder <small>a skill or project on this Mac: its files become the preview</small><input name="path" placeholder="~/.agents/skills/…" defaultValue={v.path ?? ""} /></label>
         <label>video file <small>anywhere in your home folder or on the Dev drive</small><input name="file" placeholder="~/Downloads/demo.mp4" defaultValue={v.file ?? ""} /></label>

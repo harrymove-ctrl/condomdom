@@ -47,14 +47,15 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
     const v = store.get<string>("view", "library");
     if ((VIEWS as readonly string[]).includes(v)) setView(v as View);
     setFilters(store.get("filters", []));
-    const cols = store.get<string[] | null>("columns", null);
-    if (cols) setVisible(new Set(cols));
+    // Hidden columns are remembered (not shown ones), so a column added later shows up on its own.
+    const hidden = store.get<string[]>("hidden-columns", []);
+    if (hidden.length) setVisible(new Set(TABLE_COLUMNS.map((c) => c.id).filter((id) => !hidden.includes(id))));
     const pm = store.get<string>("panel", "center");
     if ((PANEL_MODES as readonly string[]).includes(pm)) setPanelMode(pm as PanelMode);
   }, []);
   useEffect(() => store.set("view", view), [view]);
   useEffect(() => store.set("filters", filters), [filters]);
-  useEffect(() => store.set("columns", [...visible]), [visible]);
+  useEffect(() => store.set("hidden-columns", TABLE_COLUMNS.map((c) => c.id).filter((id) => !visible.has(id))), [visible]);
   useEffect(() => store.set("panel", panelMode), [panelMode]);
 
   // Typing shows the boot log until the search settles, then the results.
@@ -212,7 +213,7 @@ export function Library({ initialItems, stages }: { initialItems: Item[]; stages
       </div>
 
       <DetailDrawer mode={panelMode} onMode={setPanelMode} item={detail} stage={stages.find((s) => s.id === detail?.stage)} onClose={() => setDetailId(null)} onEdit={(it) => { setDetailId(null); setEditor({ open: true, item: it }); }} />
-      <EditorDrawer mode={panelMode} onMode={setPanelMode} open={editor.open} item={editor.item} stages={stages} defaults={defaults} onClose={() => setEditor({ open: false, item: null })} onSaved={onSaved} />
+      <EditorDrawer groups={[...new Set(items.map((i) => i.group).filter((g): g is string => !!g))].sort()} mode={panelMode} onMode={setPanelMode} open={editor.open} item={editor.item} stages={stages} defaults={defaults} onClose={() => setEditor({ open: false, item: null })} onSaved={onSaved} />
       {toast && <div className="toast" role="status">{toast}</div>}
     </>
   );

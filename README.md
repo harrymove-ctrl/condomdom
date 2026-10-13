@@ -39,6 +39,8 @@ Each item points at where the resource lives:
 | `path` | a folder on this Mac: a skill, a project (`~/.agents/skills/orca-cli`) | its real file tree + SKILL.md description |
 | `file` | a video anywhere in your home folder or on the Dev drive (`~/Downloads/demo.mp4`) | a frame as ascii, plus the player |
 
+Every item also has a **kind** (component, skill, read, tool, inspiration, video) and an optional **group**: a category inside the kind, such as `animated-react`, `svelte`, `glass & effects` or `primitives`. Groups are folders in the explorer, a column in the table and a filter. Set or change one in the editor: pick an existing group or type a new one.
+
 There are three ways to add items:
 
 - **Scan:** `pnpm scan` finds your skills in `~/.agents/skills` and `~/.claude/skills` and lists the new ones. Add `--apply` to save them. `pnpm scan --videos ~/Movies/demos --apply` adds every video in a folder too.

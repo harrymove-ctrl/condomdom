@@ -1,6 +1,308 @@
 {
   "items": [
     {
+      "id": "dinil-crafts",
+      "title": "Dinil \u00b7 Crafts",
+      "kind": "inspiration",
+      "group": "craft experiments",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://dinilth.vercel.app/crafts",
+      "summary": "Small experiments in interaction, motion and visual detail.",
+      "tags": [
+        "inspiration",
+        "motion",
+        "craft"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "morphin",
+      "title": "Morphin",
+      "kind": "inspiration",
+      "group": "real-product UI",
+      "stage": "inspire",
+      "status": "to-try",
+      "url": "https://morphin.dev/",
+      "summary": "Interfaces, interactions and animations from real websites and apps.",
+      "tags": [
+        "inspiration",
+        "patterns"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "astryx-templates",
+      "title": "Astryx Templates",
+      "kind": "component",
+      "group": "blocks & templates",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://astryx.atmeta.com/templates",
+      "summary": "Page templates: dashboards, settings, forms, AI chat and more.",
+      "tags": [
+        "templates",
+        "dashboards"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "mono-charts",
+      "title": "amicro \u00b7 Mono Charts",
+      "kind": "component",
+      "group": "charts",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://amicro.vercel.app/mono-charts",
+      "summary": "Monochrome chart components.",
+      "tags": [
+        "charts",
+        "mono"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "sv-dai",
+      "title": "Svelte Chanhdai",
+      "kind": "component",
+      "group": "svelte",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://sv-dai.vercel.app/",
+      "summary": "Svelte 5 / SvelteKit components and blocks with polished animations.",
+      "tags": [
+        "svelte",
+        "motion",
+        "blocks"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "sv-table",
+      "title": "Svelte Datatables",
+      "kind": "component",
+      "group": "svelte",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://sv-table.vercel.app/",
+      "summary": "Svelte data table examples: filtering, sorting, pagination and more.",
+      "tags": [
+        "svelte",
+        "table",
+        "filters"
+      ],
+      "added": "2026-10-13",
+      "note": "The filter pattern condomdom's own table is built on."
+    },
+    {
+      "id": "sv-blocks",
+      "title": "Svelte Shadcn Blocks",
+      "kind": "component",
+      "group": "svelte",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://sv-blocks.vercel.app/",
+      "summary": "150+ UI and marketing blocks for Svelte landing pages.",
+      "tags": [
+        "svelte",
+        "shadcn",
+        "blocks"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "kibo-ui",
+      "title": "Kibo UI",
+      "kind": "component",
+      "group": "primitives",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://www.kibo-ui.com/",
+      "summary": "Composable, accessible, open-source components for shadcn/ui.",
+      "tags": [
+        "shadcn",
+        "react",
+        "accessibility"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "react-aria",
+      "title": "React Aria",
+      "kind": "component",
+      "group": "primitives",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://react-aria.adobe.com/",
+      "summary": "Accessible components you style yourself, from Adobe.",
+      "tags": [
+        "react",
+        "accessibility",
+        "headless"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "1st-pouf",
+      "title": "1st-Pouf",
+      "kind": "component",
+      "group": "glass & effects",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://1st-pouf.worksonmy.dev/",
+      "summary": "Puffy, pastel, maximalist UI kit for React: claymorphism as a shadcn-style registry.",
+      "tags": [
+        "react",
+        "claymorphism",
+        "shadcn"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "obsidian-ui",
+      "title": "ObsidianUI \u00b7 Fractal Glass",
+      "kind": "component",
+      "group": "glass & effects",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://www.obsidianui.dev/",
+      "summary": "Component library with a fractal glass effect.",
+      "tags": [
+        "react",
+        "glass"
+      ],
+      "added": "2026-10-13",
+      "note": "The fractal-glass docs page you saved now returns 404; this points at the library's home."
+    },
+    {
+      "id": "liquefy-ui",
+      "title": "liquefy-ui",
+      "kind": "component",
+      "group": "glass & effects",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://liquefy-ui.com/",
+      "summary": "Liquid Glass components for React: WebGL optics, spring physics, a shadcn registry and an MCP server.",
+      "tags": [
+        "react",
+        "glass",
+        "webgl",
+        "shadcn"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "rewamp-kinetic-reel-text",
+      "title": "Rewamp UI \u00b7 Kinetic Reel Text",
+      "kind": "component",
+      "group": "text-motion",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://www.rewampui.com/components/kinetic-reel-text",
+      "summary": "Kinetic reel text animation component.",
+      "tags": [
+        "react",
+        "text",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "spectrum-nav-list-card",
+      "title": "Spectrum UI \u00b7 Nav List Card",
+      "kind": "component",
+      "group": "animated-react",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://ui.spectrumhq.in/docs/nav-list-card",
+      "summary": "A navigation card listing links with icons, with a spring slide on hover.",
+      "tags": [
+        "react",
+        "navigation",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "sona-ui",
+      "title": "Sona UI",
+      "kind": "component",
+      "group": "animated-react",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://www.sonaui.com/",
+      "summary": "Animated React components: interactions and visual effects for apps and landing pages.",
+      "tags": [
+        "react",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "componentry",
+      "title": "Componentry",
+      "kind": "component",
+      "group": "animated-react",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://componentry.dev/",
+      "summary": "Animated React components with styling and motion already handled.",
+      "tags": [
+        "react",
+        "tailwind",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "rare-ui",
+      "title": "Rare UI",
+      "kind": "component",
+      "group": "animated-react",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://www.rareui.com/",
+      "summary": "Free, open-source registry of rare animated React components.",
+      "tags": [
+        "shadcn",
+        "react",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "unlumen-ui",
+      "title": "unlumen UI",
+      "kind": "component",
+      "group": "animated-react",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://ui.unlumen.com/",
+      "summary": "Registry of React components built with TypeScript, Tailwind and Motion.",
+      "tags": [
+        "shadcn",
+        "react",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
+      "id": "skiper-ui",
+      "title": "Skiper UI",
+      "kind": "component",
+      "group": "animated-react",
+      "stage": "build",
+      "status": "to-try",
+      "url": "https://skiper-ui.com/",
+      "summary": "Uncommon components for shadcn/ui, installed with the shadcn CLI.",
+      "tags": [
+        "shadcn",
+        "react",
+        "motion"
+      ],
+      "added": "2026-10-13"
+    },
+    {
       "id": "cmk-adr",
       "title": "cmk-adr",
       "kind": "skill",
@@ -430,7 +732,8 @@
         "motion",
         "numbers"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "animated-react"
     },
     {
       "id": "beautiful-ui",
@@ -446,7 +749,8 @@
         "agents",
         "copy-paste"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "ai-ui"
     },
     {
       "id": "aicss",
@@ -461,7 +765,8 @@
         "ai-ui",
         "agents"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "ai-ui"
     },
     {
       "id": "dot-matrix",
@@ -476,7 +781,8 @@
         "shadcn",
         "loaders"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "loaders"
     },
     {
       "id": "thinking-orbs",
@@ -491,7 +797,8 @@
         "ai-ui",
         "loaders"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "ai-ui"
     },
     {
       "id": "loading-dev",
@@ -506,7 +813,8 @@
         "react",
         "loaders"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "loaders"
     },
     {
       "id": "liquid-glass",
@@ -521,7 +829,8 @@
         "react",
         "effects"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "glass & effects"
     },
     {
       "id": "liquid-gooey",
@@ -536,7 +845,8 @@
         "react",
         "effects"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "glass & effects"
     },
     {
       "id": "morphicons",
@@ -551,7 +861,8 @@
         "icons",
         "motion"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "icons"
     },
     {
       "id": "interior-dev",
@@ -566,7 +877,8 @@
         "react",
         "micro-interactions"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "animated-react"
     },
     {
       "id": "uselayouts",
@@ -582,7 +894,8 @@
         "tailwind",
         "motion"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "animated-react"
     },
     {
       "id": "fluid-functionalism",
@@ -596,7 +909,8 @@
       "tags": [
         "open-source"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "animated-react"
     },
     {
       "id": "bencho",
@@ -610,7 +924,8 @@
       "tags": [
         "blocks"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "blocks & templates"
     },
     {
       "id": "shoogle",
@@ -640,7 +955,8 @@
         "sound",
         "micro-interactions"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "sound"
     },
     {
       "id": "dither-kit",
@@ -655,7 +971,8 @@
         "charts",
         "dither"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "charts"
     },
     {
       "id": "kugiri",
@@ -670,7 +987,8 @@
         "typography",
         "motion"
       ],
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "group": "text-motion"
     },
     {
       "id": "corner-radii",
@@ -1075,49 +1393,6 @@
       "tags": [
         "agent-skill",
         "deploy"
-      ],
-      "added": "2026-10-13"
-    },
-    {
-      "id": "video-e2e-aether",
-      "title": "E2E Aether walkthrough",
-      "kind": "video",
-      "stage": "ship",
-      "status": "using",
-      "file": "~/Downloads/E2E-Aether.mov",
-      "summary": "End-to-end product demo recording.",
-      "tags": [
-        "demo",
-        "my-work"
-      ],
-      "added": "2026-10-13"
-    },
-    {
-      "id": "video-demo-stellar",
-      "title": "Stellar demo",
-      "kind": "video",
-      "stage": "ship",
-      "status": "using",
-      "file": "~/Downloads/demo_stellar.mp4",
-      "summary": "Hackathon demo video.",
-      "tags": [
-        "demo",
-        "my-work"
-      ],
-      "added": "2026-10-13"
-    },
-    {
-      "id": "video-ultramock-timeline",
-      "title": "Ultramock timeline 16:9",
-      "kind": "video",
-      "stage": "inspire",
-      "status": "using",
-      "file": "~/Downloads/ultramock-timeline-16-9-48-3s-2026-06-24T16-03-53-366Z.mp4",
-      "summary": "Animated product timeline made in Ultramock.",
-      "note": "Template for launch videos.",
-      "tags": [
-        "mockups",
-        "launch"
       ],
       "added": "2026-10-13"
     }

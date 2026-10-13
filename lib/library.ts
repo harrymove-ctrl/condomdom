@@ -50,6 +50,7 @@ function clean(input: Record<string, unknown>, existing?: Item): Item {
     file: opt("file"),
     summary: opt("summary"),
     note: opt("note"),
+    group: opt("group")?.toLowerCase(),
     tags: tags.map((t) => t.trim()).filter(Boolean),
     added: existing?.added ?? new Date().toISOString().slice(0, 10),
   };
